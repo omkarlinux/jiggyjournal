@@ -55,7 +55,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="page-scroll">
-                        <a href="register.html">Register</a>
+                        <a href="register.php">Register</a>
                     </li>
                     <li class="page-scroll">
                         <a href="index.html#FAQ">FAQ's</a>
@@ -107,16 +107,15 @@
                             <h3>List of Users in the Database</h3>
                             <?php
                             //Query User Data
-                            $sqlQueryFetchUsers = "ALTER TABLE journal
-													ADD CONSTRAINT fk_journal
-													FOREIGN KEY (`user_id`)
-													REFERENCES user(`user_id`)";
+                            $sqlQueryFetchUsers = "select *
+from information_schema.referential_constraints
+where constraint_schema = 'a2354647_journal'";
                             $usersResult = $conn->query($sqlQueryFetchUsers);
                             
                             if ($usersResult->num_rows > 0){
                                 //Output each row
                                 while($row = $usersResult->fetch_assoc()){
-                                    echo "User ID: " . $row["user_id"] . " First Name : " . $row["u_fname"] . "<br>"; 
+                                    echo "$row"; 
                                 }
                             }
                             else {

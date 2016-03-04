@@ -54,7 +54,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="page-scroll">
-                        <a href="register.html">Register</a>
+                        <a href="register.php">Register</a>
                     </li>
 					<li class="hidden">
                         <a href="index.html#page-top"></a>
@@ -97,11 +97,50 @@
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row">
+			<!--PHP --!>
+            <?php
+				 if(isset($_POST['register']))
+				{
+					Register_user();
+				}
+			
+				function Register_user()
+				{
+	
+					// Database connection setup
+					$serverName = "mysql13.000webhost.com";
+					$database = "a2354647_journal";
+					$username = "a2354647_journal";
+					$password = "njoys6900";
+					
+					//Create connection object
+					$conn = new mysqli($serverName, $username, $password, $database);
+
+					// Check connection
+					if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					} 
+					$fname = $_POST["name"];
+					$email = $_POST["email"];
+					$password = $_POST["password"];
+					$sql = "INSERT INTO a2354647_journal". "(u_fname, u_email, password)".
+							"VALUES ('$fname', '$email','$password')";
+					
+					if ($conn->query($sql) === TRUE) {
+						echo "Registered successfully";
+					} else {
+						echo "Not registered: " . $sql ;
+					}
+
+					$conn->close();        
+				}
+			?>
+			
+			<div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" action="register.php" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
