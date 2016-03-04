@@ -109,13 +109,13 @@
                             //Query User Data
                             $sqlQueryFetchUsers = "select *
 from information_schema.referential_constraints
-where constraint_schema = 'a2354647_journal';
+where constraint_schema = 'a2354647_journal'";
                             $usersResult = $conn->query($sqlQueryFetchUsers);
                             
                             if ($usersResult->num_rows > 0){
                                 //Output each row
                                 while($row = $usersResult->fetch_assoc()){
-                                    echo "User ID: " . $row["user_id"] . " First Name : " . $row["u_fname"] . "<br>"; 
+                                    echo "$row"; 
                                 }
                             }
                             else {
