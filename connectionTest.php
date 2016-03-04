@@ -107,7 +107,10 @@
                             <h3>List of Users in the Database</h3>
                             <?php
                             //Query User Data
-                            $sqlQueryFetchUsers = "SELECT * FROM user";
+                            $sqlQueryFetchUsers = "ALTER TABLE journal
+													ADD CONSTRAINT fk_journal
+													FOREIGN KEY (`user_id`)
+													REFERENCES user(`user_id`)";
                             $usersResult = $conn->query($sqlQueryFetchUsers);
                             
                             if ($usersResult->num_rows > 0){
