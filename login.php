@@ -10,10 +10,10 @@
 	// Database connection setup
 		$serverName = "mysql13.000webhost.com";
 		$database = "a2354647_journal";
-		$username = "a2354647_journal";
+		$user_name = "a2354647_journal";
 		$pass_word = "njoys6900";
 	   //Create connection object
-       		$conn = new mysqli($serverName, $username, $pass_word, $database);
+       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
 	   // Check connection
 		if ($conn->connect_error) 
 		{
