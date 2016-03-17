@@ -79,27 +79,19 @@
         <!-- /.container-fluid -->
     </nav>
 
-	
-	
-	
-	
-	
-	
-	
-	
-    <!-- Register -->
-	    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-				</br></br></br>
-                    <h2>Join US</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
+		<section id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						</br></br></br>
+						<h2>Join US</h2>
+						<hr class="star-primary">
+					</div>
+				</div>
+    
 			<!--PHP --!>
             <?php
-				 if(isset($_POST['register']))
+				 if(isset($_POST['submit']))
 				{
 					Register_user();
 				}
@@ -117,48 +109,61 @@
 					$conn = new mysqli($serverName, $username, $password, $database);
 
 					// Check connection
-					if ($conn->connect_error) {
+					if ($conn->connect_error) 
+					{
 						die("Connection failed: " . $conn->connect_error);
 					} 
-					$fname = $_POST["name"];
+					$fname = $_POST["Firstname"];
+					$lname = $_POST["Lastname"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
-					$sql = "INSERT INTO a2354647_journal". "(u_fname, u_email, password)".
-							"VALUES ('$fname', '$email','$password')";
+					$sql = "INSERT INTO user(u_fname,u_lname, u_email, password) VALUES ('$fname','$lname' ,'$email','$password');";
 					
-					if ($conn->query($sql) === TRUE) {
+					if ($conn->query($sql) === TRUE) 
+					{
 						echo "Registered successfully";
-					} else {
-						echo "Not registered: " . $sql ;
+					} 
+					else 
+					{
+						echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
 					}
 
 					$conn->close();        
 				}
 			?>
-			
-			<div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" action="register.php" id="contactForm" novalidate>
+			<!-- Register -->
+            
+	
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+						<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+					<form action="register.php" method="post" >
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <label>FirstName</label>
+                                <input type="text" class="form-control" name="Firstname" placeholder="FirstName" id="Firstname" required data-validation-required-message="Please enter your firstname.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+						 <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>LastName</label>
+                                <input type="text" class="form-control" name="Lastname" placeholder="Lastname" id="Lastname" required data-validation-required-message="Please enter your lastname.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your password.">
+                                <input type="password" class="form-control" name="password" placeholder="Password" id="password" required data-validation-required-message="Please enter your password.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -173,21 +178,19 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Register</button>
+                                <input type="submit" name ="submit" class="btn btn-success btn-lg" value = "submit">
                             </div>
                         </div>
                     </form>
+					</div>
                 </div>
+				
             </div>
         </div>
-    </section>
+</section>
 
+    <!-- Footer -->
 
-	
-	
-	
-	
-	
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
@@ -220,7 +223,6 @@
                     <div class="footer-col col-md-4">
                         <h3>About JiggyJournal</h3>
                         <p>JiggyJournal is a free to use, open source online journal created by <a href="about.html">JiggyJournal</a>.</p>
- 
                     </div>
                 </div>
             </div>
@@ -235,7 +237,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll visible-xs visible-sm">
         <a class="btn btn-primary" href="#page-top">
