@@ -3,7 +3,7 @@
 	$serverName = "mysql13.000webhost.com";
 	$database = "a2354647_journal";
 	$username = "a2354647_journal";
-	$password = "njoys6900";
+	$pass_word = "njoys6900";
 	
 	session_start();
 	
@@ -13,7 +13,7 @@
 	if($username&&$password)
 	{
 	   //Create connection object
-       $conn = new mysqli($serverName, $username, $password, $database);
+       $conn = new mysqli($serverName, $username, $pass_word, $database);
 	   // Check connection
 		if ($conn->connect_error) 
 		{
@@ -25,7 +25,7 @@
 	
 		if($numrows!==0)
 		{
-			while($row = mysql_fetch_asooc($query))
+			while($row = mysql_fetch_assoc($query))
 			{
 			$dbusername = $row['u_email'];
 			$dbpassword = $row['paassword'];
