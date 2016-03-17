@@ -35,3 +35,15 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+
+//Jiggy Journal 
+
+//dropdown menu
+
+$(document).ready(function () {
+    //Handles menu drop down
+    $('.dropdown-menu').find('form').click(function (e) {
+        e.stopPropagation();
+    });
+});
