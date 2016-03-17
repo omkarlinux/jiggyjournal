@@ -28,7 +28,7 @@
 			while($row = mysqli_fetch_assoc($query))
 			{
 			$dbusername = $row['u_email'];
-			$dbpassword = $row['paassword'];
+			$dbpassword = $row['password'];
 			}
 		
 			if($username == $dbusername&&$password==$dbpassword)
