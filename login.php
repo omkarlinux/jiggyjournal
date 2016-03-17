@@ -20,7 +20,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		} 
        
-	  $query = mysqli_query("SELECT * FROM user WHERE u_email='$username'");
+	  $query = mysqli_query($conn, "SELECT * FROM user WHERE u_email='$username'");
 	  $numrows = mysqli_num_rows($query);
 	
 		if($numrows!==0)
