@@ -25,9 +25,9 @@
                        <div class="jumbotron">
                            <div class="about" id="aboutUs">
                                <div class="row">
-                                   <p class="text-justify col-md-8"><b>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b></p>
+                                   <p class="text-justify col-md-8"><b>My Jiggy Journal</b></p>
                                    <div class="col-md-4">
-                                   <button class="btn btn-success btn-lg" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span>  Add New Journal Entry </button>
+                                   <button class="btn btn-success btn-md" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span>  Add New Journal Entry </button>
                                   
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                                    <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                                </div>
                                                <div class="col-md-3 col-md-offset-0">
-                                                   Last Updated: Mar 10, 2016
+                                                   Mar 10, 2016
                                                </div>
                                                
                                            </div>
@@ -69,7 +69,7 @@
                                                    <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                                </div>
                                                <div class="col-md-3 col-md-offset-0">
-                                                   Last Updated: Mar 10, 2016
+                                                   Mar 10, 2016
                                                </div>
                                            </div>
                                        </div>
@@ -93,7 +93,7 @@
                                                    <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                                </div>
                                                <div class="col-md-3 col-md-offset-0">
-                                                   Last Updated: Mar 10, 2016
+                                                    Mar 10, 2016
                                                </div>
                                            </div>
                                        </div>
