@@ -1,113 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Jiggy Journal</title>
-
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <!--Browser icon -->
-    <link rel="icon" href="img/logo.png">
-</head>
+<?php
+    require 'includes/headcode.html';
+?>
 
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <span>
-                    <img src="img/JiggyJournalIcon.png" style="height:55px; width:55px;float:left;">
-                    <a href="#page-top" class="navbar-brand">iggy Journal</a>
-                </span>  
-                    
-     </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="page-scroll">
-                        <a href="register.php">Register</a>
-                    </li>
-					<li class="hidden">
-                        <a href="index.html#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="index.html#FAQ">FAQ's</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="about.html">About US</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="index.html#contact">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form action="login.php" method="post" class="form" id="login-form">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email address" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox"> Remember me
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block" value="login">Sign in</button>
-                                            </div>
-                                            <div class="help-block text-right"><a href="">Forgot password?</a></div>
-                                        </form>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        New here ? <a href="register.php"><b>Join Us</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+<?php
+    require 'includes/topNavigation.html';
+?>
 
     <!-- Header -->
     <header>
@@ -331,7 +234,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About JiggyJournal</h3>
-                        <p>JiggyJournal is a free to use, open source online journal created by <a href="about.html">JiggyJournal</a>.</p>
+                        <p>JiggyJournal is a free to use, open source online journal created by <a href="about.php">JiggyJournal</a>.</p>
                     </div>
                 </div>
             </div>
