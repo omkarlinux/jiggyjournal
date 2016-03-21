@@ -480,6 +480,7 @@ footer .footer-below {
 
 #myCarousel img{
     width:100%;
+    max-width: 1400px;
 }
 .overlay { 
   color: #617487f;
