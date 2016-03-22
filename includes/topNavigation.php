@@ -78,7 +78,7 @@
                 </li>
 			 <?php } else { ?>
 				<li class="page-scroll">
-                    <a href="ListView.php"><?php echo $_SESSION['fname'] "'Journal"  ?></a>
+                    <a href="ListView.php"><?php echo $_SESSION['fname']."'Journal"  ?></a>
                 </li>
 			 <?php } ?>
 				
