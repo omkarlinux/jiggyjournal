@@ -39,6 +39,7 @@
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
+                                    <span><?php echo basename($_SERVER['PHP_SELF']);?></span>
                                     <form action="login.php" method="post" class="form" id="login-form">
                                         <div class="form-group">
                                             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email address" required>

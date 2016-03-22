@@ -9,7 +9,7 @@
 
     <!-- Navigation -->
 <?php
-    require 'includes/topNavigation.html';
+    require 'includes/topNavigation.php';
 ?>
 
     <!-- Header -->
