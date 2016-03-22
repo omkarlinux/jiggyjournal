@@ -72,9 +72,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+			 <?php if(empty($_SESSION['userid'])) {?>
                 <li class="page-scroll">
                     <a href="register.php">Register</a>
                 </li>
+			 <?php } else { ?>
+				<li class="page-scroll">
+                    <a href="ListView.php"><?php echo $_SESSION['fname'] ?></a>
+                </li>
+			 <?php } ?>
+				
                 <li class="page-scroll">
                     <a href="index.php#FAQ">FAQ's</a>
                 </li>
