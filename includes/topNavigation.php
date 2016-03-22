@@ -86,8 +86,8 @@
                 </li>
 				<?php if(isset($_SESSION['userid'])):
 						{
-							if(isset($error)): echo ' open'; endif;?>
-							{
+							if(isset($error)): echo ' open'; endif;
+							{?>
                 <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
@@ -96,7 +96,7 @@
                                 <div class="col-md-12">
                                     <?php if(isset($error)): ?>
                                         <span><?php echo $error; ?></span>
-                                    <?php endif; ?>
+                                    
                                     <form action="<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" class="form" id="login-form">
                                         <div class="form-group">
                                             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email address" required>
