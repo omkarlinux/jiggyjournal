@@ -1,3 +1,57 @@
+<!-- Login Validation Code PHP -->
+<?php
+	
+	session_start();                    // Check later
+	
+	$username = $_POST['email'];
+	$password = $_POST['password'];
+	
+	if($username&&$password)
+	{
+	// Database connection setup
+		$serverName = "mysql13.000webhost.com";
+		$database = "a2354647_journal";
+		$user_name = "a2354647_journal";
+		$pass_word = "njoys6900";
+	   //Create connection object
+       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
+	   // Check connection
+		if ($conn->connect_error) 
+		{
+			die("Connection failed: " . $conn->connect_error);
+		} 
+       
+	  $query = mysqli_query($conn, "SELECT * FROM user WHERE u_email='$username'");
+	  $numrows = mysqli_num_rows($query);
+	
+		if($numrows!==0)
+		{
+			if($row = mysqli_fetch_assoc($query))
+			{
+			$dbpassword = $row['password'];
+			}
+		
+			if($password==$dbpassword)
+			{
+				@$_SESSION['username'] = $username;         //Check later
+                header("Location: ListView.php");            //Redirect to User's List view page
+			}
+			else
+            {
+                //Password & username are incorrect
+                $error = "Password is incorrect. Try again";
+            }
+		}
+		else
+        {
+            $error = "User doesn't exist!";
+        }
+	}
+	else
+    {
+        $error = "Please enter a username and password!";
+    }
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -39,8 +93,10 @@
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <span><?php echo basename($_SERVER['PHP_SELF']);?></span>
-                                    <form action="login.php" method="post" class="form" id="login-form">
+                                    <?php if(isset($error)): ?>
+                                        <span><?php echo $error; ?></span>
+                                    <?php endif; ?>
+                                    <form action="<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" class="form" id="login-form">
                                         <div class="form-group">
                                             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email address" required>
                                         </div>
