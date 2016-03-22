@@ -31,11 +31,13 @@
 			{
 			$dbpassword = $row['password'];
 			$dbuserid = $row['user_id'];
+			$dbfname = $row['u_fname'];
 			}
 		
 			if($password==$dbpassword)
 			{
-				$_SESSION['username'] = $username;
+				$_SESSION['fname'] = $dbfname;
+				$_SESSION['userid'] = $dbuserid
                 header("Location: ListView.php");            //Redirect to User's List view page
 			}
 			else
@@ -63,7 +65,7 @@
             </button>
             <span>
                 <img src="img/JiggyJournalIcon.png" style="height:55px; width:55px;float:left;">
-                <a href="index.php#page-top" class="navbar-brand">iggy Journal</a>
+                <a href="index.php" class="navbar-brand">iggy Journal</a>
             </span>  
         </div>
 
@@ -72,9 +74,6 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="page-scroll">
                     <a href="register.php">Register</a>
-                </li>
-                <li class="hidden">
-                    <a href="index.php#page-top"></a>
                 </li>
                 <li class="page-scroll">
                     <a href="index.php#FAQ">FAQ's</a>
@@ -85,7 +84,9 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
-				<?php if(isset($username)): echo ' open'; endif;?>
+				<?php if(isset($username));
+				      if(isset($error)): echo ' open'; endif;?>
+					  {
                 <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
@@ -119,7 +120,14 @@
                             </div>
                         </li>
                     </ul>
-                </li>
+					  </li>}
+					<?php else {?>
+					
+						<li class="page-scroll">
+						<a href="logout.php">Logout</a>
+						</li>
+				    
+					<?php } ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
