@@ -37,7 +37,7 @@
 			if($password==$dbpassword)
 			{
 				$_SESSION['fname'] = $dbfname;
-				$_SESSION['userid'] = $dbuserid
+				$_SESSION['userid'] = $dbuserid;
                 header("Location: ListView.php");            //Redirect to User's List view page
 			}
 			else
@@ -84,9 +84,10 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
-				<?php if(isset($username));
-				      if(isset($error)): echo ' open'; endif;?>
-					  {
+				<?php if(isset($_SESSION['userid'])):
+						{
+							if(isset($error)): echo ' open'; endif;?>
+							{
                 <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
@@ -120,8 +121,8 @@
                             </div>
                         </li>
                     </ul>
-					  </li>}
-					<?php else {?>
+					  </li>
+						<?php } else {?>
 					
 						<li class="page-scroll">
 						<a href="logout.php">Logout</a>
