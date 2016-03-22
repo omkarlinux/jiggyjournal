@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
-                        <h1>Welcome, <?php echo $_SESSION['fna	me']; ?></h1>
+                        <h1>Welcome, <?php echo $_SESSION['fname']; ?></h1>
                         <hr class="star-light">
                         
                        <div class="jumbotron">
