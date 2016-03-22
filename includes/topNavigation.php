@@ -29,12 +29,13 @@
 			if($row = mysqli_fetch_assoc($query))
 			{
 			$dbpassword = $row['password'];
+			$dbuserid = $row['user_id'];
 			}
 		
 			if($password==$dbpassword)
 			{
 				@$_SESSION['username'] = $username;         //Check later
-                header("Location: ListView.php");            //Redirect to User's List view page
+                header("Location: ListView.php");        	//Redirect to User's List view page
 			}
 			else
             {
@@ -83,6 +84,7 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
+				<?php if(isset($username)): echo ' open'; endif;?>
                 <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
