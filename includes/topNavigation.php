@@ -122,7 +122,7 @@
                         </li>
                     </ul>
 					  </li>
-						<?php } else {?>
+						<?php } else :{?>
 					
 						<li class="page-scroll">
 						<a href="logout.php">Logout</a>
