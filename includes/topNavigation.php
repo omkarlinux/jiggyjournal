@@ -84,16 +84,16 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
-				<?php if(empty($_SESSION['userid'])):
+				<?php if(empty($_SESSION['userid']))
 						{?>
-                <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
+                <li class="dropdown<?php if(isset($error)){ echo ' open'; }?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <?php if(isset($error)): ?>
-                                        <span><?php echo $error; ?></span>
+                                    <?php if(isset($error)){ ?>
+									<span><?php echo $error; } ?></span>
                                     
                                     <form action="<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" class="form" id="login-form">
                                         <div class="form-group">
@@ -120,7 +120,7 @@
                         </li>
                     </ul>
 					  </li>
-						<?php } else :{?>
+						<?php } else {?>
 					
 						<li class="page-scroll">
 						<a href="logout.php">Logout</a>
