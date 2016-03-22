@@ -83,7 +83,7 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
-                <li class="dropdown<?php if(isset($error)): echo 'open'; endif;?>">
+                <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
