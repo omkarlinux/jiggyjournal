@@ -1,7 +1,8 @@
 <!-- Login Validation Code PHP -->
 <?php
 	
-	session_start();                    // Check later
+    ob_start();
+	session_start();
 	
 	$username = $_POST['email'];
 	$password = $_POST['password'];
@@ -33,7 +34,7 @@
 		
 			if($password==$dbpassword)
 			{
-				@$_SESSION['username'] = $username;         //Check later
+				$_SESSION['username'] = $username;
                 header("Location: ListView.php");            //Redirect to User's List view page
 			}
 			else
