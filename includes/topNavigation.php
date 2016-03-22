@@ -84,10 +84,8 @@
                 <li class="page-scroll">
                     <a href="index.php#contact">Contact</a>
                 </li>
-				<?php if(isset($_SESSION['userid'])):
-						{
-							if(isset($error)): echo ' open'; endif;
-							{?>
+				<?php if(empty($_SESSION['userid'])):
+						{?>
                 <li class="dropdown<?php if(isset($error)): echo ' open'; endif;?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
