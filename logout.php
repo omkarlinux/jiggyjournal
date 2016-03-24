@@ -23,7 +23,7 @@
 
     <!-- About US -->
     <header>
-        <div class="container">
+        <div class="main-content container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">

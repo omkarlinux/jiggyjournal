@@ -38,7 +38,7 @@ h6 {
 
 hr.star-light,
 hr.star-primary {
-    margin: 25px auto 30px;
+    margin: 15px auto 18px;
     padding: 0;
     max-width: 250px;
     border: 0;
@@ -79,15 +79,15 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
+.navbar-brand{
+    float: left;
+}
+
+
 header {
     text-align: center;
     color: #fff;
     background: #18bc9c;
-}
-
-header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
 }
 
 header img {
@@ -109,10 +109,6 @@ header .intro-text .skills {
 }
 
 @media(min-width:768px) {
-    header .container {
-        padding-top: 125px;
-        padding-bottom: 100px;
-    }
 
     header .intro-text .name {
         font-size: 4.75em;
@@ -149,7 +145,6 @@ header .intro-text .skills {
 }
 
 .navbar {
-    text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -277,6 +272,10 @@ section.success a.active {
     border: solid 2px #fff;
     color: #18bc9c;
     background: #fff;
+}
+
+.btn.padded{
+    padding: 15px;
 }
 
 .floating-label-form-group {
@@ -475,7 +474,7 @@ footer .footer-below {
 }
 
 .main-content{
-    margin-top: 110px;
+    margin-top: 22px;
 }
 
 #myCarousel img{
@@ -495,6 +494,11 @@ footer .footer-below {
 
 .overlay h1{
     font-size: 5vw;
+}
+
+.content-heading{
+    font-size: 2.5em;
+    margin: 15px;
 }
 
 #login-dp{

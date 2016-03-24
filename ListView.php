@@ -12,99 +12,104 @@
     require 'includes/topNavigation.php';
 ?>
 
+    <!-- To make sure that people who do not login cannot access ListView Page -->
+    <!--
+<?php/*
+if(empty($_SESSION['userid']))
+    {
+        header("Location: index.php");
+    }*/
+?>  -->
     <!-- About US -->
     <header>
-        <div class="container">
+        <div class="main-content container">
             <div class="row">
                 <div class="col-lg-12">
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
-                        <h1>Welcome, <?php echo $_SESSION['fname']; ?></h1>
-                        <hr class="star-light">
-                        
                        <div class="jumbotron">
-                           <div class="about" id="aboutUs">
-                               <div class="row">
-                                   <p class="text-justify col-md-8"><b>My Jiggy Journal</b></p>
-                                   <div class="col-md-4">
-                                   <button class="btn btn-success btn-md" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span>  Add New Journal Entry </button>
-                                  
+                            <div class="row">
+                                <div class="text-justify col-sm-8">
+                                    <div class="content-heading">
+                                        <b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>
                                     </div>
                                 </div>
-                               <div class="panel-group">
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                   Mar 10, 2016
-                                               </div>
-                                               
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                   </div>
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                   Mar 10, 2016
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                           <br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                       </div>
-                                   </div>
+                                <div class="col-sm-4">
+                                <button class="btn btn-success btn-md" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add Entry</button>
+                                
+                                </div>
+                            </div>
+                            <div class="panel-group">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-md-7 text-left">
+                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Edit Journal">
+                                                    <img src="img/editIcon.png" alt="Edit" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                                            </div>
+                                            <div class="col-md-3 col-md-offset-0">
+                                                Mar 10, 2016
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-md-7 text-left">
+                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Edit Journal">
+                                                    <img src="img/editIcon.png" alt="Edit" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                                            </div>
+                                            <div class="col-md-3 col-md-offset-0">
+                                                Mar 10, 2016
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        <br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
 
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                    Mar 10, 2016
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                   </div>
-
-                               </div>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-md-7 text-left">
+                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Edit Journal">
+                                                    <img src="img/editIcon.png" alt="Edit" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                                            </div>
+                                            <div class="col-md-3 col-md-offset-0">
+                                                Mar 10, 2016
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                </div>
                            </div>
                         </div>
                         <hr class="star-light">
-
                     </div>
                 </div>
             </div>

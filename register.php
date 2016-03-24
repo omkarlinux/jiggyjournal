@@ -11,12 +11,9 @@
 <?php
     require 'includes/topNavigation.php';
 ?>
-
-		<section id="contact">
-			<div class="container">
+			<div class="main-content container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
-						</br></br></br>
 						<h2>Join US</h2>
 						<hr class="star-primary">
 					</div>
@@ -115,12 +112,12 @@
                             </div>
                         </div>
                     </form>
+                    <br/><br/><br/>
 					</div>
                 </div>
 				
             </div>
         </div>
-</section>
 
     <!-- Footer -->
 

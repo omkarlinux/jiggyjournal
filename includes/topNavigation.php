@@ -65,7 +65,7 @@
             </button>
             <span>
                 <img src="img/JiggyJournalIcon.png" style="height:55px; width:55px;float:left;">
-                <a href="index.php" class="navbar-brand">iggy Journal</a>
+                <a href="index.php" class="navbar-brand">IGGY JOURNAL</a>
             </span>  
         </div>
 
@@ -74,7 +74,7 @@
             <ul class="nav navbar-nav navbar-right">
 			 <?php if(empty($_SESSION['userid'])) {?>
                 <li class="page-scroll">
-                    <a href="register.php">Register</a>
+                    <a href="register.php">REGISTER</a>
                 </li>
 			 <?php } else { ?>
 				<li class="page-scroll">
@@ -83,18 +83,18 @@
 			 <?php } ?>
 				
                 <li class="page-scroll">
-                    <a href="index.php#FAQ">FAQ's</a>
+                    <a href="index.php#FAQ">FAQ'S</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="about.php">About US</a>
+                    <a href="about.php">ABOUT US</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="index.php#contact">Contact</a>
+                    <a href="index.php#contact">CONTACT</a>
                 </li>
 				<?php if(empty($_SESSION['userid']))
 						{?>
                 <li class="dropdown<?php if(isset($error)){ echo ' open'; }?>">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>LOGIN</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
                             <div class="row">
@@ -111,17 +111,17 @@
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox"> Remember me
+                                                <input type="checkbox"> Remember Me
                                             </label>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block" value="login">Sign in</button>
+                                            <button type="submit" class="btn btn-primary btn-block" value="login">SIGN IN</button>
                                         </div>
                                         <div class="help-block text-right"><a href="">Forgot password?</a></div>
                                     </form>
                                 </div>
                                 <div class="bottom text-center">
-                                    New here ? <a href="register.php"><b>Join Us</b></a>
+                                    NEW HERE ? <a href="register.php"><b>JOIN US</b></a>
                                 </div>
                             </div>
                         </li>
