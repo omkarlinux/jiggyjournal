@@ -1,4 +1,5 @@
 <!-- Login Validation Code PHP -->
+<!-- Commented so that any errors don't actually show up on screen but php is still processed
 <?php
 	
     ob_start();
@@ -51,7 +52,7 @@
             $error = "User doesn't exist!";
         }
 	}
-?>
+?> -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
