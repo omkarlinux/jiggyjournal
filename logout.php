@@ -30,7 +30,7 @@
                         <br/><br/><br/>
                         <h3>Logout successful!</h3>
                         <hr class="star-light"
-                        <br/><br/><br/>>
+                        <br/><br/><br/>
                     </div>
                 </div>
             </div>
