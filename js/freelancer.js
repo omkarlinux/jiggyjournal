@@ -52,3 +52,8 @@ $(document).ready(function () {
 $('.carousel').carousel({
   interval: 1000 * 4
 });
+
+//Datepicker
+$('.form-group input.date').datepicker({
+    format: "mm/dd/yyyy"
+});

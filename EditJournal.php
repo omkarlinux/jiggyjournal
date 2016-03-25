@@ -24,10 +24,10 @@ if(empty($_SESSION['userid']))
             <?php
 				 if(isset($_POST['submit']))
 				{
-					Register_user();
+					save_post();
 				}
 			
-				function Register_user()
+				function save_post()
 				{
 	
 					// Database connection setup
@@ -75,12 +75,13 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                    <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="button">Save</button>
+                                                    <button class="btn btn-primary btn-xs" type="button" value="">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
+                                                    <button class="btn btn-primary btn-xs" type="button">Delete</button>
                                                     <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                                 </div>
                                             </div>
@@ -94,12 +95,9 @@ if(empty($_SESSION['userid']))
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control" id="title"><br />
-                                                        <div class='input-group date date-picker' id='datetimepicker1'>
-                                                            <input type='text' class="form-control" />
-                                                            <span class="input-group-addon">
-                                                                <span class="glyphicon glyphicon-calendar"></span>
-                                                            </span>
+                                                        <input type="text" class="form-control" name="title"><br />
+                                                        <div class='input-group'>
+                                                            <input type='text' class="form-control date" name="date"/>
                                                         </div><br />
                                                         <textarea class="form-control col-md-10" id="Entry" rows="5"></textarea>
                                                     </div>
@@ -430,25 +428,10 @@ if(empty($_SESSION['userid']))
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
+    <!-- Footer -->
+    <?php
+        require 'includes/footer.php';
+    ?>
 </body>
 
 </html>
