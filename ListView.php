@@ -39,12 +39,43 @@ if(empty($_SESSION['userid']))
                                 
                                 </div>
                             </div>
+
+	<?PHP
+		if(isset($_SESSION['userid']))
+		{
+			// Database connection setup
+		$serverName = "mysql13.000webhost.com";
+		$database = "a2354647_journal";
+		$user_name = "a2354647_journal";
+		$pass_word = "njoys6900";
+	   //Create connection object
+       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
+	   // Check connection
+			if ($conn->connect_error) 
+			{
+			  die("Connection failed: " . $conn->connect_error);
+			} 
+			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$_SESSION['userid']'");
+			$numrows = mysqli_num_rows($query);
+	
+			for($x=$numrows, $x>=0, $x--)
+			{
+				if($row = mysqli_fetch_assoc($query))
+				{
+					$title = $row['title'];
+					$content = $row['content'];
+					$date = $row['date'];
+				}
+			}
+				
+		}
+		?>
                             <div class="panel-group">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                <span class="glyphicon glyphicon-paperclip"></span> <?PHP $title ?>
                                             </div>
                                             <div class="col-md-1">
                                                 <a title="Edit Journal">
@@ -55,60 +86,16 @@ if(empty($_SESSION['userid']))
                                                 <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                             </div>
                                             <div class="col-md-3 col-md-offset-0">
-                                                Mar 10, 2016
+                                                <?PHP $date ?>
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                    <div class="panel-body text-justify">$content</div>
                                 </div>
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a title="Edit Journal">
-                                                    <img src="img/editIcon.png" alt="Edit" />
-                                                </a>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                            </div>
-                                            <div class="col-md-3 col-md-offset-0">
-                                                Mar 10, 2016
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        <br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </div>
-                                </div>
-
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a title="Edit Journal">
-                                                    <img src="img/editIcon.png" alt="Edit" />
-                                                </a>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                            </div>
-                                            <div class="col-md-3 col-md-offset-0">
-                                                Mar 10, 2016
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                </div>
-                           </div>
-                        </div>
+                                
+                            </div>
+                    
                         <hr class="star-light">
                     </div>
                 </div>
