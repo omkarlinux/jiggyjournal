@@ -61,6 +61,9 @@ if(empty($_SESSION['userid']))
 			$numrows = mysqli_num_rows($query);
 			if($numrows!==0)
 			{
+				?>
+				<div class="panel-group">
+				<?php 
 				for($x=$numrows; $x>=1; $x--)
 				{
 					if($row = mysqli_fetch_assoc($query))
@@ -68,9 +71,11 @@ if(empty($_SESSION['userid']))
 					$title = $row['title'];
 					$content = $row['content'];
 					$date = $row['date'];
+					$journal_id=$row['journal_id'];
 		?>
-                            <div class="panel-group">
-                                <div class="panel panel-success">
+                            
+                                <div class="post panel panel-success">
+									<div class="id"><?php echo $journal_id ;?></div>
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-7 text-left">
@@ -93,11 +98,14 @@ if(empty($_SESSION['userid']))
                                     <div class="panel-body text-justify"><?php echo $content; ?></div>
                                 </div>
                                 
-                            </div>
+                            
 							
 					<?php 
 					} 
-				}			
+				}
+			?>
+			</div>				
+			<?php 
 			}
 			else
 			{
