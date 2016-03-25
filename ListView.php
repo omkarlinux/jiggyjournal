@@ -50,27 +50,26 @@ if(empty($_SESSION['userid']))
 		$pass_word = "njoys6900";
 	   //Create connection object
        		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
-	   // Check connection
+	   // Check 
+	
 			if ($conn->connect_error) 
 			{
 			  die("Connection failed: " . $conn->connect_error);
 			} 
-			$userid=$_SESSION['userid']
+			$userid = $_SESSION['userid'];
 			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid'");
 			$numrows = mysqli_num_rows($query);
-	
-			for($x=$numrows, $x>=0, $x--)
+			if($numrows!==0)
 			{
-				if($row = mysqli_fetch_assoc($query))
+				for($x=$numrows, $x>=0, $x--)
 				{
+					if($row = mysqli_fetch_assoc($query))
+					{
 					$title = $row['title'];
 					$content = $row['content'];
 					$date = $row['date'];
-				}
-			}
-				
-		}
-		?>
+					}
+		
                             <div class="panel-group">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
@@ -96,6 +95,11 @@ if(empty($_SESSION['userid']))
                                 </div>
                                 
                             </div>
+							
+				}
+				
+			}
+		?>
                     
                         <hr class="star-light">
                     </div>
