@@ -119,7 +119,7 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                    Edit Post
+                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
@@ -141,7 +141,10 @@ if(empty($_SESSION['userid']))
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
                                                         <div class='input-group'>
-                                                            <input type='text' class="form-control date" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                            <input type='text' class="form-control date date-picker" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                            <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-calendar"></span>
+                                                           </span>
                                                         </div><br />
                                                         <textarea name="content" class="form-control col-md-10" rows="5" value="<?php if($numrows!==0){ echo $content; } ?>"></textarea>
                                                     </div>
