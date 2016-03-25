@@ -24,7 +24,7 @@ if(empty($_SESSION['userid']))
     <header>
         <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12"> <br/>
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
                     
