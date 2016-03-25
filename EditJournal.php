@@ -110,8 +110,9 @@ if(empty($_SESSION['userid']))
     <header>
         <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12"> <br/>
                     <div class="intro-text">
+                      <hr class="star-light">
                        <div class="jumbotron">
                             <form action="EditJournal.php" method="post" >
                                 <div class="panel-group">
