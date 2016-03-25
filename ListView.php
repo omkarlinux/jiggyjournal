@@ -76,7 +76,7 @@ if(empty($_SESSION['userid']))
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-8 text-left">
-                                                <?php echo $title; ?>
+                                              <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
                                                 <a title="Edit Journal">
