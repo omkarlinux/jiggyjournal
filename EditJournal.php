@@ -31,8 +31,45 @@ if(empty($_SESSION['userid']))
                     elseif (isset($_POST['delete'])) {
                         delete_post();
                     }
+                    if (isset($_post['edit']))
+                    {
+                        edit_post();
+                    }
 				}
-			
+                
+			    function edit_post()
+				{
+	
+					// Database connection setup
+					$serverName = "mysql13.000webhost.com";
+					$database = "a2354647_journal";
+					$username = "a2354647_journal";
+					$password = "njoys6900";
+					
+					//Create connection object
+					$conn = new mysqli($serverName, $username, $password, $database);
+
+					// Check connection
+					if ($conn->connect_error) 
+					{
+						die("Connection failed: " . $conn->connect_error);
+					$journalid = $_POST["journalid"];
+					$sql = "SELECT * FROM journal WHERE journal_id='journalid'";
+					$query = mysqli_query($conn,$sql);
+                    $numrows = mysqli_num_rows($query);
+			        if($numrows!==0)
+                    {
+                        if($row = mysqli_fetch_assoc($query))
+                        {
+                            $title = $row['title'];
+                            $content = $row['content'];
+                            $date = $row['date'];
+                            $journal_id=$row['journal_id'];
+                        }
+                    }
+					$conn->close();        
+				}
+                
 				function save_post()
 				{
 	
@@ -101,11 +138,11 @@ if(empty($_SESSION['userid']))
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control" name="title"><br />
+                                                        <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
                                                         <div class='input-group'>
-                                                            <input type='text' class="form-control date" name="date"/>
+                                                            <input type='text' class="form-control date" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
                                                         </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5"></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" value="<?php if($numrows!==0){ echo $content; } ?>"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
