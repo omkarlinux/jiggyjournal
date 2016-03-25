@@ -102,8 +102,9 @@ if(empty($_SESSION['userid']))
 		}
 		?>
                     
-                        <hr class="star-light">
+                        
                     </div>
+					<hr class="star-light">
                 </div>
             </div>
         </div>
