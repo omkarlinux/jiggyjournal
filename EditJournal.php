@@ -20,6 +20,48 @@ if(empty($_SESSION['userid']))
         header("Location: index.php");
     }*/
 ?>  -->
+			<!--Database PHP --!>
+            <?php
+				 if(isset($_POST['submit']))
+				{
+					Register_user();
+				}
+			
+				function Register_user()
+				{
+	
+					// Database connection setup
+					$serverName = "mysql13.000webhost.com";
+					$database = "a2354647_journal";
+					$username = "a2354647_journal";
+					$password = "njoys6900";
+					
+					//Create connection object
+					$conn = new mysqli($serverName, $username, $password, $database);
+
+					// Check connection
+					if ($conn->connect_error) 
+					{
+						die("Connection failed: " . $conn->connect_error);
+					} 
+					$fname = $_POST["Firstname"];
+					$lname = $_POST["Lastname"];
+					$email = $_POST["email"];
+					$password = $_POST["password"];
+					$sql = "INSERT INTO user(u_fname,u_lname, u_email, password) VALUES ('$fname','$lname' ,'$email','$password');";
+					
+					if ($conn->query($sql) === TRUE) 
+					{
+						echo "Registered successfully";
+					} 
+					else 
+					{
+						echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+					}
+
+					$conn->close();        
+				}
+			?>
     <!-- Main Content -->
     <header>
         <div class="main-content container">
@@ -27,44 +69,46 @@ if(empty($_SESSION['userid']))
                 <div class="col-lg-12">
                     <div class="intro-text">
                        <div class="jumbotron">
-                            <div class="panel-group">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            </div>
-                                            <div class="col-md-1 col-md-offset-3">
-                                                <button class="btn btn-primary btn-xs" type="button">Save</button>
-                                            </div>
-                                            <div class="col-md-1 col-md-offset-0">
-                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                            <form action="EditJournal.php" method="post" >
+                                <div class="panel-group">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-md-7 text-left">
+                                                    <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                </div>
+                                                <div class="col-md-1 col-md-offset-3">
+                                                    <button class="btn btn-primary btn-xs" type="button">Save</button>
+                                                </div>
+                                                <div class="col-md-1 col-md-offset-0">
+                                                    <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <div class="col-md-2">
-                                                    <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
-                                                    <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
-                                                    <label for="Entry" class="text-left">Journal Entry:</label>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control" id="title"><br />
-                                                    <div class='input-group date date-picker' id='datetimepicker1'>
-                                                        <input type='text' class="form-control" />
-                                                        <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
-                                                    </div><br />
-                                                    <textarea class="form-control col-md-10" id="Entry" rows="5"></textarea>
+                                        <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-md-2">
+                                                        <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
+                                                        <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
+                                                        <label for="Entry" class="text-left">Journal Entry:</label>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" id="title"><br />
+                                                        <div class='input-group date date-picker' id='datetimepicker1'>
+                                                            <input type='text' class="form-control" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                        </div><br />
+                                                        <textarea class="form-control col-md-10" id="Entry" rows="5"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                           </div>
+                           </form>
                         </div>
                     </div>
                 </div>

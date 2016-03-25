@@ -19,7 +19,7 @@
 					</div>
 				</div>
     
-			<!--PHP --!>
+			<!--Database PHP --!>
             <?php
 				 if(isset($_POST['submit']))
 				{
@@ -62,8 +62,6 @@
 				}
 			?>
 			<!-- Register -->
-            
-	
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2">
 						<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
