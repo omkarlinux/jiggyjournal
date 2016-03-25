@@ -53,6 +53,7 @@ if(empty($_SESSION['userid']))
 					if ($conn->connect_error) 
 					{
 						die("Connection failed: " . $conn->connect_error);
+					} 
 					$journalid = $_POST["journalid"];
 					$sql = "SELECT * FROM journal WHERE journal_id='journalid'";
 					$query = mysqli_query($conn,$sql);
