@@ -22,9 +22,15 @@ if(empty($_SESSION['userid']))
 ?>  -->
 			<!--Database PHP --!>
             <?php
-				 if(isset($_POST['submit']))
-				{
-					save_post();
+				 if($_SERVER['REQUEST_METHOD'] === 'POST')
+				{//something posted
+                    if (isset($_POST['save'])) 
+                    {
+                        save_post();   
+                    }
+                    elseif (isset($_POST['delete'])) {
+                        delete_post();
+                    }
 				}
 			
 				function save_post()
@@ -44,19 +50,19 @@ if(empty($_SESSION['userid']))
 					{
 						die("Connection failed: " . $conn->connect_error);
 					} 
-					$fname = $_POST["Firstname"];
-					$lname = $_POST["Lastname"];
-					$email = $_POST["email"];
-					$password = $_POST["password"];
-					$sql = "INSERT INTO user(u_fname,u_lname, u_email, password) VALUES ('$fname','$lname' ,'$email','$password');";
+					$title = $_POST["title"];
+					$content = $_POST["content"];
+					$date = $_POST["date"];
+					$userid = $_SESSION["userid"];
+					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' ,'$date','$userid');";
 					
 					if ($conn->query($sql) === TRUE) 
 					{
-						echo "Registered successfully";
+						$result = "Posted Successfully";
 					} 
 					else 
 					{
-						echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+						$result = "Not posted: " .$sql . "<br>" . mysqli_error($conn); 
 					}
 
 					$conn->close();        
@@ -78,11 +84,11 @@ if(empty($_SESSION['userid']))
                                                     Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="button" value="">Save</button>
+                                                    <button class="btn btn-primary btn-xs" type="button" name="save">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="button">Delete</button>
-                                                    <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
+                                                    <button class="btn btn-primary btn-xs" type="button" name="delete">Delete</button>
+                                                    <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -99,7 +105,7 @@ if(empty($_SESSION['userid']))
                                                         <div class='input-group'>
                                                             <input type='text' class="form-control date" name="date"/>
                                                         </div><br />
-                                                        <textarea class="form-control col-md-10" id="Entry" rows="5"></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
