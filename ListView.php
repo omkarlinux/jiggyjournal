@@ -55,7 +55,8 @@ if(empty($_SESSION['userid']))
 			{
 			  die("Connection failed: " . $conn->connect_error);
 			} 
-			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$_SESSION['userid']'");
+			$userid=$_SESSION['userid']
+			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid'");
 			$numrows = mysqli_num_rows($query);
 	
 			for($x=$numrows, $x>=0, $x--)
