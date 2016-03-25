@@ -536,6 +536,6 @@ footer .footer-below {
         border-top:0 none;
     }
 }
-.post div.id{
-	display: hide;
+div.post div.id{
+	display: none;
 }
