@@ -91,7 +91,7 @@ if(empty($_SESSION['userid']))
                                             
                                         </div>
                                     </div>
-                                    <div class="panel-body text-justify"><?php$content;?></div>
+                                    <div class="panel-body text-justify"><?php $content; ?></div>
                                 </div>
                                 
                             </div>
