@@ -21,7 +21,7 @@
         require 'includes/topNavigation.php';
     ?>
 
-    <!-- About US -->
+    <!-- Main Content -->
     <header>
         <div class="main-content container">
             <div class="row">

@@ -12,7 +12,7 @@
     require 'includes/topNavigation.php';
 ?>
 
-    <!-- Connection Test-->
+    <!-- Main Content-->
         <div class="container" style="margin-top:100px">
 
             <div class="row">

@@ -12,7 +12,7 @@
     require 'includes/topNavigation.php';
 ?>
 
-    <!-- Header -->
+    <!-- Main Content -->
     <header>
         <div class="main-content">
             <div class="row">

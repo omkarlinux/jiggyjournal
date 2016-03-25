@@ -20,7 +20,7 @@ if(empty($_SESSION['userid']))
         header("Location: index.php");
     }*/
 ?>  -->
-    <!-- About US -->
+    <!-- Main Content-->
     <header>
         <div class="main-content container">
             <div class="row">
@@ -35,7 +35,7 @@ if(empty($_SESSION['userid']))
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                <button class="btn btn-success btn-md" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add Entry</button>
+                                <a href="EditJournal.php"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add Entry</a>
                                 
                                 </div>
                             </div>

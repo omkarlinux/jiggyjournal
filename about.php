@@ -12,7 +12,7 @@
     require 'includes/topNavigation.php';
 ?>
 
-    <!-- About US -->
+    <!-- Main Content -->
     <header>
         <div class="main-content container">
             <div class="row">
@@ -21,7 +21,6 @@
                     <div class="intro-text">
 					<h1>About US</h1>
 					 <hr class="star-light">
-                        
                         <div class="jumbotron">
                             <div class="about" id="aboutUs">
                                 <p><b>Our team first met as Management Information Systems graduate students at Utah State University’s Jon M. Huntsman School of Business in the Fall of 2015. Though we each took different paths to arrive there, we quickly found common ground and decided to work together in developing Omkar’s idea for an on-line journal.  That’s how Jiggy Journal began!</b></p>
