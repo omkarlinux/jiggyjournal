@@ -131,7 +131,7 @@
 						<?php } else {?>
 					
 						<li class="page-scroll">
-						<a href="logout.php">Logout</a>
+						<a href="logout.php">LOGOUT</a>
 						</li>
 				    
 					<?php } ?>

@@ -54,7 +54,7 @@ if(empty($_SESSION['userid']))
 					$content = $_POST["content"];
 					$date = $_POST["date"];
 					$userid = $_SESSION["userid"];
-					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' ,'$date','$userid');";
+					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
 					
 					if ($conn->query($sql) === TRUE) 
 					{
