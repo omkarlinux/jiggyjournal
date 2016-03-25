@@ -57,7 +57,7 @@ if(empty($_SESSION['userid']))
 			  die("Connection failed: " . $conn->connect_error);
 			} 
 			$userid = $_SESSION['userid'];
-			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid'");
+			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid' ORDER by date");
 			$numrows = mysqli_num_rows($query);
 			if($numrows!==0)
 			{
