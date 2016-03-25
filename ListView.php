@@ -75,7 +75,7 @@ if(empty($_SESSION['userid']))
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> <?PHP $title ?>
+                                                <span class="glyphicon glyphicon-paperclip"></span> <?php $title; ?>
                                             </div>
                                             <div class="col-md-1">
                                                 <a title="Edit Journal">
@@ -86,12 +86,12 @@ if(empty($_SESSION['userid']))
                                                 <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                             </div>
                                             <div class="col-md-3 col-md-offset-0">
-                                                <?PHP $date ?>
+                                                <?php $date; ?>
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    <div class="panel-body text-justify">$content</div>
+                                    <div class="panel-body text-justify"><?php$content;?></div>
                                 </div>
                                 
                             </div>
