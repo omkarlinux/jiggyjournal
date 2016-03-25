@@ -84,10 +84,10 @@ if(empty($_SESSION['userid']))
                                                     Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="button" name="save">Save</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="button" name="delete">Delete</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete">Delete</button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
