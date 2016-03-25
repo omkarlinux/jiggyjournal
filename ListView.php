@@ -99,6 +99,7 @@ if(empty($_SESSION['userid']))
 				<?php }
 				
 			}
+		}
 		?>
                     
                         <hr class="star-light">
