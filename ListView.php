@@ -99,6 +99,12 @@ if(empty($_SESSION['userid']))
 					} 
 				}			
 			}
+			else
+			{
+			?>
+				Nothing to see here. Move along.
+			<?php 
+			}
 		}
 		?>
                     
