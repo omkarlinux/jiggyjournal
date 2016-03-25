@@ -69,7 +69,7 @@ if(empty($_SESSION['userid']))
 					$content = $row['content'];
 					$date = $row['date'];
 					}
-		
+		?>
                             <div class="panel-group">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
@@ -96,7 +96,7 @@ if(empty($_SESSION['userid']))
                                 
                             </div>
 							
-				}
+				<?php }
 				
 			}
 		?>
