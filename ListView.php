@@ -61,7 +61,7 @@ if(empty($_SESSION['userid']))
 			$numrows = mysqli_num_rows($query);
 			if($numrows!==0)
 			{
-				for($x=$numrows, $x>=0, $x--)
+				for($x=$numrows; $x>=0; $x--)
 				{
 					if($row = mysqli_fetch_assoc($query))
 					{
