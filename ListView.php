@@ -27,20 +27,15 @@ if(empty($_SESSION['userid']))
                 <div class="col-lg-12">
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
-                      <h1>
-                        <b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>
-                      </h1>
+                    
                         <hr class="star-light">
                        <div class="jumbotron">
-                            <div class="row">
-                                <div class="text-justify col-sm-8">
-                                    
-                                </div>
-                                <div class="col-sm-4">
-                                <a href="EditJournal.php"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add Entry</a>
+                           
+                             <div class="row">
+                                   <p class="text-justify col-sm-7"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
+                                   <a href="EditJournal.php" class="btn btn-success btn-sm col-sm-4"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                </div> <br/>
                                 
-                                </div>
-                            </div>
 
 	<?PHP
 		if(isset($_SESSION['userid']))
