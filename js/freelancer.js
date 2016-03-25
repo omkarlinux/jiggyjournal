@@ -54,6 +54,13 @@ $('.carousel').carousel({
 });
 
 //Datepicker
-$('.form-group input.date').datepicker({
-    format: "mm/dd/yyyy"
+
+$(document).ready(function(){
+    $('.form-group input.date').datepicker({
+        format: "mm/dd/yyyy",
+        orientation: "auto right",
+        autoclose: true,
+        todayHighlight: true,
+        todayBtn: "linked"
+    });    
 });

@@ -15,3 +15,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="js/freelancer.js"></script>
+
+<!-- Bootstrap javascript for datepicker -->
+<script src="js/bootstrap-datepicker.js"></script>
