@@ -61,21 +61,20 @@ if(empty($_SESSION['userid']))
 			$numrows = mysqli_num_rows($query);
 			if($numrows!==0)
 			{
-				for($x=$numrows; $x>=0; $x--)
+				for($x=$numrows; $x>=1; $x--)
 				{
 					if($row = mysqli_fetch_assoc($query))
 					{
 					$title = $row['title'];
 					$content = $row['content'];
 					$date = $row['date'];
-					}
 		?>
                             <div class="panel-group">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-7 text-left">
-                                                <span class="glyphicon glyphicon-paperclip"></span> <?php $title; ?>
+                                                <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
                                                 <a title="Edit Journal">
@@ -86,18 +85,19 @@ if(empty($_SESSION['userid']))
                                                 <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                             </div>
                                             <div class="col-md-3 col-md-offset-0">
-                                                <?php $date; ?>
+                                                <?php echo $date; ?>
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    <div class="panel-body text-justify"><?php $content; ?></div>
+                                    <div class="panel-body text-justify"><?php echo $content; ?></div>
                                 </div>
                                 
                             </div>
 							
-				<?php }
-				
+					<?php 
+					} 
+				}			
 			}
 		}
 		?>
