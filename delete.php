@@ -30,7 +30,20 @@
 		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
           if( $conn->query($sql) === TRUE)
 	  { 
-            echo "Deleted successfully";
+              <header>
+        <div class="main-content container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <br/><br/><br/>
+                        <h3>Deleted successfully</h3>
+                        <hr class="star-light"
+                        <br/><br/><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
       	  }
 	  else 
 	  {
