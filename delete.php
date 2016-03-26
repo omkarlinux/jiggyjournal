@@ -28,19 +28,10 @@
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
 		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
- 
- if ($conn->query($sql) === TRUE) 
-					{
-						$result = "Deleted Successfully";
-					} 
-					else 
-					{
-						$result = "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
-					}
-
-					$conn->close();    
+  
                     header("refresh:2; url=ListView.php");
  }
+ ?>
  
  <!-- Navigation -->
     <?php
@@ -54,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="intro-text">
                         <br/><br/><br/>
-                        <h3>Logout successful!</h3>
+                        <h3>Deleted successfully!</h3>
                         <hr class="star-light"
                         <br/><br/><br/>
                     </div>
