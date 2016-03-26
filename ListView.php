@@ -89,28 +89,9 @@ if(empty($_SESSION['userid']))
                                                 </a>
                                             </div>
                                             <div class="col-md-1">
-                                                <a title="Delete Journal" onclick="del(<? php echo $journal_id; ?>)"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                                <?php
-													function del($journal_id)
-													{
-														// Database connection setup
-														$serverName = "mysql13.000webhost.com";
-														$database = "a2354647_journal";
-														$user_name = "a2354647_journal";
-														$pass_word = "njoys6900";
-													   //Create connection object
-															$conn = new mysqli($serverName, $user_name, $pass_word, $database);
-													   // Check 
-													
-															if ($conn->connect_error) 
-															{
-															  die("Connection failed: " . $conn->connect_error);
-															} 
-															
-															$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$journal_id' ");
-													}
-												
-												?>
+											<form action = "delete.php" method="post" >
+											<input type="image" src="img/deleteIcon.png" name="delete" width="60" height="60">	
+											</form>
 											</div>
                                             <div class="col-md-3 col-md-offset-0">
                                                 <?php echo $date; ?>
