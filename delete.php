@@ -4,6 +4,7 @@
  if(isset($_POST['delete']))
  {
 	del($journal_id);
+	echo $journal_id;
     return true(); 
  }
  
