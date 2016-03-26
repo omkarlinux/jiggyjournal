@@ -30,6 +30,7 @@
 		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
           if( $conn->query($sql) === TRUE)
 	  { 
+	 ?> 	
               <header>
         <div class="main-content container">
             <div class="row">
@@ -44,7 +45,7 @@
             </div>
         </div>
     </header>
-      	  }
+      	  <?php }
 	  else 
 	  {
 		echo "Not deleted: " .  $conn->error;
