@@ -4,7 +4,7 @@
  if(isset($_POST['delete']))
  {
 	$delete_id= $_POST['delete'];
-	echo $delete_id; 
+	echo "name".b $delete_id; 
  
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
