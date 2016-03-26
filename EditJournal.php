@@ -103,7 +103,8 @@ if(empty($_SESSION['userid']))
 						$result = "Not posted: " .$sql . "<br>" . mysqli_error($conn); 
 					}
 
-					$conn->close();        
+					$conn->close();    
+                    header("Location: ListView.php");
 				}
 			?>
     <!-- Main Content -->
