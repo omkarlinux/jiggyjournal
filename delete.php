@@ -27,7 +27,7 @@
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
 		$delete_id = $_POST['delete_id'];
-		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id'";
+		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
           if( $conn->query($sql) === TRUE)
 	  { 
             echo "Deleted successfully";
