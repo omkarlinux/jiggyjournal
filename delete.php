@@ -1,10 +1,14 @@
  
 
  <?php
- if(isset($_POST['delete_id']))
+ if(isset($_POST['delete']))
  {
-   $delete_id = mysql_real_escape_string($_POST['delete_id']);
-	
+	$delete_id= $_POST('delete');
+	echo $delete_id; 
+ }
+ 
+function del($journal_id)
+ {
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
 	$database = "a2354647_journal";
@@ -19,17 +23,18 @@
 	} 
 		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
  
-    if ($conn->query($sql) === TRUE) 
-		{
-		echo "Deleted post successfully";
-		} 
-	else 
-		{
-		echo "Not delete: " .$sql . "<br>" . mysqli_error($conn); 
-		}
+ if ($conn->query($sql) === TRUE) 
+					{
+						$result = "Deleted Successfully";
+					} 
+					else 
+					{
+						$result = "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
+					}
 
-		$conn->close();  
-    header('Location: Listview.php');		
+					$conn->close();    
+                    header("Location: ListView.php");
  }
+ 
  
 ?>
