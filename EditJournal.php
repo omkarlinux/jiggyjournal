@@ -142,7 +142,7 @@ if(empty($_SESSION['userid']))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
-                                                        <div class='date'>
+                                                        <div class='datepicker'>
                                                             <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
                                                          </div><br />
                                                         <textarea name="content" class="form-control col-md-10" rows="5" value="<?php if($numrows!==0){ echo $content; } ?>"></textarea>
