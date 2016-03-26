@@ -79,8 +79,8 @@ if(empty($_SESSION['userid']))
                                               <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
-                                                <a title="Edit Journal">
-                                                    <img src="img/editIcon.png" alt="Edit" />
+                                                <a title="Edit Journal" href="EditJournal.php">
+                                                    <img src="img/editIcon.png" alt="Edit"  />
                                                 </a>
                                             </div>
                                             <div class="col-md-1">
