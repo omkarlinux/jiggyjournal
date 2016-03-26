@@ -33,10 +33,9 @@ if(empty($_SESSION['userid']))
                     }
                   
 				}
-                if (isset($_POST['edit']))
+                if(isset($_POST['edit']))
                 {
-			    function edit_post()
-				{
+			   
 					$edit_id = $_POST['edit_id'];
 	
 					// Database connection setup
@@ -68,7 +67,7 @@ if(empty($_SESSION['userid']))
                         }
                     }
 					$conn->close();        
-				}
+				
                 }
                 
 				function save_post()
