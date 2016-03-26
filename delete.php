@@ -27,15 +27,16 @@
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
 		$delete_id = $_POST['delete_id'];
-		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id'");
-    if( $conn->query($query) === TRUE)
+		$sql = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id'");
+    if( $conn->query($sql) === TRUE)
 	{ 
           echo "Deleted successfully";
       	}
 	else 
 	{
-		echo "Not deleted: " .$query . "<br>" . mysqli_error($conn); 
+		echo "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
 	}
+	$conn->close();
       header("refresh:2; url=ListView.php");
  }
  ?>
