@@ -9,104 +9,116 @@
 
     <!-- Navigation -->
 <?php
-    require 'includes/topNavigation.html';
+    require 'includes/topNavigation.php';
 ?>
 
-    <!-- About US -->
+    <!-- To make sure that people who do not login cannot access ListView Page -->
+    <!--
+<?php/*
+if(empty($_SESSION['userid']))
+    {
+        header("Location: index.php");
+    }*/
+?>  -->
+    <!-- Main Content-->
     <header>
-        <div class="container">
+        <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12"> <br/>
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
-                        <h1>Welcome, User</h1>
+                    
                         <hr class="star-light">
-                        
                        <div class="jumbotron">
-                           <div class="about" id="aboutUs">
-                               <div class="row">
-                                   <p class="text-justify col-md-8"><b>My Jiggy Journal</b></p>
-                                   <div class="col-md-4">
-                                   <button class="btn btn-success btn-md" type="button"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span>  Add New Journal Entry </button>
-                                  
+                           
+                             <div class="row">
+                                   <p class="text-justify col-sm-7"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
+                                   <a href="EditJournal.php" class="btn btn-success btn-sm col-sm-4"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                </div> <br/>
+                                
+
+	<?PHP
+		if(isset($_SESSION['userid']))
+		{
+			// Database connection setup
+		$serverName = "mysql13.000webhost.com";
+		$database = "a2354647_journal";
+		$user_name = "a2354647_journal";
+		$pass_word = "njoys6900";
+	   //Create connection object
+       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
+	   // Check 
+	
+			if ($conn->connect_error) 
+			{
+			  die("Connection failed: " . $conn->connect_error);
+			} 
+			$userid = $_SESSION['userid'];
+			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc");
+			$numrows = mysqli_num_rows($query);
+			if($numrows!==0)
+			{
+				?>
+				<div class="panel-group">
+				<?php 
+				for($x=$numrows; $x>=1; $x--)
+				{
+					if($row = mysqli_fetch_assoc($query))
+					{
+					$title = $row['title'];
+					$content = $row['content'];
+					$date = $row['date'];
+					$journal_id=$row['journal_id'];
+		?>
+                            
+                                <div class="post panel panel-success">
+									<div class="id"><?php echo $journal_id ;?></div>
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-md-8 text-left">
+                                              <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <a title="Edit Journal">
+                                                    <img src="img/editIcon.png" alt="Edit" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-1">
+											<form action = "delete.php" method="post" >
+											<input type="image" src="img/deleteIcon.png" name="delete">	
+											</form>
+											</div>
+                                            <div class="col-md-2 col-md-offset-0">
+                                                <?php echo $date; ?>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
+                                    <div class="panel-body text-justify"><?php echo $content; ?></div>
                                 </div>
-                               <div class="panel-group">
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                   Mar 10, 2016
-                                               </div>
-                                               
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                   </div>
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                   Mar 10, 2016
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                           <br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                       </div>
-                                   </div>
-
-                                   <div class="panel panel-success">
-                                       <div class="panel-heading">
-                                           <div class="row">
-                                               <div class="col-md-7 text-left">
-                                                   <span class="glyphicon glyphicon-paperclip"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Edit Journal">
-                                                       <img src="img/editIcon.png" alt="Edit" />
-                                                   </a>
-                                               </div>
-                                               <div class="col-md-1">
-                                                   <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                               </div>
-                                               <div class="col-md-3 col-md-offset-0">
-                                                    Mar 10, 2016
-                                               </div>
-                                           </div>
-                                       </div>
-                                       <div class="panel-body text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                   </div>
-
-                               </div>
-                           </div>
-                        </div>
-                        <hr class="star-light">
-
+                                
+                            
+							
+					<?php 
+					} 
+				}
+			?>
+			</div>				
+			<?php 
+			}
+			else
+			{
+			?>
+				Nothing to see here. Move along.
+			<?php 
+			}
+		}
+		?>
+                    
+                        
                     </div>
                 </div>
+				<hr class="star-light">
             </div>
         </div>
     </header>
@@ -425,25 +437,10 @@
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
+    <!-- Footer -->
+    <?php
+        require 'includes/footer.php';
+    ?>
 </body>
 
 </html>

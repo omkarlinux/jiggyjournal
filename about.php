@@ -9,19 +9,18 @@
 
     <!-- Navigation -->
 <?php
-    require 'includes/topNavigation.html';
+    require 'includes/topNavigation.php';
 ?>
 
-    <!-- About US -->
+    <!-- Main Content -->
     <header>
-        <div class="container">
+        <div class="main-content container">
             <div class="row">
                 <div class="col-lg-12">
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
 					<h1>About US</h1>
 					 <hr class="star-light">
-                        
                         <div class="jumbotron">
                             <div class="about" id="aboutUs">
                                 <p><b>Our team first met as Management Information Systems graduate students at Utah State University’s Jon M. Huntsman School of Business in the Fall of 2015. Though we each took different paths to arrive there, we quickly found common ground and decided to work together in developing Omkar’s idea for an on-line journal.  That’s how Jiggy Journal began!</b></p>
@@ -355,25 +354,10 @@
             </div>
         </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
+    <!-- Footer -->
+    <?php
+        require 'includes/footer.php';
+    ?>
 </body>
 
 </html>

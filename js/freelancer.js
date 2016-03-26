@@ -52,3 +52,15 @@ $(document).ready(function () {
 $('.carousel').carousel({
   interval: 1000 * 4
 });
+
+//Datepicker
+
+$(document).ready(function(){
+    $('.datepicker input').datepicker({
+        format: "mm/dd/yyyy",
+        autoclose: true,
+        todayHighlight: true,
+        todayBtn: "linked",
+        orientation: "bottom right"
+    });    
+});
