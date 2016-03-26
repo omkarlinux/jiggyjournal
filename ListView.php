@@ -85,7 +85,7 @@ if(empty($_SESSION['userid']))
                                             </div>
                                             <div class="col-md-1">
 											<form action = "delete.php" method="post" >
-											<input type="hidden" name="delete_id" value="<?php echo $journal_id; ?>" />
+											<input type="hidden" name="delete_id" value="<?php echo '$journal_id'; ?>" />
 											<button type="submit" name="delete" value="delete" >	
 											</form>
 											</div>
