@@ -26,7 +26,7 @@
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
-		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id' ");
+		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='delete_id' ");
   
       header("refresh:2; url=ListView.php");
  }
