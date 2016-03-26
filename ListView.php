@@ -79,7 +79,7 @@ if(empty($_SESSION['userid']))
                                               <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
-                                                <form action = "editJournal.php" method="post" >
+                                                <form action = "EditJournal.php" method="post" >
 											<input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
 											<button type="submit" name="edit" value="edit" >edit</button>			
 											</form>
