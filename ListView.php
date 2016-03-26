@@ -88,7 +88,7 @@ if(empty($_SESSION['userid']))
 											<input type="image" src="img/deleteIcon.png" name="delete">	
 											</form>
 											</div>
-                                            <div class="col-md-3 col-md-offset-0">
+                                            <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
                                             
