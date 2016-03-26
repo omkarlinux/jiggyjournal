@@ -23,18 +23,6 @@ function del($journal_id)
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
 		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$journal_id' ");
-       if ($conn->query($sql) === TRUE) 
-					{
-						$result = "Post deleted Successfully";
-					} 
-					else 
-					{
-						$result = "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
-					}
-
-					$conn->close();    
-                    header("Location: ListView.php");
-
-}
+ }
  
 ?>
