@@ -4,6 +4,7 @@
  if(isset($_POST['delete']))
  {
 	del($journal_id);
+    return true(); 
  }
  
 function del($journal_id)
@@ -22,4 +23,5 @@ function del($journal_id)
 	} 
 		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$journal_id' ");
  }
+ 
 ?>
