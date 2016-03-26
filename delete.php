@@ -37,7 +37,7 @@
       	  }
 	  else 
 	  {
-		echo "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
+		echo "Not deleted: " .  $conn->error;
 	  }
 	$conn->close();
       header("refresh:2; url=ListView.php");
