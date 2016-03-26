@@ -5,7 +5,6 @@
  {
 	$delete_id= $_POST('delete');
 	echo $delete_id; 
- }
  
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
