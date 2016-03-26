@@ -72,7 +72,7 @@ if(empty($_SESSION['userid']))
 		?>
                             
                                 <div class="post panel panel-success">
-									<div class="id"><?php echo $journal_id ;?></div>
+									
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-8 text-left">
@@ -84,9 +84,10 @@ if(empty($_SESSION['userid']))
                                                 </a>
                                             </div>
                                             <div class="col-md-1">
-											<form action = "delete.php" method="post" >
-											<input type="image" src="img/deleteIcon.png" name="delete">	
+											<div class="id" >< form action = "delete.php" <?php echo $journal_id ;?> method="post" >>
+											<input type="image" src="img/deleteIcon.png" name="delete" value="delete"	>	
 											</form>
+											</div
 											</div>
                                             <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
