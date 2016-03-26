@@ -1,15 +1,10 @@
  
 
  <?php
- if(isset($_POST['delete']))
+ if(isset($_POST['delete_id']))
  {
-	del($journal_id);
-	echo $journal_id;
-    return true(); 
- }
- 
-function del($journal_id)
- {
+   $delete_id = mysql_real_escape_string($_POST['delete_id']);
+	
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
 	$database = "a2354647_journal";
@@ -22,7 +17,19 @@ function del($journal_id)
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
-		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$journal_id' ");
+		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
+ 
+    if ($conn->query($sql) === TRUE) 
+		{
+		echo "Deleted post successfully";
+		} 
+	else 
+		{
+		echo "Not delete: " .$sql . "<br>" . mysqli_error($conn); 
+		}
+
+		$conn->close();  
+    header('Location: Listview.php');		
  }
  
 ?>
