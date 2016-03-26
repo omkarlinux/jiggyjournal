@@ -31,12 +31,10 @@ if(empty($_SESSION['userid']))
                     elseif (isset($_POST['delete'])) {
                         delete_post();
                     }
-                    if (isset($_POST['edit']))
-                    {
-                        edit_post();
-                    }
+                  
 				}
-                
+                if (isset($_POST['edit']))
+                {
 			    function edit_post()
 				{
 					$edit_id = $_POST['edit_id'];
@@ -55,7 +53,6 @@ if(empty($_SESSION['userid']))
 					{
 						die("Connection failed: " . $conn->connect_error);
 					} 
-					$journalid = $_POST["journalid"];
 					$edit_id = $_POST['edit_id'];
 					$sql = "SELECT * FROM journal WHERE journal_id='edit_id';";
 					$query = mysqli_query($conn,$sql);
@@ -72,6 +69,7 @@ if(empty($_SESSION['userid']))
                     }
 					$conn->close();        
 				}
+                }
                 
 				function save_post()
 				{
