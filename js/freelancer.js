@@ -61,6 +61,6 @@ $(document).ready(function(){
         autoclose: true,
         todayHighlight: true,
         todayBtn: "linked",
-        orientation: "auto right"
+        orientation: "bottom right"
     });    
 });
