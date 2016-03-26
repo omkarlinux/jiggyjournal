@@ -3,7 +3,7 @@
  <?php
  if (isset($_POST["delete"]))
  {
-	del($journal_id) 
+	del($journal_id);
  }
  
 function del($journal_id)
