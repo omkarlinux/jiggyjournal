@@ -50,12 +50,8 @@
 	}
 	else 
 	{
-	else 
-    {
 		echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
 	}
-	
-	}	
       header("refresh:2; url=ListView.php");
  }
  ?>
