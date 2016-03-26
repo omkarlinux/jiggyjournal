@@ -84,9 +84,11 @@ if(empty($_SESSION['userid']))
                                                 </a>
                                             </div>
                                             <div class="col-md-1">
-                                                <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
-                                            </div>
-                                            <div class="col-md-2 col-md-offset-0">
+											<form action = "delete.php" method="post" >
+											<input type="image" src="img/deleteIcon.png" name="delete" width="60" height="60">	
+											</form>
+											</div>
+                                            <div class="col-md-3 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
                                             
