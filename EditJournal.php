@@ -39,6 +39,7 @@ if(empty($_SESSION['userid']))
                 
 			    function edit_post()
 				{
+					$edit_id = $_POST['edit_id'];
 	
 					// Database connection setup
 					$serverName = "mysql13.000webhost.com";
@@ -55,7 +56,7 @@ if(empty($_SESSION['userid']))
 						die("Connection failed: " . $conn->connect_error);
 					} 
 					$journalid = $_POST["journalid"];
-					$sql = "SELECT * FROM journal WHERE journal_id='journalid'";
+					$sql = "SELECT * FROM journal WHERE journal_id='$edit_id'";
 					$query = mysqli_query($conn,$sql);
                     $numrows = mysqli_num_rows($query);
 			        if($numrows!==0)
