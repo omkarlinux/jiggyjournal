@@ -28,7 +28,7 @@
 	} 
 		$delete_id = $_POST['delete_id'];
 		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id'");
-    if($conn->query($query) == TRUE)
+    if( $conn->query($query) === TRUE)
 	{ 
     ?>
 		 <!-- Main Content -->
@@ -50,7 +50,7 @@
 	}
 	else 
 	{
-		echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+		echo "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
 	}
       header("refresh:2; url=ListView.php");
  }
