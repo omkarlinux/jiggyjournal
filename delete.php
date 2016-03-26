@@ -10,7 +10,7 @@
  
     <!-- Delete script -->
  <?php
- if(isset($_POST[$delete]))
+ if(isset($_POST['delete']))
  {
 	$delete_id= $_POST['delete_id'];
 	echo "name".$delete_id; 
@@ -29,7 +29,7 @@
 	} 
 		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
   
-                    header("refresh:2; url=ListView.php");
+      header("refresh:2; url=ListView.php");
  }
  ?>
  
