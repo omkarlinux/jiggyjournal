@@ -56,7 +56,7 @@ $('.carousel').carousel({
 //Datepicker
 
 $(document).ready(function(){
-    $('.input-group.date input').datepicker({
+    $('.datepicker input').datepicker({
         format: "mm/dd/yyyy",
         autoclose: true,
         todayHighlight: true,
