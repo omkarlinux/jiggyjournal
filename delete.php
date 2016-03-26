@@ -12,9 +12,8 @@
  <?php
  if(isset($_POST['delete']))
  {
-	$delete_id = $_POST["delete_id"];
+	$delete_id = $_POST['delete_id'];
 	echo "name".$delete_id; 
- 
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
 	$database = "a2354647_journal";
@@ -27,7 +26,7 @@
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
-		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
+		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id' ");
   
       header("refresh:2; url=ListView.php");
  }
