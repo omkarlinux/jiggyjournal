@@ -12,7 +12,7 @@
  <?php
  if(isset($_POST['delete']))
  {
-	$delete_id= $_POST["delete_id"];
+	$delete_id = $_POST["delete_id"];
 	echo "name".$delete_id; 
  
    // Database connection setup
