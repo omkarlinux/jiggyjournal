@@ -7,6 +7,9 @@
 ?>
 
 <body id="page-top" class="index">
+<?php
+       require 'includes/topNavigation.php';
+?>
  
     <!-- Delete script -->
  <?php
@@ -28,14 +31,14 @@
 	} 
 		$delete_id = $_POST['delete_id'];
 		$sql = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='$delete_id'");
-    if( $conn->query($sql) === TRUE)
-	{ 
-          echo "Deleted successfully";
-      	}
-	else 
-	{
+          if( $conn->query($sql) === TRUE)
+	  { 
+            echo "Deleted successfully";
+      	  }
+	  else 
+	  {
 		echo "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
-	}
+	  }
 	$conn->close();
       header("refresh:2; url=ListView.php");
  }
