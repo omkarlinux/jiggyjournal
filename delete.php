@@ -7,8 +7,6 @@
 	echo $delete_id; 
  }
  
-function del($journal_id)
- {
    // Database connection setup
     $serverName = "mysql13.000webhost.com";
 	$database = "a2354647_journal";
