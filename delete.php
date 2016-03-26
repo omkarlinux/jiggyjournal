@@ -26,18 +26,12 @@
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
+		$delete_id = $_POST['delete_id'];
 		$query = mysqli_query($conn, "DELETE FROM journal WHERE journal_id='delete_id' ");
-  
-      header("refresh:2; url=ListView.php");
- }
- ?>
- 
- <!-- Navigation -->
-    <?php
-        require 'includes/topNavigation.php';
+    if($conn->query($query) == TRUE)
+	{ 
     ?>
-
-	 <!-- Main Content -->
+		 <!-- Main Content -->
     <header>
         <div class="main-content container">
             <div class="row">
@@ -52,6 +46,26 @@
             </div>
         </div>
     </header>
+	<?php
+	}
+	else 
+	{
+	else 
+    {
+		echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+	}
+	
+	}	
+      header("refresh:2; url=ListView.php");
+ }
+ ?>
+ 
+ <!-- Navigation -->
+    <?php
+        require 'includes/topNavigation.php';
+    ?>
+
+	
 	
 	<!-- Footer -->
     <footer class="text-center">
