@@ -141,8 +141,8 @@ if(empty($_SESSION['userid']))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
-                                                        <div class='input-group'>
-                                                            <input type='text' class="form-control date" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                        <div class='input-group date'>
+                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
                                                             <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-calendar"></span>
                                                            </span>
