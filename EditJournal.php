@@ -57,7 +57,7 @@ if(empty($_SESSION['userid']))
 					} 
 					$journalid = $_POST["journalid"];
 					$edit_id = $_POST['edit_id'];
-					$sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
+					$sql = "SELECT * FROM journal WHERE journal_id='edit_id';";
 					$query = mysqli_query($conn,$sql);
                     $numrows = mysqli_num_rows($query);
 			        if($numrows!==0)
