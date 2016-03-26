@@ -56,11 +56,11 @@ $('.carousel').carousel({
 //Datepicker
 
 $(document).ready(function(){
-    $('.form-group input.date').datepicker({
+    $('.input-group.date input').datepicker({
         format: "mm/dd/yyyy",
-        orientation: "auto right",
         autoclose: true,
         todayHighlight: true,
-        todayBtn: "linked"
+        todayBtn: "linked",
+        orientation: "bottom right"
     });    
 });

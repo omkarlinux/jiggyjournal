@@ -110,8 +110,9 @@ if(empty($_SESSION['userid']))
     <header>
         <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12"> <br/>
                     <div class="intro-text">
+                      <hr class="star-light">
                        <div class="jumbotron">
                             <form action="EditJournal.php" method="post" >
                                 <div class="panel-group">
@@ -119,7 +120,7 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                    Edit Post
+                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
@@ -140,8 +141,11 @@ if(empty($_SESSION['userid']))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
-                                                        <div class='input-group'>
-                                                            <input type='text' class="form-control date" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                        <div class='input-group date'>
+                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                            <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-calendar"></span>
+                                                           </span>
                                                         </div><br />
                                                         <textarea name="content" class="form-control col-md-10" rows="5" value="<?php if($numrows!==0){ echo $content; } ?>"></textarea>
                                                     </div>
