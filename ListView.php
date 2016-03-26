@@ -24,23 +24,18 @@ if(empty($_SESSION['userid']))
     <header>
         <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12"> <br/>
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
-                      <h1>
-                        <b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>
-                      </h1>
+                    
                         <hr class="star-light">
                        <div class="jumbotron">
-                            <div class="row">
-                                <div class="text-justify col-sm-8">
-                                    
-                                </div>
-                                <div class="col-sm-4">
-                                <a href="EditJournal.php"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add Entry</a>
+                           
+                             <div class="row">
+                                   <p class="text-justify col-sm-7"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
+                                   <a href="EditJournal.php" class="btn btn-success btn-sm col-sm-4"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                </div> <br/>
                                 
-                                </div>
-                            </div>
 
 	<?PHP
 		if(isset($_SESSION['userid']))
@@ -80,8 +75,8 @@ if(empty($_SESSION['userid']))
 									<div class="id"><?php echo $journal_id ;?></div>
                                     <div class="panel-heading">
                                         <div class="row">
-                                            <div class="col-md-7 text-left">
-                                                <?php echo $title; ?>
+                                            <div class="col-md-8 text-left">
+                                              <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
                                                 <a title="Edit Journal">
@@ -91,7 +86,7 @@ if(empty($_SESSION['userid']))
                                             <div class="col-md-1">
                                                 <a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>
                                             </div>
-                                            <div class="col-md-3 col-md-offset-0">
+                                            <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
                                             
