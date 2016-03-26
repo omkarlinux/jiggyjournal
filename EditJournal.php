@@ -31,7 +31,7 @@ if(empty($_SESSION['userid']))
                     elseif (isset($_POST['delete'])) {
                         delete_post();
                     }
-                    if (isset($_post['edit']))
+                    if (isset($_POST['edit']))
                     {
                         edit_post();
                     }
