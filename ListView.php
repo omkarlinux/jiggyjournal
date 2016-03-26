@@ -32,8 +32,12 @@ if(empty($_SESSION['userid']))
                        <div class="jumbotron">
                            
                              <div class="row">
-                                   <p class="text-justify col-sm-7"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
-                                   <a href="EditJournal.php" class="btn btn-success btn-sm col-sm-4"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                   <span class="col-md-7">
+                                       <p class="text-left"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
+                                   </span>
+                                   <span class="col-md-5 col-md-offset-0 text-right">
+                                       <a href="EditJournal.php" class="btn btn-success btn-sm"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                   </span>
                                 </div> <br/>
                                 
 
