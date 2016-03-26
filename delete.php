@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-text">
-                        <br/><br/><br/>
+                        <br/><br/><br/>		
                         <h3>Deleted successfully!</h3>
                         <hr class="star-light"
                         <br/><br/><br/>
