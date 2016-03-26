@@ -3,9 +3,8 @@
  <?php
  if(isset($_POST['delete']))
  {
-	del($journal_id);
-	echo $journal_id;
-    return true(); 
+	$delete_id= $_POST('delete');
+	echo $delete_id; 
  }
  
 function del($journal_id)
@@ -22,7 +21,20 @@ function del($journal_id)
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
-		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$journal_id' ");
+		$query = mysqli_query($conn, "DELETE * FROM journal WHERE journal_id='$delete_id' ");
+ 
+ if ($conn->query($sql) === TRUE) 
+					{
+						$result = "Deleted Successfully";
+					} 
+					else 
+					{
+						$result = "Not deleted: " .$sql . "<br>" . mysqli_error($conn); 
+					}
+
+					$conn->close();    
+                    header("Location: ListView.php");
  }
+ 
  
 ?>
