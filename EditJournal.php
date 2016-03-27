@@ -99,22 +99,20 @@ if(empty($_SESSION['userid']))
                     if (isset($GLOBALS['journal_id']))
                     {
 					    $sql = "UPDATE journal 
-                                    SET title='$title', 
-                                        content='$content', 
-                                        date='$date', 
-                                        user_id='$userid'
-                                    WHERE journal_id='$journal_id';";
+                                    SET title = '$title', 
+                                        content = '$content', 
+                                        date = '$date', 
+                                        user_id = '$userid'
+                                    WHERE journal_id = '$journal_id';";
                     }
 					if ($connobj->query($sql)) 
 					{
-						return true;
+						$result = true;
 					} 
 					else 
 					{
-						return false; 
+						$result = false; 
 					}
-  
-                    header("Location: ListView.php");
                 }
 			?>
     <!-- Main Content -->
