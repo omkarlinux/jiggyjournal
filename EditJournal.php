@@ -61,7 +61,6 @@ if(empty($_SESSION['userid']))
                         $date = $row['date'];
                         $journal_id=$row['journal_id'];
                     }
-                    $conn->close();   
                 }
                 
 				function create_post()
