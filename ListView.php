@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    require 'includes/headcode.html';
+    require 'includes/headcode.php';
 ?>
 
 <body id="page-top" class="index">
@@ -44,7 +44,7 @@ if(empty($_SESSION['userid']))
 	<?PHP
 		if(isset($_SESSION['userid']))
 		{
-			// Database connection setup
+		// Database connection setup
 		$serverName = "mysql13.000webhost.com";
 		$database = "a2354647_journal";
 		$user_name = "a2354647_journal";

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    require 'includes/headcode.html';
+    require 'includes/headcode.php';
 ?>
 
 <body id="page-top" class="index">
@@ -22,57 +22,47 @@ if(empty($_SESSION['userid']))
 ?>  -->
 			<!--Database PHP --!>
             <?php
-				 if($_SERVER['REQUEST_METHOD'] === 'POST')
-				{//something posted
-                    if (isset($_POST['save'])) 
+                if($_SERVER['REQUEST_METHOD'] === 'POST')
+                {//something posted
+                    if (isset($_POST['save'])) //Trying to save
                     {
-                        save_post();   
-                    }
-                    elseif (isset($_POST['delete'])) 
-					{
-                      include ("delete.php");   
-                    }
-                  
-				}
-                if(isset($_POST['edit']))
-                {
-			   
-					$edit_id = $_POST['edit_id'];
-	
-					// Database connection setup
-					$serverName = "mysql13.000webhost.com";
-					$database = "a2354647_journal";
-					$username = "a2354647_journal";
-					$password = "njoys6900";
-					
-					//Create connection object
-					$conn = new mysqli($serverName, $username, $password, $database);
-
-					// Check connection
-					if ($conn->connect_error) 
-					{
-						die("Connection failed: " . $conn->connect_error);
-					} 
-					$edit_id = $_POST['edit_id'];
-					$sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
-					$query = mysqli_query($conn,$sql);
-                    $numrows = mysqli_num_rows($query);
-			        if($numrows!==0)
-                    {
-                        if($row = mysqli_fetch_assoc($query))
+                        if(isset($_POST['edit'])) //If we are editing existing post. We update it.
                         {
-                            $title = $row['title'];
-                            $content = $row['content'];
-                            $date = $row['date'];
-                            $journal_id=$row['journal_id'];
+                            update_post();
+                        }
+                        {                         //Otherwise we create a new post
+                            create_post();
                         }
                     }
-					$conn->close();        
+                    elseif (isset($_POST['delete'])) 
+                    {
+                    include ("delete.php");   
+                    }
+                    if(isset($_POST['edit']) && empty($_POST['save']))
+                    {
+                        get_post_from_database();
+                    
+                    }
+
+                }               
 				
+                function get_post_from_database()
+                {
+                    $edit_id = $_POST['edit_id'];
+                    $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
+                    $connobj->query($sql);
+                    if($row = $connobj->fetch())
+                    {
+                        $title = $row['title'];
+                        $content = $row['content'];
+                        $mySQLDate = DateTime::createFromFormat('Y-m-d', $row['date']);
+                        $date = $mySQLDate->format('m/d/Y');
+                        $journal_id=$row['journal_id'];
+                    }
+                    $conn->close();   
                 }
                 
-				
-				function save_post()
+				function create_post()
 				{
 	
 					// Database connection setup
