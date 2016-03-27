@@ -26,10 +26,11 @@ if(empty($_SESSION['userid']))
                 {//something posted
                     if (isset($_POST['save'])) //Trying to save
                     {
-                        if(isset($_POST['edit'])) //If we are editing existing post. We update it.
+                        if($_POST['action'] == "update") //If we are editing existing post. We update it.
                         {
                             update_post();
                         }
+                        elseif($_POST['action'] == "create")
                         {                         //Otherwise we create a new post
                             create_post();
                         }
@@ -80,7 +81,7 @@ if(empty($_SESSION['userid']))
 					} 
 					else 
 					{
-						return "Not posted: " .$sql . "<br>" . mysqli_error($conn); 
+						return false; 
 					}
   
                     header("Location: ListView.php");
@@ -110,7 +111,7 @@ if(empty($_SESSION['userid']))
 					} 
 					else 
 					{
-						return "Not updated: " .$sql . "<br>" . mysqli_error($conn); 
+						return false; 
 					}
   
                     header("Location: ListView.php");
@@ -125,6 +126,8 @@ if(empty($_SESSION['userid']))
                       <hr class="star-light">
                        <div class="jumbotron">
                             <form action="EditJournal.php" method="post" >
+                                <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
+                                                                                else{echo 'create';} ?>" />
                                 <div class="panel-group">
                                     <div class="panel panel-success">
                                         <div class="panel-heading">
