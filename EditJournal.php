@@ -50,7 +50,7 @@ if(empty($_SESSION['userid']))
                 {                    
                     $connobj = new Connection;
                     
-                    $edit_id = $_POST['edit_id'];
+                    $GLOBALS['journal_id'] = $edit_id = $_POST['edit_id'];
                     $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
                     $connobj->query($sql);
                     if($row = $connobj->fetch())
@@ -60,47 +60,61 @@ if(empty($_SESSION['userid']))
                      /*   $mySQLDate = new DateTime::createFromFormat('Y-m-d', $row['date']);
                         $date = $mySQLDate->format('m/d/Y');*/
                         $GLOBALS['date'] = $row['date'];
-                        $GLOBALS['journal_id'] =$row['journal_id'];
                     }
                 }
                 
 				function create_post()
 				{
 	
-					// Database connection setup
-					$serverName = "mysql13.000webhost.com";
-					$database = "a2354647_journal";
-					$username = "a2354647_journal";
-					$password = "njoys6900";
-					
-					//Create connection object
-					$conn = new mysqli($serverName, $username, $password, $database);
-
-					// Check connection
-					if ($conn->connect_error) 
-					{
-						die("Connection failed: " . $conn->connect_error);
-					} 
+					$connobj = new Connection;
+                    
 					$title = $_POST["title"];
 					$content = $_POST["content"];
 					$date = $_POST["date"];
 					$userid = $_SESSION["userid"];
 					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
 					
-					if ($conn->query($sql) === TRUE) 
+					if ($connobj->query($sql)) 
 					{
-						$result = "Posted Successfully";
+						return true;
 					} 
 					else 
 					{
-						$result = "Not posted: " .$sql . "<br>" . mysqli_error($conn); 
+						return "Not posted: " .$sql . "<br>" . mysqli_error($conn); 
 					}
-
-					$conn->close();    
+  
                     header("Location: ListView.php");
 				}
-				
-				
+                
+                function update_post()
+                {
+                    $connobj = new Connection;
+                    
+					$title = $_POST["title"];
+					$content = $_POST["content"];
+					$date = $_POST["date"];
+					$userid = $_SESSION["userid"];
+                    $journal_id = $GLOBALS['journal_id'];
+                    if (isset($GLOBALS['journal_id']))
+                    {
+					    $sql = "UPDATE journal 
+                                    SET title='$title', 
+                                        content='$content', 
+                                        date='$date', 
+                                        user_id='$userid'
+                                    WHERE journal_id='$journal_id';";
+                    }
+					if ($connobj->query($sql)) 
+					{
+						return true;
+					} 
+					else 
+					{
+						return "Not updated: " .$sql . "<br>" . mysqli_error($conn); 
+					}
+  
+                    header("Location: ListView.php");
+                }
 			?>
     <!-- Main Content -->
     <header>
@@ -136,6 +150,7 @@ if(empty($_SESSION['userid']))
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-8">
+                                                        <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
                                                         <div class='input-group date'>
                                                             <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
