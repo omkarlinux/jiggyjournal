@@ -20,7 +20,7 @@
             {
                 return false;
             }
-            return $this->link;  // returns false if connection could not be made.
+            return $this;  // returns false if connection could not be made.
         }
 
         function query($sql){

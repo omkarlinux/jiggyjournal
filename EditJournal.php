@@ -52,7 +52,8 @@ if(empty($_SESSION['userid']))
                     
                     $edit_id = $_POST['edit_id'];
                     $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
-                    $result = $connobj->query($sql);
+                    $connobj->query($sql);
+                    $result = "abc";
                     if($row = $connobj->fetch())
                     {
                         $title = $row['title'];
