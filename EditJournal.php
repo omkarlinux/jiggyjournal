@@ -22,6 +22,11 @@ if(empty($_SESSION['userid']))
 ?>  -->
 			<!--Database PHP --!>
             <?php
+                $title ="";
+                $content = "";
+				$date = "";
+				$userid = "";
+                $result = "";
                 if($_SERVER['REQUEST_METHOD'] === 'POST')
                 {//something posted
                     if (isset($_POST['save'])) //Trying to save
@@ -48,6 +53,11 @@ if(empty($_SESSION['userid']))
 				
                 function get_post_from_database()
                 {
+                    global $title;
+                    global $content;
+                    global $date;
+                    global $result;
+                    
                     $connobj = new Connection;
                     
                     $edit_id = $_POST['edit_id'];
@@ -117,7 +127,7 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post<?php echo "Result is ". $result; ?>
+                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post<?php echo "Result is " . $result; ?>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
