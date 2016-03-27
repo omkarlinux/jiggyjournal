@@ -43,11 +43,4 @@
             $this->link->close();
         }
     }
-    
-    $connobj = new Connection();
-    // Check connection
-    if (!$connobj)
-    {
-        echo "Connection failed: " . $conn->connect_error;
-    } 
 ?>
