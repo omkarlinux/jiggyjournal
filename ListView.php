@@ -83,15 +83,19 @@ if(empty($_SESSION['userid']))
                                               <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
-                                              <a title="Edit Journal">
-                                                               <span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span>
-                                              </a>
+
+                                                <form action = "EditJournal.php" method="post" >
+											<input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
+											<button type="submit" name="edit" value="edit" ><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
+											</form>
                                             </div>
                                             <div class="col-md-1">
-					    <form action = "delete.php" method="post" >
-					        <a title="Delete Journal"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></a>
-					    </form>
-					  </div>
+											<form action = "delete.php" method="post" >
+											<input type="hidden" name="delete_id" value="<?php echo $journal_id; ?>" />
+											<button type="submit" name="delete" value="delete" ><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+											</form>
+											</div>
+
                                             <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
