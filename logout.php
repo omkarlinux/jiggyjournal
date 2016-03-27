@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    require 'includes/headcode.html';
+    require 'includes/headcode.php';
 ?>
 
 <body id="page-top" class="index">
