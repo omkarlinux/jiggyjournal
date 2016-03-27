@@ -48,6 +48,7 @@ if(empty($_SESSION['userid']))
 				
                 function get_post_from_database()
                 {
+                    global $connobj;
                     $edit_id = $_POST['edit_id'];
                     $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
                     $connobj->query($sql);
