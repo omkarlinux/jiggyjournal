@@ -28,10 +28,12 @@ if(empty($_SESSION['userid']))
                     {
                         if($_POST['action'] == "update") //If we are editing existing post. We update it.
                         {
+                            echo "update";
                             update_post();
                         }
                         elseif($_POST['action'] == "create")
                         {                         //Otherwise we create a new post
+                            echo "create";
                             create_post();
                         }
                     }
