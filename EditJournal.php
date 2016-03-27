@@ -35,16 +35,11 @@ if(empty($_SESSION['userid']))
                             create_post();
                         }
                     }
-                    elseif (isset($_POST['delete'])) 
-                    {
-                        include ("delete.php");   
-                    }
                     if(isset($_POST['edit']) && empty($_POST['save']))
                     {
                         get_post_from_database();
                     
                     }
-
                 }               
 				
                 function get_post_from_database()
