@@ -32,7 +32,6 @@ if(empty($_SESSION['userid']))
                         }
                         elseif($_POST['action'] == "create")
                         {                         //Otherwise we create a new post
-                            echo "create";
                             create_post();
                         }
                     }
@@ -74,7 +73,9 @@ if(empty($_SESSION['userid']))
 					$date = $_POST["date"];
 					$userid = $_SESSION["userid"];
 					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
-
+                    
+                    $connobj->query($sql);
+                    
                     header("Location: ListView.php");
 				}
                 
