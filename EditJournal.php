@@ -115,7 +115,7 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post<?php if(!$connobj){ echo "Connobj is blank";}?>
+                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post<?php echo "Result is ". $result; ?>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
