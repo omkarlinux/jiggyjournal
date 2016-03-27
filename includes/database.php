@@ -25,7 +25,7 @@
 
         function query($sql){
             if (!empty($sql)){
-                    $this->result = mysqli_query($this->link,$sql);
+                    $this->result = mysqli_query($this->link, $sql);
                     return $this->result;
             }
             else{
