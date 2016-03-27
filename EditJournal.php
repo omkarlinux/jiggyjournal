@@ -22,11 +22,6 @@ if(empty($_SESSION['userid']))
 ?>  -->
 			<!--Database PHP --!>
             <?php
-                $title ="";
-                $content = "";
-				$date = "";
-				$userid = "";
-                $result = "";
                 if($_SERVER['REQUEST_METHOD'] === 'POST')
                 {//something posted
                     if (isset($_POST['save'])) //Trying to save
@@ -52,26 +47,20 @@ if(empty($_SESSION['userid']))
                 }               
 				
                 function get_post_from_database()
-                {
-                    global $title;
-                    global $content;
-                    global $date;
-                    global $result;
-                    
+                {                    
                     $connobj = new Connection;
                     
                     $edit_id = $_POST['edit_id'];
                     $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
                     $connobj->query($sql);
-                    $result = "abc";
                     if($row = $connobj->fetch())
                     {
-                        $title = $row['title'];
-                        $content = $row['content'];
+                        $GLOBALS['title'] = $row['title'];
+                        $GLOBALS['content'] = $row['content'];
                      /*   $mySQLDate = new DateTime::createFromFormat('Y-m-d', $row['date']);
                         $date = $mySQLDate->format('m/d/Y');*/
-                        $date = $row['date'];
-                        $journal_id=$row['journal_id'];
+                        $GLOBALS['date'] = $row['date'];
+                        $GLOBALS['journal_id'] =$row['journal_id'];
                     }
                 }
                 
@@ -147,14 +136,14 @@ if(empty($_SESSION['userid']))
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
+                                                        <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
                                                         <div class='input-group date'>
-                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
                                                          </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $content; } ?></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $GLOBALS['content']; } ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
