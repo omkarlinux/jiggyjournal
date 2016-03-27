@@ -59,7 +59,7 @@ if(empty($_SESSION['userid']))
                         $GLOBALS['title'] = $row['title'];
                         $GLOBALS['content'] = $row['content'];
                         $phpDate = strtotime($row['date']);
-                        $date = $date('m/d/Y',$time);
+                        $date = date('m/d/Y',$time);
                         $GLOBALS['date'] = $row['date'];
                     }
                 }
