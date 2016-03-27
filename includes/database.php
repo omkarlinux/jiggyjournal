@@ -9,11 +9,11 @@
         private $link;
         private $result;
         
-        function __construct($serverName="",$database=""){
+        function __construct($serverName="", $database=""){
             if (!empty($serverName)){ $this->serverName = $serverName; }
             if (!empty($database)){ $this->database = $database; }
             //Create connection object
-            $this->link = new mysqli($this->$serverName, $this->$username, $this->$password, $this->$database);
+            $this->link = new mysqli($this->serverName, $this->username, $this->password, $this->database);
             
             // Check connection
             if ($this->link->connect_error)
