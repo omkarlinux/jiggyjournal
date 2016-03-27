@@ -24,7 +24,7 @@
         }
 
         function query($sql){
-            return $sql;
+            return "abc";
             if (!empty($sql)){
                     $this->result = mysqli_query($this->link, $sql);
                     return $sql;
