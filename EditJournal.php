@@ -56,8 +56,9 @@ if(empty($_SESSION['userid']))
                     {
                         $title = $row['title'];
                         $content = $row['content'];
-                        $mySQLDate = DateTime::createFromFormat('Y-m-d', $row['date']);
-                        $date = $mySQLDate->format('m/d/Y');
+                     /*   $mySQLDate = new DateTime::createFromFormat('Y-m-d', $row['date']);
+                        $date = $mySQLDate->format('m/d/Y');*/
+                        $date = $row['date'];
                         $journal_id=$row['journal_id'];
                     }
                     $conn->close();   
