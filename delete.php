@@ -17,7 +17,7 @@
  
 function del($journal_id)
  {
-	$delete_id = $_POST['delete_id'];
+	$delete_id = $_POST['journal_id'];
 	echo "name".$delete_id; 
 
    // Database connection setup
@@ -32,7 +32,7 @@ function del($journal_id)
 	{
 	  die("Connection failed: " . $conn->connect_error);	
 	} 
-		$delete_id = $_POST['delete_id'];
+		$delete_id = $_POST['journal_id'];
 		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
           if( $conn->query($sql) === TRUE)
 	  { 
@@ -57,7 +57,7 @@ function del($journal_id)
 		echo "Not deleted: " .  $conn->error;
 	  }
 	$conn->close();
-      header("refresh:2; url=ListView.php");
+      header("refresh:1; url=ListView.php");
  }
  ?>
  

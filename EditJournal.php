@@ -37,7 +37,7 @@ if(empty($_SESSION['userid']))
                     }
                     elseif (isset($_POST['delete'])) 
                     {
-                    include ("delete.php");   
+                        include ("delete.php");   
                     }
                     if(isset($_POST['edit']) && empty($_POST['save']))
                     {
@@ -130,7 +130,7 @@ if(empty($_SESSION['userid']))
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="submitAction('delete.php')">Delete</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete">Delete</button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
