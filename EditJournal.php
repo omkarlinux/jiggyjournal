@@ -121,10 +121,10 @@ if(empty($_SESSION['userid']))
                                                   <span class="glyphicon glyphicon-paperclip"></span> Edit Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="save" onClick="submitAction('EditJournal.php')>Save</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="save" onClick="submitAction('EditJournal.php')">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="submitAction('delete.php')>Delete</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="submitAction('delete.php')">Delete</button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
