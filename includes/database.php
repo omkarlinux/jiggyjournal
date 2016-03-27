@@ -29,7 +29,7 @@
                     return $this->result;
             }
             else{
-                    return false;
+                    return 'abc';
             }
         }
 
