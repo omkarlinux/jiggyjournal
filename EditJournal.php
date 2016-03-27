@@ -28,17 +28,16 @@ if(empty($_SESSION['userid']))
                     {
                         save_post();   
                     }
-                    elseif (isset($_POST['delete'])) {
-                        delete_post();
+                    elseif (isset($_POST['delete'])) 
+					{
+                      include ("delete.php");   
                     }
-                    if (isset($_post['edit']))
-                    {
-                        edit_post();
-                    }
+                  
 				}
-                
-			    function edit_post()
-				{
+                if(isset($_POST['edit']))
+                {
+			   
+					$edit_id = $_POST['edit_id'];
 	
 					// Database connection setup
 					$serverName = "mysql13.000webhost.com";
@@ -54,8 +53,8 @@ if(empty($_SESSION['userid']))
 					{
 						die("Connection failed: " . $conn->connect_error);
 					} 
-					$journalid = $_POST["journalid"];
-					$sql = "SELECT * FROM journal WHERE journal_id='journalid'";
+					$edit_id = $_POST['edit_id'];
+					$sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
 					$query = mysqli_query($conn,$sql);
                     $numrows = mysqli_num_rows($query);
 			        if($numrows!==0)
@@ -69,8 +68,10 @@ if(empty($_SESSION['userid']))
                         }
                     }
 					$conn->close();        
-				}
+				
+                }
                 
+				
 				function save_post()
 				{
 	
@@ -106,6 +107,8 @@ if(empty($_SESSION['userid']))
 					$conn->close();    
                     header("Location: ListView.php");
 				}
+				
+				
 			?>
     <!-- Main Content -->
     <header>
@@ -127,7 +130,7 @@ if(empty($_SESSION['userid']))
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete">Delete</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="submitAction('delete.php')">Delete</button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
@@ -142,10 +145,13 @@ if(empty($_SESSION['userid']))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $title; } ?>"><br />
-                                                        <div class='datepicker'>
+                                                        <div class='input-group date'>
                                                             <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $date; } ?>"/>
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
                                                          </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5" value="<?php if($numrows!==0){ echo $content; } ?>"></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $content; } ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>

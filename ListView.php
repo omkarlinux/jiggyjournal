@@ -32,8 +32,12 @@ if(empty($_SESSION['userid']))
                        <div class="jumbotron">
                            
                              <div class="row">
-                                   <p class="text-justify col-sm-7"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
-                                   <a href="EditJournal.php" class="btn btn-success btn-sm col-sm-4"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                   <span class="col-md-7">
+                                       <p class="text-left"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
+                                   </span>
+                                   <span class="col-md-5 col-md-offset-0 text-right">
+                                       <a href="EditJournal.php" class="btn btn-success btn-sm"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
+                                   </span>
                                 </div> <br/>
                                 
 
@@ -79,15 +83,19 @@ if(empty($_SESSION['userid']))
                                               <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
-                                                <a title="Edit Journal">
-                                                    <img src="img/editIcon.png" alt="Edit" />
-                                                </a>
+
+                                                <form action = "EditJournal.php" method="post" >
+											<input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
+											<button type="submit" name="edit" value="edit" class="btn btn-link"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
+											</form>
                                             </div>
                                             <div class="col-md-1">
 											<form action = "delete.php" method="post" >
-											<input type="image" src="img/deleteIcon.png" name="delete">	
+											<input type="hidden" name="delete_id" value="<?php echo $journal_id; ?>" />
+											<button type="submit" name="delete" value="delete" class="btn btn-link"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
 											</form>
 											</div>
+
                                             <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
