@@ -3,8 +3,8 @@
         // Database connection setup
 		private $serverName = "mysql13.000webhost.com";
 		private $database = "a2354647_journal";
-		private $user_name = "a2354647_journal";
-		private $pass_word = "njoys6900";
+		private $username = "a2354647_journal";
+		private $password = "njoys6900";
         
         private $link;
         private $result;
