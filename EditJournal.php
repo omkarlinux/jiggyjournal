@@ -28,8 +28,9 @@ if(empty($_SESSION['userid']))
                     {
                         save_post();   
                     }
-                    elseif (isset($_POST['delete'])) {
-                        delete_post();
+                    elseif (isset($_POST['delete'])) 
+					{
+                      include 'delete.php';   
                     }
                   
 				}
@@ -70,6 +71,7 @@ if(empty($_SESSION['userid']))
 				
                 }
                 
+				
 				function save_post()
 				{
 	
@@ -105,6 +107,8 @@ if(empty($_SESSION['userid']))
 					$conn->close();    
                     header("Location: ListView.php");
 				}
+				
+				
 			?>
     <!-- Main Content -->
     <header>
