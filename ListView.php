@@ -83,15 +83,15 @@ if(empty($_SESSION['userid']))
                                               <span class="glyphicon glyphicon-paperclip"></span>  <?php echo $title; ?>
                                             </div>
                                             <div class="col-md-1">
-                                                <a title="Edit Journal">
-                                                    <img src="img/editIcon.png" alt="Edit" />
-                                                </a>
+                                              <a title="Edit Journal">
+                                                               <span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span>
+                                              </a>
                                             </div>
                                             <div class="col-md-1">
-											<form action = "delete.php" method="post" >
-											<input type="image" src="img/deleteIcon.png" name="delete">	
-											</form>
-											</div>
+					    <form action = "delete.php" method="post" >
+					        <a title="Delete Journal"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></a>
+					    </form>
+					  </div>
                                             <div class="col-md-2 col-md-offset-0">
                                                 <?php echo $date; ?>
                                             </div>
