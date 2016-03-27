@@ -101,7 +101,7 @@ if(empty($_SESSION['userid']))
 					    $sql = "UPDATE journal 
                                     SET title = '$title', 
                                         content = '$content', 
-                                        date = '$date', 
+                                        date = STR_TO_DATE('$date', '%m/%d/%Y'), 
                                         user_id = '$userid'
                                     WHERE journal_id = '$journal_id';";
                     }
