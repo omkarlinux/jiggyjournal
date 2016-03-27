@@ -51,7 +51,7 @@ if(empty($_SESSION['userid']))
                     global $connobj;
                     $edit_id = $_POST['edit_id'];
                     $sql = "SELECT * FROM journal WHERE journal_id='$edit_id';";
-                    $connobj->query($sql);
+                    $result = $connobj->query($sql);
                     if($row = $connobj->fetch())
                     {
                         $title = $row['title'];
@@ -115,7 +115,7 @@ if(empty($_SESSION['userid']))
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post
+                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post<?php if(!$result){ echo "Result is blank";}?>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
