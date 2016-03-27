@@ -58,8 +58,8 @@ if(empty($_SESSION['userid']))
                     {
                         $GLOBALS['title'] = $row['title'];
                         $GLOBALS['content'] = $row['content'];
-                     /*   $mySQLDate = new DateTime::createFromFormat('Y-m-d', $row['date']);
-                        $date = $mySQLDate->format('m/d/Y');*/
+                        $phpDate = strtotime($row['date']);
+                        $date = $phpDate->format('m/d/Y');
                         $GLOBALS['date'] = $row['date'];
                     }
                 }
