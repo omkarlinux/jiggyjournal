@@ -104,8 +104,10 @@ if(empty($_SESSION['userid']))
                                         date = '$date', 
                                         user_id = '$userid'
                                     WHERE journal_id = '$journal_id';";
+                        echo $sql;
                     }
-					if ($connobj->query($sql)) 
+                    $result = $connobj->query($sql);
+					if () 
 					{
 						$result = true;
 					} 
