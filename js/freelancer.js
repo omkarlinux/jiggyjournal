@@ -64,3 +64,8 @@ $(document).ready(function(){
         orientation: "bottom right"
     });    
 });
+
+function submitAction(act) {
+    document.editPageForm.action = act;
+    document.editPageForm.submit();
+}
