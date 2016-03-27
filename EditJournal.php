@@ -73,16 +73,7 @@ if(empty($_SESSION['userid']))
 					$date = $_POST["date"];
 					$userid = $_SESSION["userid"];
 					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
-					
-					if ($connobj->query($sql)) 
-					{
-						return true;
-					} 
-					else 
-					{
-						return false; 
-					}
-  
+
                     header("Location: ListView.php");
 				}
                 
