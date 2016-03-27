@@ -28,12 +28,10 @@ if(empty($_SESSION['userid']))
                     {
                         if($_POST['action'] == "update") //If we are editing existing post. We update it.
                         {
-                            echo "update";
                             update_post();
                         }
                         elseif($_POST['action'] == "create")
                         {                         //Otherwise we create a new post
-                            echo "create";
                             create_post();
                         }
                     }
@@ -97,8 +95,8 @@ if(empty($_SESSION['userid']))
 					$content = $_POST["content"];
 					$date = $_POST["date"];
 					$userid = $_SESSION["userid"];
-                    $journal_id = $GLOBALS['journal_id'];
-                    if (isset($GLOBALS['journal_id']))
+                    $journal_id = $_POST['journal_id'];
+                    if (isset($journal_id))
                     {
 					    $sql = "UPDATE journal 
                                     SET title = '$title', 
@@ -106,7 +104,6 @@ if(empty($_SESSION['userid']))
                                         date = '$date', 
                                         user_id = '$userid'
                                     WHERE journal_id = '$journal_id';";
-                        echo $sql;
                     }
 					if ($connobj->query($sql)) 
 					{
@@ -116,6 +113,7 @@ if(empty($_SESSION['userid']))
 					{
 						$result = false; 
 					}
+                    header("Location: ListView.php");
                 }
 			?>
     <!-- Main Content -->
