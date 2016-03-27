@@ -20,14 +20,13 @@
             {
                 return false;
             }
-            return $this;  // returns false if connection could not be made.
+            return $this->link;  // returns false if connection could not be made.
         }
 
         function query($sql){
-            return "abc";
             if (!empty($sql)){
                     $this->result = mysqli_query($this->link, $sql);
-                    return $sql;
+                    return $this->result;
             }
             else{
                     return false;
