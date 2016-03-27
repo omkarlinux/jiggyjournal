@@ -32,6 +32,7 @@ if(empty($_SESSION['userid']))
                         }
                         elseif($_POST['action'] == "create")
                         {                         //Otherwise we create a new post
+                            echo "create";
                             create_post();
                         }
                     }
