@@ -130,7 +130,7 @@ if(empty($_SESSION['userid']))
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete">Delete</button>
+                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="delete.php">Delete</button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
