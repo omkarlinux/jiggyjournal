@@ -13,7 +13,7 @@
             if (!empty($serverName)){ $this->serverName = $serverName; }
             if (!empty($database)){ $this->database = $database; }
             //Create connection object
-            $this->link = new mysqli($serverName, $username, $password, $database);
+            $this->link = new mysqli($this->$serverName, $this->$username, $this->$password, $this->$database);
             
             // Check connection
             if ($this->link->connect_error)
