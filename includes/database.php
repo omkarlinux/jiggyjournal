@@ -26,10 +26,10 @@
         function query($sql){
             if (!empty($sql)){
                     $this->result = mysqli_query($this->link, $sql);
-                    return $this->result;
+                    return $sql;
             }
             else{
-                    return 'abc';
+                    return false;
             }
         }
 
