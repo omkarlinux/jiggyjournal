@@ -97,14 +97,8 @@ if(empty($_SESSION['userid']))
                                         user_id = '$userid'
                                     WHERE journal_id = '$journal_id';";
                     }
-					if ($connobj->query($sql)) 
-					{
-						$result = true;
-					} 
-					else 
-					{
-						$result = false; 
-					}
+					$connobj->query($sql);
+
                     header("Location: ListView.php");
                 }
 			?>
