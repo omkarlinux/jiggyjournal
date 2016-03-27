@@ -30,7 +30,7 @@ if(empty($_SESSION['userid']))
                     }
                     elseif (isset($_POST['delete'])) 
 					{
-                      include 'delete.php';   
+                      include ("delete.php");   
                     }
                   
 				}
