@@ -86,7 +86,7 @@ if(empty($_SESSION['userid']))
 
                                             <form action = "EditJournal.php" method="post" >
                                                 <input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="edit" value="edit" class="btn btn-link"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
+                                                <button type="submit" name="edit" value="edit" data-toggle="tooltip" data-placement="bottom" title="Edit the journal" class="btn btn-link"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
 											</form>
                                             </div>
                                             <div class="col-md-1">
