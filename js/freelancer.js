@@ -66,14 +66,8 @@ $(document).ready(function(){
 });
 
 function submitAction(act) {
-    if(!validate()){
-        document.editPageForm.action = act;
-        document.editPageForm.submit(); 
-    }        
-}
-
-function validate(){
-    return $(".control-group .controls.date input").jqBootstrapValidation("collectErrors");
+    document.editPageForm.action = act;
+    document.editPageForm.submit();     
 }
 
 $(document).ready(function () {
