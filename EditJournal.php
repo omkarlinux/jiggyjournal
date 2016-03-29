@@ -13,28 +13,18 @@
     ?>
 
     <!-- To make sure that people who do not login cannot access the EditJournal Page -->
-    <!--
-<?php/*
-if(empty($_SESSION['userid']))
-    {
-        header("Location: index.php");
-    }*/
-?>  -->
+    
+    <?php
+        session_start();
+        if(empty($_SESSION['userid']))
+        {
+            header("Location: index.php");
+        }
+    ?> 
 			<!--Database PHP --!>
             <?php
                 if($_SERVER['REQUEST_METHOD'] === 'POST')
                 {//something posted
-                    if (isset($_POST['save'])) //Trying to save
-                    {
-                        if($_POST['action'] == "update") //If we are editing existing post. We update it.
-                        {
-                            update_post();
-                        }
-                        elseif($_POST['action'] == "create")
-                        {                         //Otherwise we create a new post
-                            create_post();
-                        }
-                    }
                     if(isset($_POST['edit']) && empty($_POST['save']))
                     {
                         get_post_from_database();
@@ -57,45 +47,6 @@ if(empty($_SESSION['userid']))
                         $GLOBALS['date'] = date('m/d/Y',$phpDate);
                     }
                 }
-                
-				function create_post()
-				{
-	
-					$connobj = new Connection;
-                    
-					$title = $_POST["title"];
-					$content = $_POST["content"];
-					$date = $_POST["date"];
-					$userid = $_SESSION["userid"];
-					$sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
-                    
-                    $connobj->query($sql);
-                    
-                    header("Location: ListView.php");
-				}
-                
-                function update_post()
-                {
-                    $connobj = new Connection;
-                    
-					$title = $_POST["title"];
-					$content = $_POST["content"];
-					$date = $_POST["date"];
-					$userid = $_SESSION["userid"];
-                    $journal_id = $_POST['journal_id'];
-                    if (isset($journal_id))
-                    {
-					    $sql = "UPDATE journal 
-                                    SET title = '$title', 
-                                        content = '$content', 
-                                        date = STR_TO_DATE('$date', '%m/%d/%Y'), 
-                                        user_id = '$userid'
-                                    WHERE journal_id = '$journal_id';";
-                    }
-					$connobj->query($sql);
-
-                    header("Location: ListView.php");
-                }
 			?>
     <!-- Main Content -->
     <header>
@@ -108,18 +59,19 @@ if(empty($_SESSION['userid']))
                             <form name="editPageForm" action="EditJournal.php" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
-                                <div class="panel-group">
+                                <div class="panel-group control-group">
                                     <div class="panel panel-success">
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                  <span class="glyphicon glyphicon-paperclip"></span> Edit Post
+                                                  <?php if(isset($_POST['edit'])){echo 'Edit';}
+                                                        else{echo 'Create';} ?> Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="save" onClick="submitAction('EditJournal.php')">Save</button>
+                                                    <button type="submit" name="save" onClick="submitAction('save.php')" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk"></span></span></button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="delete" onClick="submitAction('delete.php')">Delete</button>
+                                                    <button type="submit" name="delete" value="delete" onClick="submitAction('delete.php')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>
@@ -134,14 +86,16 @@ if(empty($_SESSION['userid']))
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
-                                                        <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
-                                                        <div class='input-group date'>
-                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
+                                                        <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']? $GLOBALS['title']:''; ?>"><br />
+                                                        <div class='input-group date controls'>
+                                                            <input type='text' class="form-control" name="date"
+                                                             value="<?php echo @$GLOBALS['date']? $GLOBALS['date']:''; ?>" required />
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
+                                                            <p class="help-block text-danger"></p>
                                                          </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $GLOBALS['content']; } ?></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <?php
@@ -6,128 +6,80 @@
 ?>
 
 <body id="page-top" class="index">
-
-    <!-- Navigation -->
-<?php
-    require 'includes/topNavigation.php';
-?>
-
-    <!-- To make sure that people who do not login cannot access ListView Page -->
-    
+ 
+    <!-- Save script -->
     <?php
         session_start();
-        if(empty($_SESSION['userid']))
+        if($_SERVER['REQUEST_METHOD'] === 'POST')
+        {//something posted
+            if (isset($_POST['save'])) //Trying to save
             {
-                header("Location: index.php");
+                if($_POST['action'] == "update") //If we are editing existing post. We update it.
+                {
+                    update_post();
+                }
+                elseif($_POST['action'] == "create")
+                {                         //Otherwise we create a new post
+                    create_post();
+                }
+            }               
+
+            header("refresh:1; url=ListView.php");
+        }
+        
+        function create_post()
+        {
+
+            $connobj = new Connection;
+            
+            $title = $_POST["title"];
+            $content = $_POST["content"];
+            $date = $_POST["date"];
+            $userid = $_SESSION["userid"];
+            $sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
+            
+            $connobj->query($sql);
+        }
+        
+        function update_post()
+        {
+            $connobj = new Connection;
+            
+            $title = $_POST["title"];
+            $content = $_POST["content"];
+            $date = $_POST["date"];
+            $userid = $_SESSION["userid"];
+            $journal_id = $_POST['journal_id'];
+            if (isset($journal_id))
+            {
+                $sql = "UPDATE journal 
+                            SET title = '$title', 
+                                content = '$content', 
+                                date = STR_TO_DATE('$date', '%m/%d/%Y'), 
+                                user_id = '$userid'
+                            WHERE journal_id = '$journal_id';";
             }
-    ?> 
-    <!-- Main Content-->
+            $connobj->query($sql);
+        }
+    ?>
+    
+    <!-- Navigation -->
+    <?php
+        require 'includes/topNavigation.php';
+    ?>
+
+    <!-- Main Content -->
     <header>
         <div class="main-content container">
             <div class="row">
-                <div class="col-lg-12"> <br/>
-                    <!--<img class="img-responsive" src="img/profile.png" alt="">-->
+                <div class="col-lg-12">
                     <div class="intro-text">
-                    
-                        <hr class="star-light">
-                       <div class="jumbotron">
-                           
-                             <div class="row">
-                                   <span class="col-md-7">
-                                       <p class="text-left"><b>Welcome, <?php if(!empty($_SESSION['fname'])){echo $_SESSION['fname'];} ?></b>- Create your life in words and pictures!!</p>
-                                   </span>
-                                   <span class="col-md-5 col-md-offset-0 text-right">
-                                       <a href="EditJournal.php" class="btn btn-success btn-sm"><span class="badge"><span class="glyphicon glyphicon-plus"></span></span> Add New Entry</a>
-                                   </span>
-                                </div> <br/>
-                                
-
-	<?PHP
-		if(isset($_SESSION['userid']))
-		{
-		// Database connection setup
-		$serverName = "mysql13.000webhost.com";
-		$database = "a2354647_journal";
-		$user_name = "a2354647_journal";
-		$pass_word = "njoys6900";
-	   //Create connection object
-       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
-	   // Check 
-	
-			if ($conn->connect_error) 
-			{
-			  die("Connection failed: " . $conn->connect_error);
-			} 
-			$userid = $_SESSION['userid'];
-			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc");
-			$numrows = mysqli_num_rows($query);
-			if($numrows!==0)
-			{
-				?>
-				<div class="panel-group">
-				<?php 
-				for($x=$numrows; $x>=1; $x--)
-				{
-					if($row = mysqli_fetch_assoc($query))
-					{
-					$title = $row['title'];
-					$content = $row['content'];
-					$date = $row['date'];
-					$journal_id=$row['journal_id'];
-		?>
-                            
-                                <div class="post panel panel-success">
-									<div class="id"><?php echo $journal_id ;?></div>
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col-md-8 text-left">
-                                               <?php echo $title; ?>
-                                            </div>
-                                            <div class="col-md-1">
-
-                                            <form action = "EditJournal.php" method="post" >
-                                                <input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="edit" value="edit" class="btn btn-link" title="Edit Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
-											</form>
-                                            </div>
-                                            <div class="col-md-1">
-											<form action = "delete.php" method="post" >
-                                                <input type="hidden" name="journal_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="delete" value="delete" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
-											</form>
-											</div>
-
-                                            <div class="col-md-2 col-md-offset-0">
-                                                <?php echo $date; ?>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="panel-body text-justify"><?php echo $content; ?></div>
-                                </div>
-                                
-                            
-							
-					<?php 
-					} 
-				}
-			?>
-			</div>				
-			<?php 
-			}
-			else
-			{
-			?>
-				Nothing to see here. Move along.
-			<?php 
-			}
-		}
-		?>
-                    
-                        
+                        <br/><br/><br/>
+                        <h3>Save successful!</h3>
+                        <hr class="star-light"
+                        <br/><br/><br/>
                     </div>
                 </div>
-				<hr class="star-light">
             </div>
         </div>
     </header>
@@ -164,7 +116,7 @@
                     <div class="footer-col col-md-4">
                         <h3>About JiggyJournal</h3>
                         <p>JiggyJournal is a free to use, open source online journal created by <a href="about.php">JiggyJournal</a>.</p>
-
+ 
                     </div>
                 </div>
             </div>
@@ -205,22 +157,16 @@
                             <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -248,22 +194,16 @@
                             <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -291,22 +231,16 @@
                             <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -334,22 +268,16 @@
                             <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -377,22 +305,16 @@
                             <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -420,22 +342,16 @@
                             <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
                             <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
-                                <li>
-                                    Client:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Date:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">April 2014</a>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
                                     </strong>
                                 </li>
-                                <li>
-                                    Service:
-                                    <strong>
-                                        <a href="http://startbootstrap.com">Web Development</a>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
                                     </strong>
                                 </li>
                             </ul>

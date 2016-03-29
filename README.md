@@ -1,27 +1,22 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
+##Our team
+first met as Management Information Systems graduate students at Utah State University’s Jon M. Huntsman School of Business in the Fall of 2015. Though we each took different paths to arrive there, we quickly found common ground and decided to work together in developing Omkar’s idea for an on-line journal. That’s how Jiggy Journal began!
 
-[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) is a one page freelancer portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, and a working PHP contact form.
+	
+##Omkar Jayant Danke
+is the lead product development manager for Jiggy Journal. He is originally from India and has five years of experience in SAP ABAP at Accenture. He loves to learn new things, tackle new technology, and when he’s not satisfying his curiosity, he enjoys hiking, reading novels and sketching. He loves to try out different types of cuisine and is learning how to cook.
 
-## Getting Started
+	
+##Neetha Reddy Sama
+works closely with Omkar to manage the development of Jiggy Journal. She is originally from Hyderabad, India and has experience in mainframes at NTTDATA. She is creative and savyv with technology, and when she’s not busy working on our project she enjoys playing badminton, cooking and dancing.
 
+	
+##Yeyuan Song
+is our database manager and architect. She comes from Dalian, a very beautiful and vibrant coastal city in the northeast part of China. She loves Management Information System so much that she decided to continue her studies and she came to the States for graduate school. She is crazy about all the patterns behind the data and she has a gift for seeing data relationships, designing ER diagrams, and writing various SQL lines. She is fond of exploring recipes and cooking Chinese food during her spare time. She also loves dancing traditional Chinese dance, jogging and hiking.
 
-To use this theme, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+	
+##Shraddha Bhandari
+is our UI designer and developer. She is originally from Indore, India where she did her undergraduate studies. She has also lived in Chennai and Bengaluru, India while working as a Software Engineer, before she came to Logan, Utah. She uses her creativity and technical skills to craft the interface our customers enjoy! When she’s not dreaming about html and css coding, she enjoys drawing, sketching and arts and crafts work.
 
-## Bugs and Issues
-
-Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-freelancer/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/).
-
-## Creator
-
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Parter at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-freelancer/blob/gh-pages/LICENSE) license.
+	
+##Julie Duersch
+is our business analyst and resident journaler. She was born in Minot, North Dakota, but has lived in Logan, Utah for most of her life, with a life-changing, two-year stint in Egypt. When she’s not busy helping behind the scenes with our project, preparing reports and keeping things organized, she has been known to whip up a batch of chocolate chip cookies to share! With five kids, she is busy living in exciting times, and Jiggy Journal helps her record it all!
