@@ -91,7 +91,7 @@
 											</form>
                                             </div>
                                             <div class="col-md-1">
-											<form action = "delete.php"  onclick="return confirm('Are you sure you want to delete?')"> method="post" >
+											<form action = "delete.php" method="post" >
                                                 <input type="hidden" name="journal_id" value="<?php echo $journal_id; ?>" />
                                                 <button type="submit" name="delete" value="delete" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
 											</form>
