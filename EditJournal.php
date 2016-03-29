@@ -13,13 +13,13 @@
     ?>
 
     <!-- To make sure that people who do not login cannot access the EditJournal Page -->
-    <!--
-<?php/*
-if(empty($_SESSION['userid']))
-    {
-        header("Location: index.php");
-    }*/
-?>  -->
+    
+    <?php
+    if(empty($_SESSION['userid']))
+        {
+            header("Location: index.php");
+        }
+    ?> 
 			<!--Database PHP --!>
             <?php
                 if($_SERVER['REQUEST_METHOD'] === 'POST')

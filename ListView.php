@@ -13,13 +13,13 @@
 ?>
 
     <!-- To make sure that people who do not login cannot access ListView Page -->
-    <!--
-<?php/*
-if(empty($_SESSION['userid']))
-    {
-        header("Location: index.php");
-    }*/
-?>  -->
+    
+    <?php
+        if(empty($_SESSION['userid']))
+            {
+                header("Location: index.php");
+            }
+    ?> 
     <!-- Main Content-->
     <header>
         <div class="main-content container">
