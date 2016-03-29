@@ -7,7 +7,7 @@
 
 <body id="page-top" class="index">
  
-    <!-- Logout script -->
+    <!-- Save script -->
     <?php
         if($_SERVER['REQUEST_METHOD'] === 'POST')
         {//something posted
@@ -21,10 +21,10 @@
                 {                         //Otherwise we create a new post
                     create_post();
                 }
-            }
-        }               
+            }               
 
-        header("refresh:1; url=ListView.php");
+            header("refresh:1; url=ListView.php");
+        }
         
         function create_post()
         {
@@ -37,6 +37,7 @@
             $userid = $_SESSION["userid"];
             $sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
             
+            echo $sql;
             $connobj->query($sql);
         }
         
