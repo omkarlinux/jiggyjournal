@@ -68,10 +68,10 @@ $(document).ready(function(){
 function submitAction(act) {
             document.editPageForm.action = act;
         document.editPageForm.submit();  
-    if(!validate()){
+ /*   if(!validate()){
         document.editPageForm.action = act;
         document.editPageForm.submit();   
-    }
+    }*/
 }
 
 function validate(){
