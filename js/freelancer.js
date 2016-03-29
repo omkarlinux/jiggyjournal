@@ -66,8 +66,20 @@ $(document).ready(function(){
 });
 
 function submitAction(act) {
-    document.editPageForm.action = act;
-    document.editPageForm.submit();     
+	 if(act == "delete.php")
+	 {
+		if(confirm('Are you sure you want to delete?'))
+		{
+			document.editPageForm.action = act;
+			document.editPageForm.submit();   
+		}
+	 }
+	 
+	else
+	{
+		document.editPageForm.action = act;
+	    document.editPageForm.submit();   
+	}  
 }
 
 $(document).ready(function () {
