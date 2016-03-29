@@ -15,7 +15,8 @@
     <!-- To make sure that people who do not login cannot access the EditJournal Page -->
     
     <?php
-    if(empty($_SESSION['userid']))
+        session_start();
+        if(empty($_SESSION['userid']))
         {
             header("Location: index.php");
         }
@@ -55,7 +56,7 @@
                     <div class="intro-text">
                       <hr class="star-light">
                        <div class="jumbotron">
-                            <form name="editPageForm" action="EditJournal.php" method="post" >
+                            <form name="editPageForm" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
                                 <div class="panel-group control-group">
@@ -63,10 +64,11 @@
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-7 text-left">
-                                                  Edit Post
+                                                  <?php if(isset($_POST['edit'])){echo 'Edit';}
+                                                        else{echo 'Create';} ?> Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button class="btn btn-primary btn-xs" type="submit" name="save" onClick="submitAction('save.php')">Save</button>
+                                                    <button type="submit" name="save" value="save" onClick="submitAction('save.php')"class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk"></span></span></button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
                                                     <button type="submit" name="delete" value="delete" onClick="submitAction('delete.php')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
@@ -84,15 +86,17 @@
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
-                                                        <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
+                                                        <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']?:''; ?>"><br />
                                                         <div class='input-group date controls'>
-                                                            <input type='text' class="form-control" name="date" data-validation-callback-callback="isValidDate" required value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
+                                                            <input type='text' class="form-control" name="date" 
+                                                            
+                                                            data-validation-required-message="You should have a date for your journal entry" value="<?php echo @$GLOBALS['date']?:''; ?>" required />
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $GLOBALS['content']; } ?></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']?:''; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
