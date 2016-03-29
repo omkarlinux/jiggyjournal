@@ -12,24 +12,9 @@
  <?php
  if(isset($_POST['delete']))
  {
-  ?>	 
-    <script type="JavaScript">
-	var check = confirm("Are you sure?" );
-	<?php 
-	if (check == true)
-	{
-	 del($journal_id);
-		
-	}
-	else
-	{
-	 header('Location: ListView.php'); 
-	
-	}	
+	del($journal_id);
  }
-?> 
- </Script>
- <?php
+ 
 function del($journal_id)
  {
 	$delete_id = $_POST['journal_id'];
@@ -66,7 +51,7 @@ function del($journal_id)
             </div>
         </div>
     </header>
-  <?php }
+      	  <?php }
 	  else 
 	  {
 		echo "Not deleted: " .  $conn->error;
@@ -80,6 +65,9 @@ function del($journal_id)
     <?php
         require 'includes/topNavigation.php';
     ?>
+
+	
+	
 	<!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
