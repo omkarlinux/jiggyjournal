@@ -86,7 +86,7 @@
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
                                                         <div class='input-group date'>
-                                                            <input type='text' class="form-control" name="date" data-validation-callback-callback="isValidDate" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
+                                                            <input type='text' class="form-control" name="date" data-validation-callback-callback="isValidDate" required value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
