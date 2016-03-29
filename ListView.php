@@ -86,13 +86,13 @@ if(empty($_SESSION['userid']))
 
                                             <form action = "EditJournal.php" method="post" >
                                                 <input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="edit" value="edit" class="btn btn-link"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
+                                                <button type="submit" name="edit" value="edit" class="btn btn-link" title="Edit Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
 											</form>
                                             </div>
                                             <div class="col-md-1">
 											<form action = "delete.php" method="post" >
                                                 <input type="hidden" name="journal_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="delete" value="delete" class="btn btn-link"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+                                                <button type="submit" name="delete" value="delete" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
 											</form>
 											</div>
 

@@ -119,7 +119,7 @@ if(empty($_SESSION['userid']))
                                                     <button class="btn btn-primary btn-xs" type="submit" name="save" onClick="submitAction('EditJournal.php')">Save</button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button type="submit" name="delete" value="delete" onClick="submitAction('delete.php')" class="btn btn-link"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+                                                    <button type="submit" name="delete" value="delete" onClick="submitAction('delete.php')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
                                                     <!--<a title="Delete Journal"><img src="img/deleteIcon.png" alt="Delete" /></a>-->
                                                 </div>
                                             </div>

@@ -70,3 +70,6 @@ function submitAction(act) {
     document.editPageForm.submit();
 }
 
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
