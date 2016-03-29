@@ -58,7 +58,7 @@
                             <form name="editPageForm" action="EditJournal.php" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
-                                <div class="panel-group">
+                                <div class="panel-group control-group">
                                     <div class="panel panel-success">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
-                                            <div class="row control-group">
+                                            <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
