@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
-                                            <div class="row">
+                                            <div class="row control-group">
                                                 <div class="form-group">
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
@@ -86,10 +86,11 @@
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
                                                         <input type="text" class="form-control" name="title" value="<?php if($numrows!==0){ echo $GLOBALS['title']; } ?>"><br />
                                                         <div class='input-group date'>
-                                                            <input type='text' class="form-control" name="date" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
+                                                            <input type='text' class="form-control" name="date" data-validation-callback-callback="isValidDate" value="<?php if($numrows!==0){ echo $GLOBALS['date']; } ?>"/>
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
+                                                            <p class="help-block text-danger"></p>
                                                          </div><br />
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php if($numrows!==0){ echo $GLOBALS['content']; } ?></textarea>
                                                     </div>
