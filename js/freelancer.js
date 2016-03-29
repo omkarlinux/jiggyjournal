@@ -86,7 +86,7 @@ function isValidDate($el, dateString, callback)
 {
     // First check for the pattern
     if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-        return false;
+        returnValue = false;
 
     // Parse the date parts to integers
     var parts = dateString.split("/");
@@ -96,7 +96,7 @@ function isValidDate($el, dateString, callback)
 
     // Check the ranges of month and year
     if(year < 1000 || year > 3000 || month == 0 || month > 12)
-        return false;
+        returnValue = false;
 
     var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
