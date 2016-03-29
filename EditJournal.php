@@ -56,7 +56,7 @@
                     <div class="intro-text">
                       <hr class="star-light">
                        <div class="jumbotron">
-                            <form name="editPageForm" method="post" >
+                            <form name="editPageForm" onclick="return confirm('Are you sure you want to delete?')" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
                                 <div class="panel-group control-group">
@@ -68,10 +68,10 @@
                                                         else{echo 'Create';} ?> Post
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-3">
-                                                    <button type="button" name="save" onClick="submitAction('save.php')" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk"></span></span></button>
+                                                    <button type="submit" name="save" onClick="submitAction('save.php')" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk"></span></span></button>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0">
-                                                    <button type="button" name="delete" value="delete" onClick="if(confirm('Are you sure?')){submitAction('delete.php')}" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+                                                    <button type="submit" name="delete" value="delete" onClick="submitAction('delete.php')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
                                                 </div>
                                             </div>
                                         </div>
