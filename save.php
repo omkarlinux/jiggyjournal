@@ -24,7 +24,7 @@
                 }
             }               
 
-          /*  header("refresh:1; url=ListView.php"); */
+            header("refresh:1; url=ListView.php");
         }
         
         function create_post()
