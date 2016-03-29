@@ -62,12 +62,18 @@ $(document).ready(function(){
         todayHighlight: true,
         todayBtn: "linked",
         orientation: "bottom right"
-    });    
+    });   
 });
 
 function submitAction(act) {
+    if(!validate()){
         document.editPageForm.action = act;
-        document.editPageForm.submit();   
+        document.editPageForm.submit(); 
+    }        
+}
+
+function validate(){
+    return $(".control-group .controls.date input").jqBootstrapValidation("collectErrors");
 }
 
 $(document).ready(function () {
