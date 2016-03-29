@@ -38,7 +38,6 @@
             $userid = $_SESSION["userid"];
             $sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
             
-            echo $sql;
             $connobj->query($sql);
         }
         
