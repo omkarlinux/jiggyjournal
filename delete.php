@@ -12,9 +12,29 @@
  <?php
  if(isset($_POST['delete']))
  {
-	del($journal_id);
- }
+  ?>	 
+    <script type="JavaScript">
+	var check = confirm("Are you sure?" );
+	if (check)
+	{
+		
+	<?php 
+	 del($journal_id);
+	?>
+	}
+	else
+	{
+	<?php	
+	 header('Location: ListView.php'); 	
+	?>
+    }
+
  
+   </Script>
+   <?php 
+   }
+ ?>
+ <?php 
 function del($journal_id)
  {
 	$delete_id = $_POST['journal_id'];
