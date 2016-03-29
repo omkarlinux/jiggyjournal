@@ -15,6 +15,7 @@
     <!-- To make sure that people who do not login cannot access ListView Page -->
     
     <?php
+        session_start();
         if(empty($_SESSION['userid']))
             {
                 header("Location: index.php");

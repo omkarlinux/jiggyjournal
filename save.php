@@ -9,6 +9,7 @@
  
     <!-- Save script -->
     <?php
+        session_start();
         if($_SERVER['REQUEST_METHOD'] === 'POST')
         {//something posted
             if (isset($_POST['save'])) //Trying to save
