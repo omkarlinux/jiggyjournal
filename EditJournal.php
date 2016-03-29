@@ -86,17 +86,17 @@
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
-                                                        <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']?:''; ?>"><br />
+                                                        <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']? $GLOBALS['title']:''; ?>"><br />
                                                         <div class='input-group date controls'>
                                                             <input type='text' class="form-control" name="date" 
                                                             
-                                                            data-validation-required-message="You should have a date for your journal entry" value="<?php echo @$GLOBALS['date']?:''; ?>" required />
+                                                            data-validation-required-message="You should have a date for your journal entry" value="<?php echo @$GLOBALS['date']? $GLOBALS['date']:''; ?>" required />
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
-                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']?:''; ?></textarea>
+                                                        <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
