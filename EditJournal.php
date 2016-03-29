@@ -14,12 +14,12 @@
 
     <!-- To make sure that people who do not login cannot access the EditJournal Page -->
     
-    <?php/*
+    <?php
         session_start();
         if(empty($_SESSION['userid']))
         {
             header("Location: index.php");
-        }*/
+        }
     ?> 
 			<!--Database PHP --!>
             <?php
