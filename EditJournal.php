@@ -56,7 +56,7 @@
                     <div class="intro-text">
                       <hr class="star-light">
                        <div class="jumbotron">
-                            <form name="editPageForm" onclick="return confirm('Are you sure you want to delete?')" method="post" >
+                            <form name="editPageForm" id="editPageForm" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
                                 <div class="panel-group control-group">

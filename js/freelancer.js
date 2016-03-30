@@ -63,13 +63,15 @@ $(document).ready(function(){
         todayBtn: "linked",
         orientation: "bottom right"
     });   
+    
+    $('#editPageForm').addEventListener('submit', function(){
+        return confirm('Are you sure you want to delete?');
+    }, false);
 });
 
 function submitAction(act) {
-	
 		document.editPageForm.action = act;
-	    document.editPageForm.submit();   
-	 
+	    document.editPageForm.submit();
 }
 
 $(document).ready(function () {
