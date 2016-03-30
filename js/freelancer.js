@@ -64,7 +64,9 @@ $(document).ready(function(){
         orientation: "bottom right"
     });   
     
-    $('#editPageForm').addEventListener('submit', function(){
+    var el = document.getElementById('editPageForm');
+
+    el.addEventListener('submit', function(){
         return confirm('Are you sure you want to delete?');
     }, false);
 });
