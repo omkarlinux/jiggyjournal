@@ -4,69 +4,56 @@
 
 <?php
     require 'includes/headcode.php';
-?>
-
-<body id="page-top" class="index">
- 
-    <!-- Delete script -->
- <?php
- if(isset($_POST['delete']))
- {
-	del($journal_id);
- }
- 
-function del($journal_id)
- {
-	$delete_id = $_POST['journal_id'];
-	echo "name".$delete_id; 
-
-   // Database connection setup
-    $serverName = "mysql13.000webhost.com";
-	$database = "a2354647_journal";
-	$user_name = "a2354647_journal";
-	$pass_word = "njoys6900";
-	 //Create connection object
-	$conn = new mysqli($serverName, $user_name, $pass_word, $database);
-	 // Check 
-	if ($conn->connect_error) 
-	{
-	  die("Connection failed: " . $conn->connect_error);	
-	} 
-		$delete_id = $_POST['journal_id'];
-		$sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
-          if( $conn->query($sql) === TRUE)
-	  { 
-	 ?> 	
-              <header>
-        <div class="main-content container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-text">
-                        <br/><br/><br/>
-                        <h3>Deleted successfully</h3>
-                        <hr class="star-light"
-                        <br/><br/><br/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-      	  <?php }
-	  else 
-	  {
-		echo "Not deleted: " .  $conn->error;
-	  }
-	$conn->close();
-      header("refresh:1; url=ListView.php");
- }
- ?>
- 
+?> 
+<body id="page-top" class="index"> 
  <!-- Navigation -->
     <?php
         require 'includes/topNavigation.php';
     ?>
+    <!-- Delete script -->
+    <?php
+        //If delete button is called
+        if(isset($_POST['delete']))
+        {
+            del($journal_id);
+        }
+    
+        function del($journal_id)
+        {/* Delete journal entry from database */
+        
+            $connobj = new Connection;
+            
+            $delete_id = $_POST['journal_id'];
 
-	
+            // Database connection setup
+            $connobj = new Connection;
+            
+            $sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
+            if( $connobj->query($sql) === TRUE)
+            { 
+            ?> 	
+            <header>
+                <div class="main-content container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="intro-text">
+                                <br/><br/><br/>
+                                <h3>Deleted successfully</h3>
+                                <hr class="star-light"
+                                <br/><br/><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+                <?php }
+            else 
+            {
+                echo "Not deleted";
+            }
+            header("refresh:1; url=ListView.php");
+        }
+    ?>
 	
 	<!-- Footer -->
     <footer class="text-center">
