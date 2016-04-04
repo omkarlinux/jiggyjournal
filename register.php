@@ -49,7 +49,7 @@
 					$password = $_POST["password"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
 				
-					 if(mysqli_num_rows($conn->query($sql1) > 0)
+					 if(mysqli_num_rows($conn->query($sql1)) > 0)
 					 {
 					 	die("User already exists with this email!");
 					 }
