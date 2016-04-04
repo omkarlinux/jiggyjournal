@@ -48,8 +48,8 @@
 					$email = $_POST["email"];
 					$password = $_POST["password"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
-					$result = mysql_query($sql1);
-					 if(mysql_num_rows($result) > 0)
+				
+					 if(mysqli_num_rows($conn->query($sql1) > 0)
 					 {
 					 	die("User already exists with this email!");
 					 }
@@ -57,15 +57,15 @@
 					 {	 
 					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password) VALUES ('$fname','$lname' ,'$email','$password');";
 					
-					 if ($conn->query($sql) === TRUE) 
-					 {
-					 	echo "Registered successfully";
-					 } 
-					 else 
-					 {
-					 	echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
-					 }
-					 }	
+					   if ($conn->query($sql) === TRUE) 
+					   {
+					 	 echo "Registered successfully";
+					   } 
+					   else 
+					   {
+					 	 echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+					   }
+					  }	
 					$conn->close();        
 				}
 			?>
