@@ -8,7 +8,7 @@
 	$username = $_POST['email'];
 	$password = $_POST['password'];
 	
-	if($username&&$password)
+	if($username&&$password&&$login="login")
 	{
 	// Database connection setup
 		$serverName = "mysql13.000webhost.com";
@@ -115,6 +115,7 @@
                                                 <input type="checkbox"> Remember Me
                                             </label>
                                         </div>
+										<input type="hidden" name="login" value="<?php echo $login="login"; ?>" />
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-block" value="login">SIGN IN</button>
                                         </div>
