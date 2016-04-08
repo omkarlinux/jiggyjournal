@@ -5,10 +5,10 @@
     ob_start();
 	session_start();
 	
-	$username = $_POST['email'];
-	$password = $_POST['password'];
+	$username = $_POST['email_id'];
+	$password = $_POST['passwrd'];
 	
-	if($username&&$password&&$login="login")
+	if($username&&$password)
 	{
 	// Database connection setup
 		$serverName = "mysql13.000webhost.com";
@@ -105,17 +105,17 @@
                                     
                                     <form action="<?php echo basename($_SERVER['PHP_SELF']);?>" method="post" class="form" id="login-form">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email address" required>
+                                            <input type="email" class="form-control" name="email_id" id="inputEmail" placeholder="Email address" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+                                            <input type="password" class="form-control" name="passwrd" id="inputPassword" placeholder="Password" required>
                                         </div>
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox"> Remember Me
                                             </label>
                                         </div>
-										<input type="hidden" name="login" value="<?php echo $login="login"; ?>" />
+										
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-block" value="login">SIGN IN</button>
                                         </div>
