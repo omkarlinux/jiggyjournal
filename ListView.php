@@ -98,7 +98,7 @@
 											</div>
 
                                             <div class="col-md-2 col-md-offset-0">
-                                                <?php echo the_date("F j, Y",$date); ?>
+                                                <?php echo date("F j, Y",$date); ?>
                                             </div>
                                             
                                         </div>
