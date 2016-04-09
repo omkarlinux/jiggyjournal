@@ -98,7 +98,7 @@
 											</div>
 
                                             <div class="col-md-2 col-md-offset-0">
-                                                <?php echo $date = date("F j, Y"); ?>
+                                                <?php echo $date; ?> = <?php echo $date->format("F j, Y"); ?>
                                             </div>
                                             
                                         </div>
