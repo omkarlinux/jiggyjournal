@@ -33,11 +33,13 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-md-5 text-left">
+													    <label for="entryDate">Enter your Email Address:</label> <br /><br /><br />
                                                         <label for="selectQuestion">Your Security Question is:</label> <br /><br /><br />
                                                         <label for="addQuestion">Please Enter your Password</label> <br /><br /><br />
                                                         
                                                     </div>
                                                     <div class="col-md-7">
+                                                        <input type="text" class="form-control input-sm" id="emailId" required><br />
                                                         <select class="form-control btn-sm" id="selectedquestion">
                                                             <option> What is your first pet's name?</option>
                                                         </select>
