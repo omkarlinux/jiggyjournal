@@ -47,7 +47,10 @@
 					$lname = $_POST["Lastname"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
+					$security_question = $_POST["secutiry_question"];
+					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
+					
 				
 					 if(mysqli_num_rows($conn->query($sql1)) > 0)
 					 {
@@ -55,7 +58,7 @@
 					 }
 					 else
 					 {	 
-					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password) VALUES ('$fname','$lname' ,'$email','$password');";
+					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', $security_question,$answer);";
 					
 					   if ($conn->query($sql) === TRUE) 
 					   {
@@ -114,7 +117,7 @@
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" id="selectedquestion" required>
+                                <select class="form-control btn-sm register-placeholder" name = "question" id="selectedquestion" required>
                                     <option>--Select a Security Question--</option>
                                     <option> What is your first pet's name?</option>
                                     <option>What is your favorite color?</option>
@@ -126,14 +129,14 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label> Write your own Security Question</label>
-                                <input type="text" class="form-control input-sm" placeholder="OR Write your own Security question" id="anotherquestion">
+                                <input type="text" class="form-control input-sm" name ="security_question" placeholder="OR Write your own Security question" id="anotherquestion" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Enter an Answer</label>
-                                <input type="text" class="form-control input-sm" placeholder="Enter an anwer" id="answer">
+                                <input type="text" class="form-control input-sm" name="answer" placeholder="Enter an anwer" id="answer" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
