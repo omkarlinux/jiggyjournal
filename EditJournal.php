@@ -84,7 +84,7 @@
 														<label for="UploadFile" class="text-left">Upload a Picture:</label><br /><br /><br />
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-9">
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
                                                         <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']? $GLOBALS['title']:''; ?>"><br />
                                                       	<div class='input-group date controls'>
@@ -95,7 +95,7 @@
                                                             </span>
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
-														 <input type="file" name="UploadFile" class="col-md-5">
+														 <input type="file" name="UploadFile" class="col-md-4">
 														  <input type="submit" value="Upload Image" name="submit" class="col-md-3 col-md-offest-0"><br/><br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
