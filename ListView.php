@@ -98,7 +98,7 @@
 											</div>
 
                                             <div class="col-md-2 col-md-offset-0">
-                                                <?php echo date("F j, Y",$date=time()); ?> 
+                                                <?php echo date("F j, Y",strptime($date,"m/d/Y")); ?> 
                                             </div>
                                             
                                         </div>
