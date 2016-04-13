@@ -110,6 +110,33 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
+						 
+						<div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <br/>
+                                <select class="form-control btn-sm register-placeholder" id="selectedquestion" required>
+                                    <option>--Select a Security question--</option>
+                                    <option> What is your first pet's name?</option>
+                                    <option>What is your favorite color?</option>
+                                    <option>What is your favorite actor's name?</option>
+                                </select>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label> Write your own Security question</label>
+                                <input type="text" class="form-control input-sm" placeholder="OR Write your own Security question" id="anotherquestion">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Enter an anwer</label>
+                                <input type="text" class="form-control input-sm" placeholder="Enter an anwer" id="answer">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
                         <br>
                         <div id="success"></div>
                         <div class="row">
