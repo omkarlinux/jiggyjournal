@@ -94,7 +94,7 @@
                 </li>
 				<?php if(empty($_SESSION['userid']))
 						{?>
-                <li class="dropdown<?php if(isset($error)){ echo ' open'; }?>">
+                <li class="dropdown<?php if(isset($error) or isset($_POST['register'])){ echo ' open'; }?>">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>LOGIN</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
