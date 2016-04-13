@@ -59,6 +59,8 @@
                                     echo "Sorry, there was an error uploading your file.";
                                 }
                             }
+                            
+                            phpinfo();
                          ?>
                     </div>
                 </div>
