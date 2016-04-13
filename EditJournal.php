@@ -81,12 +81,13 @@
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
                                                         <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
+														<label for="UploadFile">Upload a Picture</label>
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-8">
                                                         <input type="hidden" name="journal_id" value="<?php echo $GLOBALS['journal_id']; ?>" />
                                                         <input type="text" class="form-control" name="title" value="<?php echo @$GLOBALS['title']? $GLOBALS['title']:''; ?>"><br />
-                                                        <div class='input-group date controls'>
+                                                      	<div class='input-group date controls'>
                                                             <input type='text' class="form-control" name="date"
                                                              value="<?php echo @$GLOBALS['date']? $GLOBALS['date']:''; ?>" required />
                                                             <span class="input-group-addon">
@@ -94,6 +95,8 @@
                                                             </span>
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
+														 <input type="file" name="UploadFile">
+														  <input type="submit" value="Upload Image" name="submit"><br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
                                                 </div>
