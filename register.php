@@ -41,7 +41,7 @@
 					// Check connection
 					if ($conn->connect_error) 
 					{
-						die("Connection failed: " . $conn->connect_error);
+						echo("Connection failed: " . $conn->connect_error);
 					} 
 					$fname = $_POST["Firstname"];
 					$lname = $_POST["Lastname"];
@@ -51,7 +51,7 @@
 				
 					 if(mysqli_num_rows($conn->query($sql1)) > 0)
 					 {
-					 	die("User already exists with this email!");
+					 	echo("User already exists with this email!");
 					 }
 					 else
 					 {	 
@@ -65,7 +65,7 @@
 					   {
 					 	 echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
 					   }
-					  }	
+					 }	
 					$conn->close();        
 				}
 			?>
