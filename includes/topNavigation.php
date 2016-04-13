@@ -119,7 +119,7 @@
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary btn-block" value="login">SIGN IN</button>
                                         </div>
-                                        <div class="help-block text-right"><a href="">Forgot password?</a></div>
+                                        <div class="help-block text-right"><a href="PasswordRecovery.php">Forgot password?</a></div>
                                     </form>
                                 </div>
                                 <div class="bottom text-center">
