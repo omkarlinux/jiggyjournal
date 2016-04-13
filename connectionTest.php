@@ -48,6 +48,13 @@
                                 echo "Sorry, file already exists.";
                                 $uploadOk = 0;
                             }
+                            
+                            // Check file size
+                            if ($_FILES["fileToUpload"]["size"] > 50000000) {
+                                echo "Sorry, your file is too large.";
+                                $uploadOk = 0;
+                            }
+                            
                             // Check if $uploadOk is set to 0 by an error
                             if ($uploadOk == 0) {
                                 echo "Sorry, your file was not uploaded.";
