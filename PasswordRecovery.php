@@ -33,21 +33,16 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <div class="col-md-5 text-left">
-                                                        <label for="selectQuestion">Select a question to reset your password:</label> <br /><br /><br />
-                                                        <label for="addQuestion">Add another question to reset your password:</label> <br /><br /><br />
-                                                        <label for="entryDate">Answer to the question selected/added:</label> <br /><br /><br />
-
+                                                        <label for="selectQuestion">Your Security Question is:</label> <br /><br /><br />
+                                                        <label for="addQuestion">Please Enter your Password</label> <br /><br /><br />
+                                                        
                                                     </div>
                                                     <div class="col-md-7">
-                                                        
                                                         <select class="form-control btn-sm" id="selectedquestion">
                                                             <option> What is your first pet's name?</option>
-                                                            <option>What is your favorite color?</option>
-                                                            <option>What is your favorite actor's name?</option>
                                                         </select>
                                                         <br/>
-                                                        <input type="text" class="form-control input-sm" id="anotherquestion"><br />
-                                                        <input type="text" class="form-control input-sm" id="answer"><br />
+                                                       <input type="text" class="form-control input-sm" id="answer" required><br />
                                                          <button class="btn btn-primary btn-sm text-left" type="submit" name="reset">Reset Password</button>&nbsp; &nbsp;&nbsp;&nbsp; 
                                                          <button class="btn btn-primary btn-sm text-left" type="submit" name="cancel">Cancel</button>
                                                     </div>
