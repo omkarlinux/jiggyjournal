@@ -99,7 +99,7 @@
 
                                             <div class="col-md-2 col-md-offset-0">
                                               <?php 
-											  echo $printdate=date('F j,Y', strtoTime($date));
+											  echo $printdate=date('F j, Y', strtoTime($date));
 											  ?>
                                             </div>
                                             
