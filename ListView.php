@@ -106,7 +106,7 @@
                                     <div class="panel-body text-justify">
 									<div class="row"> 
 									<div class="col-md-3">
-									<img src="img/profile.png" class="img-thumbnail" alt="Image" style="height:100px; width:100px;" />
+									<img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="height:180px; width:300px;" />
 									</div>
 									<div class="col-md-9">
 									<?php echo $content; ?>
