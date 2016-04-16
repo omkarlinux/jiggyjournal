@@ -98,7 +98,9 @@
 											</div>
 
                                             <div class="col-md-2 col-md-offset-0">
-                                                <?php echo $date; echo strptime($date,"m-d-Y"); echo date("F j, Y",strptime($date,"m-d-Y")); ?> 
+                                              <?php /*echo $date; echo strptime($date,"m-d-Y"); echo date("F j, Y",strptime($date,"m-d-Y")); */
+                                              echo $mydate = strtoTime($date); echo $printdate = date('F j, Y', $mydate);
+											  ?>
                                             </div>
                                             
                                         </div>
