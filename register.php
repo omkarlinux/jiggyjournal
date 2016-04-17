@@ -115,22 +115,27 @@
                         </div>
 						<script language="JavaScript" type="text/javascript">
 						<!--
-						function getOther(sel,fld){
-						fld.style.display = (sel.selectedIndex==sel.options.length-1)?"inline":"none";
+						function getOther(val)
+						{
+						var element=document.getElementById('color');
+						 if(val=='pick a color'||val=='others')
+						   element.style.display='block';
+						 else  
+						   element.style.display='none';
 						}
 						//-->
 						</script>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="getOther(this,this.form.oth);" id="selectedquestion" >
+                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="getOther(this.value);" id="selectedquestion" >
                                     <option>--Select a Security Question--</option>
                                     <option> What is your first pet's name?</option>
                                     <option>What is your favorite color?</option>
                                     <option>What is your favorite actor's name?</option>
 									<option>Other</option>
                                 </select>
-								<input type="text" name="oth" style="display: none;">
+								<input type="text" name="question" style="display:none;">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
