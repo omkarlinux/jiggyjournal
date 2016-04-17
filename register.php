@@ -123,7 +123,7 @@
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="getother(this,this.form.oth);" id="selectedquestion" >
+                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="getOther(this,this.form.oth);" id="selectedquestion" >
                                     <option>--Select a Security Question--</option>
                                     <option> What is your first pet's name?</option>
                                     <option>What is your favorite color?</option>
