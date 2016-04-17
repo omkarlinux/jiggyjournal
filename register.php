@@ -113,23 +113,24 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-						 
+						<script language="JavaScript" type="text/javascript">
+						<!--
+						function getOther(sel,fld){
+						fld.style.display = (sel.selectedIndex==sel.options.length-1)?"inline":"none";
+						}
+						//-->
+						</script>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" id="selectedquestion" required>
+                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="getother(this,this.form.oth);" id="selectedquestion" >
                                     <option>--Select a Security Question--</option>
                                     <option> What is your first pet's name?</option>
                                     <option>What is your favorite color?</option>
                                     <option>What is your favorite actor's name?</option>
+									<option>Other</option>
                                 </select>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label> Write your own Security Question</label>
-                                <input type="text" class="form-control input-sm" name ="security_question" placeholder="OR Write your own Security question" id="anotherquestion" required>
+								<input type="text" name="oth" style="display: none;">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
