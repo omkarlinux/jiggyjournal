@@ -47,7 +47,7 @@
 					$lname = $_POST["Lastname"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
-					$security_question = $_POST["secutiry_question"];
+					$security_question = $_POST["question"];
 					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
 					
