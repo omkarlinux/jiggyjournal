@@ -118,7 +118,7 @@
 						function getOther(val)
 						{
 						var element=document.getElementById('color');
-						 if(val=='pick a color'||val=='others')
+						 if(val=='--Select a Security Question--'||val=='Other')
 						   element.style.display='block';
 						 else  
 						   element.style.display='none';
@@ -130,10 +130,10 @@
                                 <br/>
                                 <select class="form-control btn-sm register-placeholder" name = "question" onchange="getOther(this.value);" id="selectedquestion" >
                                     <option>--Select a Security Question--</option>
-                                    <option> What is your first pet's name?</option>
-                                    <option>What is your favorite color?</option>
-                                    <option>What is your favorite actor's name?</option>
-									<option>Other</option>
+                                    <option value="What is your first pet's name?">What is your first pet's name?</option>
+                                    <option value="What is your favorite color?">What is your favorite color?</option>
+                                    <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
+									<option value="Other">Other</option>
                                 </select>
 								<input type="text" name="question" style="display:none;">
                                 <p class="help-block text-danger"></p>
