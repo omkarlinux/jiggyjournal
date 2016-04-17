@@ -116,7 +116,7 @@
 						<script language="JavaScript" type="text/javascript">
 						function getOther(val)
 						{
-						var element=document.getElementById('color');
+						var element=document.getElementById('question');
 						 if(val=='--Select a Security Question--'||val=='Other')
 						   element.style.display='block';
 						 else  
