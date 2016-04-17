@@ -114,7 +114,6 @@
                             </div>
                         </div>
 						<script language="JavaScript" type="text/javascript">
-						<!--
 						function getOther(val)
 						{
 						var element=document.getElementById('color');
@@ -123,7 +122,6 @@
 						 else  
 						   element.style.display='none';
 						}
-						//-->
 						</script>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
