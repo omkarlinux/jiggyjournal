@@ -116,7 +116,7 @@
 						<script language="JavaScript" type="text/javascript">
 						function getOther(val)
 						{
-						 if(val==="Other")
+						 if(val=="Other")
 						   document.getElementById('question').style.display='block';
 							else
 						   document.getElementById('question').style.display='none'; 
