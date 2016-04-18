@@ -117,7 +117,7 @@
 						function getOther(val)
 						{
 						 
-						 if(val==="other")
+						 if(val==="question")
 							document.getElementById('question').style.display='block';
 						else
 						   document.getElementById('question').style.display='none'; 
