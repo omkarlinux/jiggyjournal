@@ -1,9 +1,9 @@
 <?php
     class Connection{
         // Database connection setup
-		private $serverName = "mysql13.000webhost.com";
-		private $database = "a2354647_journal";
-		private $username = "a2354647_journal";
+		private $serverName = "localhost";
+		private $database = "jiggycom_db";
+		private $username = "jiggycom_jiggy";
 		private $password = "njoys6900";
         
         private $link;

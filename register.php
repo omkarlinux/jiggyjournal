@@ -30,9 +30,9 @@
 				{
 	
 					// Database connection setup
-					$serverName = "mysql13.000webhost.com";
-					$database = "a2354647_journal";
-					$username = "a2354647_journal";
+					$serverName = "localhost";
+					$database = "jiggycom_db";
+					$username = "jiggycom_jiggy";
 					$password = "njoys6900";
 					
 					//Create connection object

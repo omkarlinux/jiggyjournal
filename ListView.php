@@ -46,9 +46,9 @@
 		if(isset($_SESSION['userid']))
 		{
 		// Database connection setup
-		$serverName = "mysql13.000webhost.com";
-		$database = "a2354647_journal";
-		$user_name = "a2354647_journal";
+		$serverName = "localhost";
+		$database = "jiggycom_db";
+		$user_name = "jiggycom_jiggy";
 		$pass_word = "njoys6900";
 	   //Create connection object
        		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
