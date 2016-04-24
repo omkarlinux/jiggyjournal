@@ -112,13 +112,13 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                        <span class="glyphicon glyphicon-plus-sign"></span> How to contact Jiggy Journal team?
+                                        <span class="glyphicon glyphicon-plus-sign"></span> How do I contact the Jiggy Journal team?
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    You can reach us by providing your details and a short message in the Contact Us Section. Our team will get back to you as soon as possible.
+                                    You can reach us by providing your details and a short message in the Contact section.
                                 </div>
                             </div>
                         </div>
@@ -127,14 +127,14 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>  WHat's the size of photos can I upload?
+                                        <span class="glyphicon glyphicon-plus-sign"></span>  What size photos can I upload?
                                     </a>
                                 </h4>
                             </div>
 
                             <div id="collapse5" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    You can upload photo with a size of 700KB.
+                                    Photos can be up to 50MB.
                                 </div>
                             </div>
 
