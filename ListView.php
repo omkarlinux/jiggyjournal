@@ -45,22 +45,18 @@
 	<?PHP
 		if(isset($_SESSION['userid']))
 		{
-		// Database connection setup
-		$serverName = "localhost";
-		$database = "jiggycom_db";
-		$user_name = "jiggycom_jiggy";
-		$pass_word = "njoys6900";
+
 	   //Create connection object
-       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
+       		$conn = new Connection;
 	   // Check 
-	
-			if ($conn->connect_error) 
+			if (!$conn) 
 			{
 			  die("Connection failed: " . $conn->connect_error);
 			} 
 			$userid = $_SESSION['userid'];
-			$query = mysqli_query($conn, "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc");
-			$numrows = mysqli_num_rows($query);
+			$sql = "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc";
+			$conn->query($sql);
+			$numrows = $conn->rows();
 			if($numrows!==0)
 			{
 				?>
@@ -68,7 +64,7 @@
 				<?php 
 				for($x=$numrows; $x>=1; $x--)
 				{
-					if($row = mysqli_fetch_assoc($query))
+					if($row = $conn->fetch())
 					{
 					$title = $row['title'];
 					$content = $row['content'];

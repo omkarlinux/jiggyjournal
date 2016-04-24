@@ -32,6 +32,10 @@
                     return false;
             }
         }
+        
+        function rows(){
+            return $this->result->num_rows;
+        }
 
         function fetch($result=""){
             if (empty($result)){ $result = $this->result; }

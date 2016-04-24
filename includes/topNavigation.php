@@ -10,25 +10,21 @@
 	
 	if($username&&$password)
 	{
-	// Database connection setup
-		$serverName = "localhost";
-		$database = "jiggycom_db";
-		$user_name = "jiggycom_jiggy";
-		$pass_word = "njoys6900";
 	   //Create connection object
-       		$conn = new mysqli($serverName, $user_name, $pass_word, $database);
+       		$conn = new Connection;
 	   // Check connection
-		if ($conn->connect_error) 
+		if (!$conn) 
 		{
-			die("Connection failed: " . $conn->connect_error);
+			die("Connection failed: ");
 		} 
        
-	  $query = mysqli_query($conn, "SELECT * FROM user WHERE u_email='$username'");
-	  $numrows = mysqli_num_rows($query);
+	  $sql = "SELECT * FROM user WHERE u_email='$username'";
+      $conn->query($sql);
+	  $numrows = $conn->rows();
 	
 		if($numrows!==0)
 		{
-			if($row = mysqli_fetch_assoc($query))
+			if($row = $conn->fetch())
 			{
 			$dbpassword = $row['password'];
 			$dbuserid = $row['user_id'];

@@ -30,18 +30,13 @@
 				{
 	
 					// Database connection setup
-					$serverName = "localhost";
-					$database = "jiggycom_db";
-					$username = "jiggycom_jiggy";
-					$password = "njoys6900";
-					
 					//Create connection object
-					$conn = new mysqli($serverName, $username, $password, $database);
+					$conn = new Connection;
 
 					// Check connection
-					if ($conn->connect_error) 
+					if (!$conn) 
 					{
-						echo("Connection failed: " . $conn->connect_error);
+						echo("Connection failed: ");
 					} 
 					$fname = $_POST["Firstname"];
 					$lname = $_POST["Lastname"];
@@ -50,9 +45,9 @@
 					$security_question = $_POST["question"];
 					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
-					
+					$conn->query($sql1);
 				
-					 if(mysqli_num_rows($conn->query($sql1)) > 0)
+					 if($conn->rows() > 0)
 					 {
 					 	echo("User already exists with this email!");
 					 }
@@ -68,8 +63,7 @@
 					   {
 					 	 echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
 					   }
-					 }	
-					$conn->close();        
+					 }        
 				}
 			?>
 			<!-- Register -->
