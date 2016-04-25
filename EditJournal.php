@@ -98,7 +98,7 @@
 														 <div class="col-md-4 text-left">
 														 <input type="file" name="UploadFile"> <br/> <br/>
 														  <input type="submit" value="Upload Image" name="submit"><br/>
-														  </div> <br/> <br/>
+														  </div> 
 														  <div class="col-md-3 col-md-offest-0">
 														  <img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="height:120px; width:150px;"/>
 														  </div> <br/> <br/>
