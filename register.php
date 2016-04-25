@@ -108,7 +108,7 @@
                             </div>
                         </div>
 						<script language="JavaScript" type="text/javascript">
-						function showfield(name)
+						function showfield(question)
 						{
 							if(name =='Other')
 								document.getElementById('ques');
