@@ -131,7 +131,7 @@
                                     <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
 									<option value="Other">Other</option>
                                 </select>
-								<div id="ques">If Other: <input type="text" name="ques" style='display:none'></div>
+								<input type="text" name="ques" id="ques" style='display:none'>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
