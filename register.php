@@ -108,26 +108,29 @@
                             </div>
                         </div>
 						<script language="JavaScript" type="text/javascript">
-						function getOther(val)
+						function showfield(name)
 						{
-						 
-						 if(val==="question")
-							document.getElementById('question').style.display='block';
-						else
-						   document.getElementById('question').style.display='none'; 
+							if(name =='Other')
+								document.getElementById('ques').style.display="block";
+							else
+								document.getElementById('ques').style.display="none"; 
+						}
+						function hidefield()
+						{
+							document.getElementById('ques').style.display='none';
 						}
 						</script>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" onchange='getOther(this.value)' id="question">
+                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="showfield(this.options[this.selectedIndex].value)" id="question">
                                     <option>--Select a Security Question--</option>
                                     <option value= "What is your first pet's name?">What is your first pet's name?</option>
                                     <option value="What is your favorite color?">What is your favorite color?</option>
-                                    <option value="What is your favorite actor's name?</">What is your favorite actor's name?</option>
-									<option value="other">Other</option>
+                                    <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
+									<option value="Other">Other</option>
                                 </select>
-								<input type="text" name="question" id="question" style='display:none'>
+								<input type="text" name="ques" id="ques" style='display:none'>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
