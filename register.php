@@ -115,10 +115,7 @@
 							else
 								document.getElementById('ques').style.display="none"; 
 						}
-						function hidefield()
-						{
-							document.getElementById('ques').style.display='none';
-						}
+						
 						</script>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
