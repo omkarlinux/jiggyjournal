@@ -34,7 +34,7 @@
 					$conn = new Connection;
 
 					// Check connection
-					if (!$conn) 
+					if ($conn->isConnectionError()) 
 					{
 						echo("Connection failed: ");
 					} 
@@ -45,9 +45,9 @@
 					$security_question = $_POST["question"];
 					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
-					$conn->query($sql1);
+					$result = $conn->query($sql1);
 				
-					 if($conn->rows() > 0)
+					 if($result->num_rows > 0)
 					 {
 					 	echo("User already exists with this email!");
 					 }
@@ -61,7 +61,7 @@
 					   } 
 					   else 
 					   {
-					 	 echo "Not registered: " .$sql . "<br>" . mysqli_error($conn); 
+					 	 echo "Not registered: " .$sql . "<br>" . $conn->error(); 
 					   }
 					 }        
 				}

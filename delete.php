@@ -19,10 +19,7 @@
         }
     
         function del($journal_id)
-        {/* Delete journal entry from database */
-        
-            $connobj = new Connection;
-            
+        {/* Delete journal entry from database */            
             $delete_id = $_POST['journal_id'];
 
             // Database connection setup
@@ -62,6 +59,3 @@
 </body>
 
 </html>
- 
-?>
->>>>>>> origin/master

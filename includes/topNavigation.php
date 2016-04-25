@@ -13,16 +13,15 @@
 	   //Create connection object
        		$conn = new Connection;
 	   // Check connection
-		if (!$conn) 
+		if ($conn->isConnectionError()) 
 		{
 			die("Connection failed: ");
 		} 
        
 	  $sql = "SELECT * FROM user WHERE u_email='$username'";
-      $conn->query($sql);
-	  $numrows = $conn->rows();
+      $result = $conn->query($sql);
 	
-		if($numrows!==0)
+		if($result->num_rows!==0)
 		{
 			if($row = $conn->fetch())
 			{

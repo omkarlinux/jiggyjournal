@@ -14,13 +14,6 @@
             if (!empty($database)){ $this->database = $database; }
             //Create connection object
             $this->link = new mysqli($this->serverName, $this->username, $this->password, $this->database);
-            
-            // Check connection
-            if ($this->link->connect_error)
-            {
-                return false;
-            }
-            return $this->link;  // returns false if connection could not be made.
         }
 
         function query($sql){
@@ -33,10 +26,14 @@
             }
         }
         
-        function rows(){
-            return $this->result->num_rows;
+        function isConnectionError(){
+            return $this->link->connect_error;
         }
-
+        
+        function error(){
+            return mysqli_error($this->$link);
+        }
+        
         function fetch($result=""){
             if (empty($result)){ $result = $this->result; }
             return mysqli_fetch_assoc($result);

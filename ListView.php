@@ -49,20 +49,19 @@
 	   //Create connection object
        		$conn = new Connection;
 	   // Check 
-			if (!$conn) 
+			if ($conn->isConnectionError()) 
 			{
-			  die("Connection failed: " . $conn->connect_error);
+			  die("Connection failed: " . $conn->isConnectionError();
 			} 
 			$userid = $_SESSION['userid'];
 			$sql = "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc";
-			$conn->query($sql);
-			$numrows = $conn->rows();
-			if($numrows!==0)
+			$result = $conn->query($sql);
+			if($result->num_rows!==0)
 			{
 				?>
 				<div class="panel-group">
 				<?php 
-				for($x=$numrows; $x>=1; $x--)
+				for($x=$result->num_rows; $x>=1; $x--)
 				{
 					if($row = $conn->fetch())
 					{
