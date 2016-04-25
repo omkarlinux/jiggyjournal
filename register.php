@@ -117,7 +117,7 @@
 						}
 						function hidefield()
 						{
-							document.getElementById('question').style.display='none';
+							document.getElementById('question').style.display='block';
 						}
 						</script>
 						<body onload="hidefield()">
