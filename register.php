@@ -113,11 +113,11 @@
 							if(name =='Other')
 								document.getElementById('ques').style.display="block";
 							else
-								document.getElementById('ques').style.display="none"; 
+								document.getElementById('question').style.display="none"; 
 						}
 						function hidefield()
 						{
-							document.getElementById('ques').style.display='none';
+							document.getElementById('question').style.display='none';
 						}
 						</script>
 						<body onload="hidefield()">
