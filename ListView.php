@@ -51,7 +51,7 @@
 	   // Check 
 			if ($conn->isConnectionError()) 
 			{
-			  die("Connection failed: " . $conn->isConnectionError();
+			  die("Connection failed: " . $conn->isConnectionError());
 			} 
 			$userid = $_SESSION['userid'];
 			$sql = "SELECT * FROM journal WHERE user_id='$userid' ORDER by date desc";
