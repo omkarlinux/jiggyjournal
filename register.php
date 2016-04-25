@@ -115,8 +115,12 @@
 							else
 								document.getElementById('ques').style.display="none"; 
 						}
-						
+						function hidefield()
+						{
+							document.getElementById('ques').style.display='none';
+						}
 						</script>
+						<body onload="hidefield()">
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
@@ -127,7 +131,7 @@
                                     <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
 									<option value="Other">Other</option>
                                 </select>
-								<input type="text" name="ques" id="ques" style='display:none'>
+								<div id="ques">If Other: <input type="text" name="ques" style='display:none'></div>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
