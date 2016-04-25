@@ -111,21 +111,21 @@
 						function showfield(name)
 						{
 							if(name =='Other')
-								document.getElementById('ques').style.display="block";
+								document.getElementById('ques');
 							else
-								document.getElementById('question').style.display="block"; 
+								document.getElementById('question');
 						}
 						function hidefield()
 						{
-							document.getElementById('question').style.display='block';
+							document.getElementById('ques').style.display='none';
 						}
 						</script>
 						<body onload="hidefield()">
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="showfield(this.options[this.selectedIndex].value)" id="question">
-                                    <option>--Select a Security Question--</option>
+                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="showfield(this.id)" id="question">
+                                    <option value="">--Select a Security Question--</option>
                                     <option value= "What is your first pet's name?">What is your first pet's name?</option>
                                     <option value="What is your favorite color?">What is your favorite color?</option>
                                     <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
