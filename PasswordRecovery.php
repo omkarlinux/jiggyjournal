@@ -92,6 +92,7 @@
                                                 </div>
                                             </div>
 										</form>
+										<form action="PasswordRecovery.php" method="post" >
                                             <div id="show-security-row">
                                                 <div class="row">
                                                     <div class="col-md-2 text-left">
