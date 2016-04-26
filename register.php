@@ -52,7 +52,7 @@
 					 {
 					 	echo("User already exists with this email!");
 					 }
-					 elseif($password === $password1)
+					 else
 					 {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
@@ -64,11 +64,8 @@
 					      {
 					 	    echo "Not registered: " .$sql . "<br>" . $conn->error(); 
 					      }
-					    }
-					   else
-					    {
-					      echo("Passwords donot match!")
-					    }
+					    
+					   
 					 }        
 				}
 			?>
