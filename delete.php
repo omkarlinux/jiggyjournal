@@ -21,13 +21,29 @@
         function del($journal_id)
         {/* Delete journal entry from database */            
             $delete_id = $_POST['journal_id'];
-
+            
+            //Check if photo exists for journal id
+            $sql = "SELECT photoFile FROM journal WHERE journal_id = '$delete_id'";
+            $result = $conn->query($sql);
+            if ($result->num_rows!==0)
+            {
+                if($row = $conn->fetch())
+                {
+                    $photoFile = $row['photoFile'];
+                    //If yes, delete existing file from server
+                    if(isset($photoFile))
+                    {
+                        unlink("$target_dir$photoFile");
+                    }
+                }
+            }
+            
             // Database connection setup
             $connobj = new Connection;
             
             $sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
             if( $connobj->query($sql) === TRUE)
-            { 
+            {
             ?> 	
             <header>
                 <div class="main-content container">
