@@ -53,6 +53,7 @@
 					 }
 					 else
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
@@ -70,6 +71,11 @@
 					 {	 
 					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
+=======
+					 {	 
+					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
+					
+>>>>>>> parent of 46e48a2... reg_paswords match issue
 					   if ($conn->query($sql) === TRUE) 
 					   {
 					 	 echo "Registered successfully";
@@ -78,6 +84,9 @@
 					   {
 					 	 echo "Not registered: " .$sql . "<br>" . $conn->error(); 
 					   }
+<<<<<<< HEAD
+>>>>>>> parent of 46e48a2... reg_paswords match issue
+=======
 >>>>>>> parent of 46e48a2... reg_paswords match issue
 					 }        
 				}
