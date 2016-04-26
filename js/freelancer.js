@@ -46,6 +46,8 @@ $(document).ready(function () {
     $('.dropdown-menu').find('form').click(function (e) {
         e.stopPropagation();
     });
+    //Hide security other question initially
+    $('#otherQuestion').hide();
 });
 
 // interval is in milliseconds. 1000 = 1 second - so 1000 * 10 = 10 seconds
