@@ -99,8 +99,8 @@
 														 <input type="file" name="UploadFile"> <br/> <br/>
 														  <input type="submit" value="Upload Image" name="submit"><br/>
 														  </div> 
-														  <div class="col-md-3 col-md-offest-0">
-														  <img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="height:120px; width:150px;"/>
+														  <div class="col-md-4 col-md-offest-0">
+														  <img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="max-height:120px; width:100%"/>
 														  </div> <br/> <br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
