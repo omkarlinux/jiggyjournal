@@ -17,6 +17,11 @@
 				{
 					get_security();
 				}
+				
+				 if(isset($_POST['go']))
+				{
+					get_security();
+				}
 			
 				function get_security()
 				{
@@ -76,7 +81,7 @@
                                                         <input type="text" name="emailId" value="<?php echo $emailID; ?>" class="form-control input-sm" id="emailId" required><br />
                                                    </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm" type="submit" name="go" value="go">Go</button>
+                                                        <button class="btn btn-primary btn-sm" name="go" id="go" type="submit" name="go" value="go">Go</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,7 +108,7 @@
                                                         <input type="text" name="answer" class="form-control input-sm" id="answer" required>
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm text-left" type="submit" name="submit">Submit</button>
+                                                        <button name="submit" class="btn btn-primary btn-sm text-left" type="submit" id="submit" value="submit">Submit</button>
                                                     </div>
                                                 </div>
                                     </div>
@@ -132,7 +137,7 @@
                                                         <input type="text" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm text-left" type="submit" name="submit">Submit</button>
+                                                        <button name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
                                                     </div>
                                                 </div>
                                             </div>
