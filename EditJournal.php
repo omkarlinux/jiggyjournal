@@ -81,7 +81,7 @@
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
                                                         <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
-														<label for="UploadFile" class="text-left">Upload a Picture:</label><br /><br /><br /><br/><br/>
+														<label for="UploadFile" class="text-left">Upload Photo:</label><br /><br /><br /><br/><br/>
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-9">
@@ -96,11 +96,11 @@
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
 														 <div class="col-md-4 text-left">
-														 <input type="file" name="UploadFile"> <br/> <br/>
-														  <input type="submit" value="Upload Image" name="submit"><br/>
+														 <input id="imageInput" type="file" name="UploadFile"> <br/> <br/>
+														  <br/>
 														  </div> 
 														  <div class="col-md-3 col-md-offest-0">
-														  <img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="height:120px; width:150px;"/>
+														  <img id="preview" src="#" class="img-thumbnail" alt="Image" style="height:120px; width:150px;"/>
 														  </div> <br/> <br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>
