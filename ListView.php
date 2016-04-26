@@ -106,7 +106,7 @@
 									<?php
 										if(isset($photoFile)){?>
 										<div class="col-md-3">
-											<img src="journalImages/<?php echo $photoFile; ?>" class="img-thumbnail" alt="Image" style="height:180px; width:300px;" />
+											<img src="journalImages/<?php echo $photoFile; ?>" class="img-thumbnail" alt="Image" style="width:280px;" />
 										</div>
 									<?php		
 										}
