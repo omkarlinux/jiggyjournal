@@ -126,14 +126,14 @@ $("#imageInput").change(function(){
 
 //Selecting other in security question shows input box
 function selectSecurityQuestion(){
-    $('#otherQuestion').value = $('#question').value;
-   /* if(this.options[this.selectedIndex].value == "Other")
+    $('#otherQuestion').val($('#question').val());
+    if($('#question').val() == "Other")
     {
-        this.form.ques.value = "";
+        $('#otherQuestion').val("");
         $('#otherQuestion').show();
     }
     else
     {
         $('#otherQuestion').hide();
-    }*/
+    }
 }
