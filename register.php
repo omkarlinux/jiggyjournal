@@ -52,10 +52,8 @@
 					 {
 					 	echo("User already exists with this email!");
 					 }
-					 else
-					 {	 
-				       if($password === $password1)
-					   {
+					 elseif($password === $password1)
+					 {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
 					     if ($conn->query($sql) === TRUE) 
