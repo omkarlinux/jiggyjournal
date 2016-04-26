@@ -15,15 +15,21 @@
 		<?php
 				 if(isset($_POST['go']))
 				{
-					get_security();
+					get_email();
 				}
 				
-				 if(isset($_POST['go']))
+				 if(isset($_POST['submit']))
 				{
 					get_security();
 				}
+				
+				 if(isset($_POST['reset']))
+				{
+					get_reset();
+				}
 			
-				function get_security()
+			
+				function get_email()
 				{
 	
 					// Database connection setup
@@ -44,8 +50,8 @@
 				
 					 if($result->num_rows > 0)
 					 {
-					 	$emailId= $row['email']
-						$security= $row['security']
+					 	$emailId= $row['email'];
+						$security= $row['security'];
 					 }
 					 else
 					 {	 
