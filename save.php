@@ -73,27 +73,43 @@
         }
         
         function upload_photo($journal_id){
+            $conn = new Connection;
             $target_dir = "journalImages/";
             $uploadOk = 1;
             //Filechecks
             // Check if image file is a actual image or fake image
-                            if(isset($_POST["submit"])) {
-                                $check = getimagesize($_FILES["UploadFile"]["tmp_name"]);
-                                if($check !== false) {
-                                    echo "File is an image - " . $check["mime"] . ".";
-                                    $uploadOk = 1;
-                                } else {
-                                    echo "File is not an image.";
-                                    $uploadOk = 0;
-                                }
-                            }
+            if(isset($_POST["submit"])) {
+                $check = getimagesize($_FILES["UploadFile"]["tmp_name"]);
+                if($check !== false) {
+                    echo "File is an image - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                } else {
+                    echo "File is not an image.";
+                    $uploadOk = 0;
+                }
+            }
             // Check file size
-                            if ($_FILES["UploadFile"]["size"] > 50000000) {
-                                echo "Sorry, your file is too large.";
-                                $uploadOk = 0;
-                            }
+            if ($_FILES["UploadFile"]["size"] > 50000000) {
+                echo "Sorry, your file is too large.";
+                $uploadOk = 0;
+            }
             //Check if photo exists for journal id
-            //If yes, delete existing file from server
+            $sql = "SELECT photoFile FROM journal WHERE journal_id = '$journal_id'";
+            $result = $conn->query($sql);
+            if ($result->num_rows!==0)
+            {
+                if($row = $conn->fetch())
+                {
+                    $photoFile = $row['photoFile'];
+                    //If yes, delete existing file from server
+                    if(isset($photoFile))
+                    {
+                        unlink("$target_dir$photoFile");
+                    }
+                }
+            }
+            
+            
             //Format the new filename
             
             $name = $_FILES['UploadFile']['name'];
@@ -113,6 +129,7 @@
             (!preg_match('/^\.\w+$/', $extension)))
             {
                 return("Bad file extension");
+                $uploadOk = 0;
             }
             # Put the full name back together
             $name = "$journal_id$extension";
@@ -135,9 +152,7 @@
                 {
                     //Update journal id with new photo file name
                     $sql = "UPDATE journal SET photoFile = '$name' WHERE journal_id = '$journal_id';";
-                    
-                    $conn = new Connection;
-                    
+ 
                     $conn->query($sql);
                 }
             }
