@@ -112,7 +112,7 @@
 														  </div> 
 
 														  <div class="image preview col-md-4 col-md-offest-0">
-														    <img id="preview" src="journalImages/<?php echo $GLOBALS['photoFile'];?>" class="img-thumbnail" alt="Image" style="max-height:120px; width:100%"/>
+														    <img id="preview" src="journalImages/<?php echo $GLOBALS['photoFile'];?>" class="img-thumbnail" alt="Image" style="max-height:120px;"/>
 
 														  </div> <br/> <br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
