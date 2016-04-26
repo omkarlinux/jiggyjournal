@@ -82,7 +82,17 @@
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
                                                         <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
-														<label for="UploadFile" class="text-left">Upload Photo:</label><br /><br /><br /><br/><br/>
+														<label for="UploadFile" class="text-left">
+                                                        <?php 
+                                                            if(isset($GLOBALS['photoFile']))
+                                                            {
+                                                                echo 'Update';
+                                                            }
+                                                            else
+                                                            {
+                                                                echo 'Upload';
+                                                            } 
+                                                        ?> Photo:</label><br /><br /><br /><br/><br/>
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-9">
