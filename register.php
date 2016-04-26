@@ -112,7 +112,7 @@
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
 								<form>
-								<input type="text" name="ques" list="question" id="ques" value= maxlength="255" style="width:50%"/>
+								<input type="text" name="ques" list="question" id="ques" maxlength="255" style="width:50%"/>
 								<select class="form-control btn-sm register-placeholder" name = "options" onchange="this.form.ques.value=this.options[this.selectedIndex].value" id="question">
 									<datalist id="question">  
 									<option value="">--Select a Security Question--</option>
