@@ -107,7 +107,9 @@
                                                     </div>
                                                 </div>
                                     </div>
+									</form>
                                     <br/><br/>
+									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
                                                 <h4 class="text-left">Reset your password</h4>
                                                 <div class="row">
