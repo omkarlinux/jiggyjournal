@@ -75,14 +75,14 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>First Name</label>
-                                <input type="text" class="form-control" name="Firstname" placeholder="FirstName" id="Firstname" required data-validation-required-message="Please enter your firstname.">
+                                <input type="text" class="form-control" name="Firstname" placeholder="First Name" id="Firstname" required data-validation-required-message="Please enter your firstname.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						 <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Last Name</label>
-                                <input type="text" class="form-control" name="Lastname" placeholder="Lastname" id="Lastname" required data-validation-required-message="Please enter your lastname.">
+                                <input type="text" class="form-control" name="Lastname" placeholder="Last Name" id="Lastname" required data-validation-required-message="Please enter your lastname.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
