@@ -74,14 +74,14 @@
 					<form action="register.php" method="post" >
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>FirstName</label>
+                                <label>First Name</label>
                                 <input type="text" class="form-control" name="Firstname" placeholder="FirstName" id="Firstname" required data-validation-required-message="Please enter your firstname.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						 <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>LastName</label>
+                                <label>Last Name</label>
                                 <input type="text" class="form-control" name="Lastname" placeholder="Lastname" id="Lastname" required data-validation-required-message="Please enter your lastname.">
                                 <p class="help-block text-danger"></p>
                             </div>
