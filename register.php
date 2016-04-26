@@ -114,7 +114,6 @@
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
 								<form>
-								<input type="text" name="ques" list="question" id="ques" style="width:50%"/>
 								<select class="form-control btn-sm register-placeholder" name = "options" onchange="this.form.ques.value=this.options[this.selectedIndex].value" id="question">
 									<datalist id="question">  
 									<option value="">--Select a Security Question--</option>
@@ -124,7 +123,7 @@
 									<option value="Other">Other</option>
 									<datalist>
 								</select>
-								
+								<input id="otherQuestion" type="text" name="ques" list="question" id="ques" style="width:50%"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
