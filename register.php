@@ -115,7 +115,7 @@
 								<select class="form-control btn-sm register-placeholder" name = "options" onchange="this.form.ques.value=this.options[this.selectedIndex].value" id="question">
 									<datalist id="question">  
 									<option value="">--Select a Security Question--</option>
-									<option value= "What is your first pet's name?">What is your first pet's name?</option>
+									<option value= "What is your first pet's name?">"What is your first pet's name?"</option>
 									<option value="What is your favorite color?">What is your favorite color?</option>
 									<option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
 									<option value="Other">Other</option>
