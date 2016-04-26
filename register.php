@@ -52,9 +52,7 @@
 					 	echo("User already exists with this email!");
 					 }
 					 else
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 					 {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
@@ -67,20 +65,7 @@
 					 	    echo "Not registered: " .$sql . "<br>" . $conn->error(); 
 					      }
 					    
-					 {	 
-					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
-					
-
-					   if ($conn->query($sql) === TRUE) 
-					   {
-					 	 echo "Registered successfully";
-					   } 
-					   else 
-					   {
-					 	 echo "Not registered: " .$sql . "<br>" . $conn->error(); 
-					   }
-
-					 }        
+					 }	        
 				}
 			?>
 			<!-- Register -->
