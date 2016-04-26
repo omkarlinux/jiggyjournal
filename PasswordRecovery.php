@@ -132,7 +132,7 @@
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
                                                        
-                                                        <input type="text" class="form-control input-sm" id="answer" required>
+                                                        <input type="text" name="answer" class="form-control input-sm" id="answer" required>
                                                     </div>
                                                    
                                                 </div>
@@ -146,7 +146,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" class="form-control input-sm" id="password" required >
+                                                        <input type="text" name="password" class="form-control input-sm" id="password" required>
                                                     </div>
                                                 </div><br/>
                                                 <div class="row">
@@ -157,10 +157,10 @@
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
 
-                                                        <input type="text" class="form-control input-sm" id="confirmPassword" required>
+                                                        <input type="text" name="confirmPassword" class="form-control input-sm" id="confirmPassword" required>
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm text-left" type="submit" name="submit">Submit</button>
+                                                        <button class="btn btn-primary btn-sm text-left" type="submit" name="submit" value="submit">Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
