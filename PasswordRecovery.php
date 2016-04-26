@@ -12,7 +12,7 @@
     require 'includes/topNavigation.php';
 ?>
 
-<?php
+		<?php
 				 if(isset($_POST['submit']))
 				{
 					get_security();
@@ -76,7 +76,7 @@
 					   
 					 }        
 				}
-			?>
+		?>
     <!-- Main Content -->
     <header>
         <div class="main-content container">
@@ -136,8 +136,8 @@
                                                     </div>
                                                    
                                                 </div>
-                                    </div>
-                                    <br/><br/>
+                                          </div>
+                                          <br/><br/>
                                             <div id="show-reset-password">
                                                 <h4 class="text-left">Reset your password</h4>
                                                 <div class="row">
@@ -160,7 +160,7 @@
                                                         <input type="text" name="confirmPassword" class="form-control input-sm" id="confirmPassword" required>
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm text-left" type="submit" name="submit" value="submit">Submit</button>
+                                                        <input class="btn btn-primary btn-sm text-left" type="submit" name="submit" value="Submit">Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
