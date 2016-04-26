@@ -30,6 +30,10 @@
             return $this->link->connect_error;
         }
         
+        function getLastID(){
+            return $this->link->insert_id;
+        }
+        
         function error(){
             return mysqli_error($this->$link);
         }
