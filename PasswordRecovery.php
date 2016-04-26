@@ -102,7 +102,7 @@
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
                                                        
-                                                        <input type="text" class="form-control input-sm" id="answer" required>
+                                                        <input type="text" class="form-control input-sm" id="answer" >
                                                     </div>
                                                     <div class="col-md-1">
                                                         <button class="btn btn-primary btn-sm text-left" type="submit" name="submit">Submit</button>
@@ -118,7 +118,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" class="form-control input-sm" id="password" required>
+                                                        <input type="text" class="form-control input-sm" id="password" >
                                                     </div>
                                                 </div><br/>
                                                 <div class="row">
@@ -129,7 +129,7 @@
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
 
-                                                        <input type="text" class="form-control input-sm" id="confirmPassword" required>
+                                                        <input type="text" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
                                                         <button class="btn btn-primary btn-sm text-left" type="submit" name="submit">Submit</button>
