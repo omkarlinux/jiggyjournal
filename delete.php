@@ -22,6 +22,9 @@
         {/* Delete journal entry from database */            
             $delete_id = $_POST['journal_id'];
             
+            // Database connection setup
+            $connobj = new Connection;
+            
             //Check if photo exists for journal id
             $sql = "SELECT photoFile FROM journal WHERE journal_id = '$delete_id'";
             $result = $conn->query($sql);
@@ -37,9 +40,6 @@
                     }
                 }
             }
-            
-            // Database connection setup
-            $connobj = new Connection;
             
             $sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
             if( $connobj->query($sql) === TRUE)
