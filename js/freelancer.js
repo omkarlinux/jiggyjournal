@@ -127,7 +127,7 @@ $("#imageInput").change(function(){
 //Selecting other in security question shows input box
 function selectSecurityQuestion(){
     this.form.ques.value=this.options[this.selectedIndex].value;
-    if(this.options[this.selectedIndex].value=="Other")
+   /* if(this.options[this.selectedIndex].value == "Other")
     {
         this.form.ques.value = "";
         $('#otherQuestion').show();
@@ -135,5 +135,5 @@ function selectSecurityQuestion(){
     else
     {
         $('#otherQuestion').hide();
-    }
+    }*/
 }
