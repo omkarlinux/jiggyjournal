@@ -54,7 +54,7 @@
 					 }
 					 else
 					 {	 
-				       if($password==$password1)
+				       if($password === $password1)
 					   {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
