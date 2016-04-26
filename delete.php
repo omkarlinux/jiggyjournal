@@ -15,19 +15,35 @@
         //If delete button is called
         if(isset($_POST['delete']))
         {
-            del($journal_id);
+            del();
         }
     
-        function del($journal_id)
+        function del()
         {/* Delete journal entry from database */            
             $delete_id = $_POST['journal_id'];
-
+            
             // Database connection setup
             $connobj = new Connection;
+            $target_dir = "journalImages/";
+            //Check if photo exists for journal id
+            $sql = "SELECT photoFile FROM journal WHERE journal_id = '$delete_id'";
+            $result = $connobj->query($sql);
+            if ($result->num_rows!==0)
+            {
+                if($row = $connobj->fetch())
+                {
+                    $photoFile = $row['photoFile'];
+                    //If yes, delete existing file from server
+                    if(isset($photoFile))
+                    {
+                        unlink("$target_dir$photoFile");
+                    }
+                }
+            }
             
             $sql=  "DELETE FROM journal WHERE journal_id='$delete_id';";
             if( $connobj->query($sql) === TRUE)
-            { 
+            {
             ?> 	
             <header>
                 <div class="main-content container">

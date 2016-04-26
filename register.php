@@ -42,7 +42,7 @@
 					$lname = $_POST["Lastname"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
-					$security_question = $_POST["question"];
+					$security_question = $_POST["ques"];
 					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
 					$result = $conn->query($sql1);
@@ -52,18 +52,20 @@
 					 	echo("User already exists with this email!");
 					 }
 					 else
-					 {	 
-					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
+
+					 {
+					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
-					   if ($conn->query($sql) === TRUE) 
-					   {
-					 	 echo "Registered successfully";
-					   } 
-					   else 
-					   {
-					 	 echo "Not registered: " .$sql . "<br>" . $conn->error(); 
-					   }
-					 }        
+					     if ($conn->query($sql) === TRUE) 
+					      {
+					 	    echo "Registered successfully";
+					      } 
+					      else 
+					      {
+					 	    echo "Not registered: " .$sql . "<br>" . $conn->error(); 
+					      }
+					    
+					 }	        
 				}
 			?>
 			<!-- Register -->
@@ -107,31 +109,21 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-						<script language="JavaScript" type="text/javascript">
-						function showfield(question)
-						{
-							if(name =='Other')
-								document.getElementById('ques');
-							else
-								document.getElementById('question');
-						}
-						function hidefield()
-						{
-							document.getElementById('ques').style.display='none';
-						}
-						</script>
-						<body onload="hidefield()">
+						
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
-                                <select class="form-control btn-sm register-placeholder" name = "question" onchange="showfield(this.id)" id="question">
-                                    <option value="">--Select a Security Question--</option>
-                                    <option value= "What is your first pet's name?">What is your first pet's name?</option>
-                                    <option value="What is your favorite color?">What is your favorite color?</option>
-                                    <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
+								<form>
+								<select class="form-control btn-sm register-placeholder" name = "options" onchange="this.form.ques.value=this.options[this.selectedIndex].value" id="question">
+									<datalist id="question">  
+									<option value="">--Select a Security Question--</option>
+									<option value= "What is your first pet's name?">What is your first pet's name?</option>
+									<option value="What is your favorite color?">What is your favorite color?</option>
+									<option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
 									<option value="Other">Other</option>
-                                </select>
-								<input type="text" name="ques" id="ques" style='display:none'>
+									<datalist>
+								</select>
+								<input id="otherQuestion" type="text" name="ques" list="question" id="ques" style="width:50%"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>

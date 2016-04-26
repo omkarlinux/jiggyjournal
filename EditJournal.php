@@ -44,6 +44,7 @@
                         $GLOBALS['title'] = $row['title'];
                         $GLOBALS['content'] = $row['content'];
                         $phpDate = strtotime($row['date']);
+                        $GLOBALS['photoFile'] = $row['photoFile'];
                         $GLOBALS['date'] = date('m/d/Y',$phpDate);
                     }
                 }
@@ -56,7 +57,7 @@
                     <div class="intro-text">
                       <hr class="star-light">
                        <div class="jumbotron">
-                            <form name="editPageForm" id="editPageForm" method="post" >
+                            <form name="editPageForm" enctype="multipart/form-data" id="editPageForm" method="post" >
                                 <input type="hidden" name="action" value="<?php if(isset($_POST['edit'])){echo 'update';}
                                                                                 else{echo 'create';} ?>" />
                                 <div class="panel-group control-group">
@@ -81,7 +82,17 @@
                                                     <div class="col-md-2">
                                                         <label for="Entry" class="text-left">Journal Title:</label> <br /><br /><br />
                                                         <label for="EntryDate" class="text-left">Entry Date:</label> <br /><br /><br />
-														<label for="UploadFile" class="text-left">Upload a Picture:</label><br /><br /><br /><br/><br/>
+														<label for="UploadFile" class="text-left">
+                                                        <?php 
+                                                            if(isset($GLOBALS['photoFile']))
+                                                            {
+                                                                echo 'Update';
+                                                            }
+                                                            else
+                                                            {
+                                                                echo 'Upload';
+                                                            } 
+                                                        ?> Photo:</label><br /><br /><br /><br/><br/>
                                                         <label for="Entry" class="text-left">Journal Entry:</label>
                                                     </div>
                                                     <div class="col-md-9">
@@ -96,11 +107,13 @@
                                                             <p class="help-block text-danger"></p>
                                                          </div><br />
 														 <div class="col-md-4 text-left">
-														 <input type="file" name="UploadFile"> <br/> <br/>
-														  <input type="submit" value="Upload Image" name="submit"><br/>
+														 <input id="imageInput" type="file" name="UploadFile"> <br/> <br/>
+														  <br/>
 														  </div> 
-														  <div class="col-md-4 col-md-offest-0">
-														  <img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="max-height:120px; width:100%"/>
+
+														  <div class="image preview col-md-4 col-md-offest-0">
+														    <img id="preview" src="journalImages/<?php echo $GLOBALS['photoFile'];?>" class="img-thumbnail" alt="Image" style="max-height:120px; width:100%"/>
+
 														  </div> <br/> <br/>
                                                         <textarea name="content" class="form-control col-md-10" rows="5" ><?php echo @$GLOBALS['content']? $GLOBALS['content']:''; ?></textarea>
                                                     </div>

@@ -105,3 +105,21 @@ function isValidDate($el, dateString, callback)
       message: "Must be a valid date in mm/dd/yyyy format"
     });
 };
+
+//Image preview function
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#preview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imageInput").change(function(){
+    readURL(this);
+});

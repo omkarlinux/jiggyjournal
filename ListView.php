@@ -67,6 +67,7 @@
 					{
 					$title = $row['title'];
 					$content = $row['content'];
+					$photoFile = $row['photoFile'];
 					$date = $row['date'];
 					$journal_id=$row['journal_id'];
 		?>
@@ -102,9 +103,14 @@
                                     </div>
                                     <div class="panel-body text-justify">
 									<div class="row"> 
-									<div class="col-md-3">
-									<img src="img/picture.jpg" class="img-thumbnail" alt="Image" style="height:180px; width:300px;" />
-									</div>
+									<?php
+										if(isset($photoFile)){?>
+										<div class="col-md-3">
+											<img src="journalImages/<?php echo $photoFile; ?>" class="img-thumbnail" alt="Image" style="height:180px; width:300px;" />
+										</div>
+									<?php		
+										}
+									?>
 									<div class="col-md-9">
 									<?php echo $content; ?>
 									</div>
