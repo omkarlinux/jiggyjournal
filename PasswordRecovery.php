@@ -65,8 +65,7 @@
 					
 					$answer = $_POST["answer"];
 					
-					if
-					
+									
 				}
 				function get_reset()
 				{
