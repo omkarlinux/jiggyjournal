@@ -42,7 +42,6 @@
 					$lname = $_POST["Lastname"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
-					$password1 = $_POST["password1"]
 					$security_question = $_POST["ques"];
 					$answer = $_POST["answer"];
 					$sql1 = "SELECT * FROM user Where u_email='$email'";
@@ -53,6 +52,7 @@
 					 	echo("User already exists with this email!");
 					 }
 					 else
+<<<<<<< HEAD
 					 {
 					    $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
 					
@@ -66,6 +66,19 @@
 					      }
 					    
 					   
+=======
+					 {	 
+					  $sql = "INSERT INTO user(u_fname,u_lname, u_email, password, security, answer) VALUES ('$fname','$lname' ,'$email','$password', '$security_question','$answer');";
+					
+					   if ($conn->query($sql) === TRUE) 
+					   {
+					 	 echo "Registered successfully";
+					   } 
+					   else 
+					   {
+					 	 echo "Not registered: " .$sql . "<br>" . $conn->error(); 
+					   }
+>>>>>>> parent of 46e48a2... reg_paswords match issue
 					 }        
 				}
 			?>
@@ -106,7 +119,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Re-enter Password</label>
-                                <input type="password" class="form-control" name="password1" placeholder="Re-enter Password" id="password1" required data-validation-required-message="Please re-enter your password.">
+                                <input type="password" class="form-control" placeholder="Re-enter Password" id="password1" required data-validation-required-message="Please re-enter your password.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
