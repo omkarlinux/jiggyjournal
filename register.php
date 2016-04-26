@@ -111,6 +111,7 @@
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <br/>
+								<input type="text" name="ques" id="ques" maxlength="255" style="width:50%"/>
                                 <select class="form-control btn-sm register-placeholder" name = "question" onchange="this.form.ques.value=this.question[this.selectedIndex].value" id="question">
                                     <option value="">--Select a Security Question--</option>
                                     <option value= "What is your first pet's name?">What is your first pet's name?</option>
@@ -118,7 +119,7 @@
                                     <option value="What is your favorite actor's name?">What is your favorite actor's name?</option>
 									<option value="Other">Other</option>
                                 </select>
-								<input type="text" name="ques" id="ques" maxlength="255" style="width:50%"/>
+								
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
