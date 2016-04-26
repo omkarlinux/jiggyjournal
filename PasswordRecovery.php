@@ -12,6 +12,45 @@
     require 'includes/topNavigation.php';
 ?>
 
+<?php
+				 if(isset($_POST['go']))
+				{
+					get_security();
+				}
+			
+				function get_security()
+				{
+	
+					// Database connection setup
+					//Create connection object
+					$conn = new Connection;
+
+					// Check connection
+					if ($conn->isConnectionError()) 
+					{
+						echo("Connection failed: ");
+					} 
+					
+					$emailId = $_POST["emailID"];
+					
+					$sql1 = "SELECT * FROM user Where u_email='$emailID'";
+					$result = $conn->query($sql1);
+				
+					 if($result->num_rows > 0)
+					 {
+					 	if($row = $conn->fetch())
+						{
+						$dbsecurity=$row['security'];
+					
+						}
+					 }
+					 else
+					 {	 
+					  echo("Invalid usename, Try again!");
+					   
+					 }        
+				}
+			?>
     <!-- Main Content -->
     <header>
         <div class="main-content container">
@@ -28,7 +67,7 @@
                                         <div class="panel-heading">
                                            &nbsp;
                                           </div>
-                                        
+                                        <form action="PasswordRecovery.php" method="post" >
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
                                             <div id="show-email-row" class="row">
                                                 <div class="form-group">
@@ -36,14 +75,14 @@
                                                         <label for="entryDate">Enter Email ID:</label> <br /><br />
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" class="form-control input-sm" id="emailId" required><br />
+                                                        <input type="text" name="emailId" class="form-control input-sm" id="emailId" required><br />
                                                    </div>
                                                     <div class="col-md-1">
-                                                        <button class="btn btn-primary btn-sm" type="submit" name="go">Go</button>
+                                                        <button class="btn btn-primary btn-sm" type="submit" name="go" value="go">Go</button>
                                                     </div>
                                                 </div>
                                             </div>
-
+										</form>
                                             <div id="show-security-row">
                                                 <div class="row">
                                                     <div class="col-md-2 text-left">
@@ -51,7 +90,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <span class="form-control disabled text-left input-sm">What is your first pet's name?</span>
+                                                      <span class="form-control disabled text-left input-sm"><?php echo $dbsecurity; ?></span> 
                                                     </div>
                                                 </div><br/>
                                                 
