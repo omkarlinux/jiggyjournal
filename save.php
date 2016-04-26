@@ -134,7 +134,7 @@
                 else
                 {
                     //Update journal id with new photo file name
-                    $sql = "UPDATE journal SET photoFile = $name WHERE journal_id = $journal_id;";
+                    $sql = "UPDATE journal SET photoFile = $name WHERE journal_id = '$journal_id';";
                     
                     $conn = new Connection;
                     
