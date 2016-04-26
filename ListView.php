@@ -112,9 +112,10 @@
 										}
 									?>
 									<div class="col-md-9">
-									<div style="white-space:pre-line">
-									<?php echo $content; ?>
-									</div>
+									<span>
+									<?php echo nl2br($content); ?>
+									</span>
+									
 									</div>
 									</div>
 									</div>
