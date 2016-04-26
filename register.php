@@ -138,7 +138,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Enter an Answer</label>
-                                <input type="text" class="form-control input-sm" name="answer" placeholder="Enter an anwer" id="answer" required>
+                                <input type="text" class="form-control input-sm" name="answer" placeholder="Enter an answer" id="answer" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
