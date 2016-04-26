@@ -50,8 +50,8 @@
 				
 					 if($result->num_rows > 0)
 					 {
-					 	$emailId= $row['email'];
-						$security= $row['security'];
+					 	$GLOBALS['emailId']= $row['email'];
+						$GLOBALS['security']= $row['security'];
 					 }
 					 else
 					 {	 
