@@ -20,7 +20,7 @@
 				
 				 if(isset($_POST['submit']))
 				{
-					get_security();
+					get_securityanswer();
 				}
 				
 				 if(isset($_POST['reset']))
@@ -42,10 +42,10 @@
 						echo("Connection failed: ");
 					} 
 					
-					$emailId = $_POST["emailID"];
+					$emailId = $_POST["emailId"];
 				
 					
-					$sql1 = "SELECT * FROM user Where u_email='$emailID'";
+					$sql1 = "SELECT * FROM user Where u_email='$emailId'";
 					$result = $conn->query($sql1);
 				
 					 if($result->num_rows > 0)
@@ -58,6 +58,19 @@
 					  echo("Invalid usename, Try again!");
 					   
 					 }        
+				}
+				function get_securityanswer()
+				{
+					$connobj = new Connection;
+					
+					$answer = $_POST["answer"];
+					
+					if
+					
+				}
+				function get_reset()
+				{
+					$connobj = new Connection;
 				}
 		?>
     <!-- Main Content -->
@@ -84,7 +97,7 @@
                                                         <label for="entryDate">Enter Email ID:</label> <br /><br />
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" name="emailId" value="<?php echo $emailID; ?>" class="form-control input-sm" id="emailId" required><br />
+                                                        <input type="text" name="emailId" value="<?php echo $emailId; ?>" class="form-control input-sm" id="emailId" required><br />
                                                    </div>
                                                     <div class="col-md-1">
                                                         <button class="btn btn-primary btn-sm" name="go" id="go" type="submit" name="go" value="go">Go</button>
@@ -100,7 +113,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                      <span class="form-control disabled text-left input-sm"><?php echo security; ?></span> 
+                                                      <span class="form-control disabled text-left input-sm"><?php echo $security; ?></span> 
                                                     </div>
                                                 </div><br/>
                                                 
