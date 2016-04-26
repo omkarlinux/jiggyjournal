@@ -24,7 +24,7 @@
             
             // Database connection setup
             $connobj = new Connection;
-            
+            $target_dir = "journalImages/";
             //Check if photo exists for journal id
             $sql = "SELECT photoFile FROM journal WHERE journal_id = '$delete_id'";
             $result = $conn->query($sql);
