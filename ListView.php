@@ -112,7 +112,9 @@
 										}
 									?>
 									<div class="col-md-9">
+									<div style="white-space:pre-line">
 									<?php echo $content; ?>
+									</div>
 									</div>
 									</div>
 									</div>
