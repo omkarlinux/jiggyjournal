@@ -79,7 +79,7 @@
 				function get_reset()
 				{
 					$connobj = new Connection;
-					$password = $_POST["password"]
+					$password = $_POST["password"];
 					
 					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$_SESSION['passrecovery_user']\";";
 					
