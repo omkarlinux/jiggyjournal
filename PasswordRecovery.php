@@ -193,7 +193,7 @@
                                                         <input type="text" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <input name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
+                                                        <input name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</input>
                                                     </div>
                                                 </div>
                                             </div>
