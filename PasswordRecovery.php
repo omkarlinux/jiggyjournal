@@ -89,13 +89,13 @@
                     echo "updated password = ". $password;
 					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$passrecovery_user\";";
 
-                    if ($conn->query($sql) === TRUE) 
+                    if ($conn->query($sql)) 
                     {
                         echo "Your password has been reset ";
                     } 
                     else 
                     {
-                        echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
+                        echo "Password not reset: " .$sql . "<br>" ; 
                     }
                     unset($_SESSION['passrecovery_user']);
                     unset($_SESSION['passrecovery_email']);
@@ -193,7 +193,7 @@
                                                         <input type="text" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
+                                                        <input name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
                                                     </div>
                                                 </div>
                                             </div>
