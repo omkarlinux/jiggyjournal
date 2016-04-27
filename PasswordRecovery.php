@@ -38,7 +38,7 @@
 					$emailId = $_POST["emailId"];
 				
 					
-					$sql = "SELECT security FROM user Where u_email=\"$emailId\"";
+					$sql = "SELECT security FROM user Where u_email=\"$emailId\";";
 					$result = $connobj->query($sql);
 				
 					 if($result->num_rows > 0)
@@ -63,7 +63,7 @@
 					$connobj = new Connection;
 					
 					$answer = $_POST["answer"];
-					$sql = "SELECT answer FROM user Where user_id=\"$_SESSION['passrecovery_user']\"";
+					$sql = "SELECT answer FROM user Where user_id=\"$_SESSION['passrecovery_user']\";";
 					
 					$result = $connobj->query($sql);
 				   	if($row = $connobj->fetch())
@@ -81,7 +81,7 @@
 					$connobj = new Connection;
 					$password = $_POST["password"]
 					
-					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$_SESSION['passrecovery_user']\"";
+					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$_SESSION['passrecovery_user']\";";
 					
 					   if ($conn->query($sql) === TRUE) 
 					   {
