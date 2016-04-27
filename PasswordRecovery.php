@@ -92,13 +92,11 @@
 					$password = $_POST["password"];
 					$passrecovery_user = $_SESSION['passrecovery_user'];
                     
-                    echo "user = ". $passrecovery_user;
-                    echo "updated password = ". $password;
 					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$passrecovery_user\";";
 
                     if ($connobj->query($sql)) 
                     {
-                        $_GLOBALS['resetSuccess'] = 1;
+                        $GLOBALS['resetSuccess'] = 1;
                     } 
                     else 
                     {
