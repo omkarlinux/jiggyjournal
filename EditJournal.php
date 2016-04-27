@@ -80,7 +80,7 @@
                                                 }
                                                 ?>
                                                 <div class="col-md-1 col-md-offset-0" style="width:7%">
-                                                    <a  class="btn" href="ListView.php"><span class="badge"><span class="glyphicon glyphicon-ban-circle" style="font-size:16px"></span></span></a>
+                                                    <a  class="btn btn-link" href="ListView.php" title="Cancel Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-ban-circle" style="font-size:16px"></span></span></a>
                                                 </div>
                                                 <div class="col-md-1 col-md-offset-0" style="width:5%">
                                                     <button type="submit" name="save" formAction="save.php" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk" style="font-size:16px"></span></span></button>
