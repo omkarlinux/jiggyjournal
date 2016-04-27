@@ -13,6 +13,7 @@
 ?>
 
 		<?php
+                session_start();
 				 if(isset($_POST['go']))
 				{
 					get_email();
@@ -45,8 +46,6 @@
 					 {
 						if($row = $connobj->fetch())
 						{
-							
-							session_start();
 							$_SESSION['passrecovery_user']= $row['user_id'];
 							$_SESSION['passrecovery_email']= $emailId;
 							$_SESSION['passrecovery_security']= $row['security'];
@@ -60,13 +59,10 @@
 				}
 				function get_securityanswer()
 				{
-                    session_start();
 					$connobj = new Connection;
 					$passrec_user = $_SESSION['passrecovery_user'];
-					echo "user = " . $passrec_user;
                     
 					$answer = $_POST["answer"];
-                    echo "answer = " . $answer;
 					$sql = "SELECT answer FROM user Where user_id=\"$passrec_user\";";
 					
 					$result = $connobj->query($sql);
@@ -85,21 +81,25 @@
 				
 				function get_reset()
 				{
-                    session_start();
 					$connobj = new Connection;
 					$password = $_POST["password"];
 					$passrecovery_user = $_SESSION['passrecovery_user'];
                     
+                    echo "user = ". $passrecovery_user;
+                    echo "updated password = ". $password;
 					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$passrecovery_user\";";
-					
-					   if ($conn->query($sql) === TRUE) 
-					   {
-					 	 echo "Your password has been reset ";
-					   } 
-					   else 
-					   {
-					 	 echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
-					   }
+
+                    if ($conn->query($sql) === TRUE) 
+                    {
+                        echo "Your password has been reset ";
+                    } 
+                    else 
+                    {
+                        echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
+                    }
+                    unset($_SESSION['passrecovery_user']);
+                    unset($_SESSION['passrecovery_email']);
+                    unset($_SESSION['passrecovery_security']);
 				}
 		?>
     <!-- Main Content -->
@@ -167,7 +167,8 @@
                                     <br/><br/>
 									<?php
                                     									
-									echo "AllowReset = " . $GLOBALS['allowreset']; 
+									if ($GLOBALS['allowreset'] == 1)
+                                    { 
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
@@ -197,7 +198,7 @@
                                                 </div>
                                             </div>
 										</form>
-									<?  ?>
+									<? } ?>
 							
                                 </div>
                             </div>
