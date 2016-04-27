@@ -158,7 +158,7 @@
                                     <br/><br/>
 									<?php
 									
-									if(isset($GLOBALS['allowreset'])
+									if($GLOBALS['allowreset']==1)
 									{
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
