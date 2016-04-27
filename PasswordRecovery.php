@@ -60,6 +60,7 @@
 				}
 				function get_securityanswer()
 				{
+                    session_start();
 					$connobj = new Connection;
 					$passrec_user = $_SESSION['passrecovery_user'];
 					echo "user = " . $passrec_user;
@@ -84,6 +85,7 @@
 				
 				function get_reset()
 				{
+                    session_start();
 					$connobj = new Connection;
 					$password = $_POST["password"];
 					$passrecovery_user = $_SESSION['passrecovery_user'];
