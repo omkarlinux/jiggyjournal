@@ -80,7 +80,7 @@
 					 }					
 				}
 				
-				function get_reset()
+		/*		function get_reset()
 				{
 					$connobj = new Connection;
 					$password = $_POST["password"];
@@ -95,7 +95,7 @@
 					   {
 					 	 echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
 					   }
-				}
+				}*/
 		?>
     <!-- Main Content -->
     <header>
@@ -161,9 +161,9 @@
 									</form>
                                     <br/><br/>
 									<?php
-									
+									/*
 									if($GLOBALS['allowreset']==1)
-									{
+									{*/
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
@@ -193,7 +193,7 @@
                                                 </div>
                                             </div>
 										</form>
-									<? } ?>
+									<? /*}*/ ?>
 							
                                 </div>
                             </div>
