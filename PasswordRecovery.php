@@ -19,15 +19,21 @@
 					get_email();
 				}
 				
-				 if(isset($_POST['validate_answer']))
+				 else if(isset($_POST['validate_answer']))
 				{
 					get_securityanswer();
 				}
 				
-				 if(isset($_POST['reset']))
+				 else if(isset($_POST['reset']))
 				{
 					get_reset();
 				}
+                else 
+                {
+                    unset($_SESSION['passrecovery_user']);
+                    unset($_SESSION['passrecovery_email']);
+                    unset($_SESSION['passrecovery_security']);
+                }
 			
 			
 				function get_email()
@@ -49,6 +55,7 @@
 							$_SESSION['passrecovery_user']= $row['user_id'];
 							$_SESSION['passrecovery_email']= $emailId;
 							$_SESSION['passrecovery_security']= $row['security'];
+                            $GLOBALS['allowAnswer'] = 1;
 						}
 					 }
 					 else
@@ -136,6 +143,11 @@
                                                 </div>
                                             </div>
 										</form>
+                                        <?php
+                                    									
+                                        if ($GLOBALS['allowAnswer'] == 1)
+                                        { 
+                                        ?>
 										<form action="PasswordRecovery.php" method="post" >
                                             <div id="show-security-row">
                                                 <div class="row">
@@ -165,6 +177,7 @@
                                     </div>
 									</form>
                                     <br/><br/>
+                                    <?php } ?>
 									<?php
                                     									
 									if ($GLOBALS['allowreset'] == 1)
