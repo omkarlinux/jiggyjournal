@@ -98,7 +98,7 @@
 
                     if ($connobj->query($sql)) 
                     {
-                        echo "Your password has been reset ";
+                        $_GLOBALS['resetSuccess'] = 1;
                     } 
                     else 
                     {
@@ -116,6 +116,16 @@
                 <div class="col-lg-12">
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
+                    <?php
+                    if ($GLOBALS['resetSuccessful'])
+                    {?>
+                        <br/><br/><br/>
+                        <h3>Password reset successful!</h3>
+                    <?php    
+                    }
+                    else 
+                    {
+                    ?>
 					<h1>Password Recovery</h1>
 					 <hr class="star-light">
                         <div class="jumbotron">
@@ -124,9 +134,7 @@
                                    <div class="panel panel-success">
                                         <div class="panel-heading">
                                            &nbsp;
-                                          </div>
-										  
-											  
+                                          </div>	  
                                         <form action="PasswordRecovery.php" method="post" >
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
                                             <div id="show-email-row" class="row">
@@ -218,6 +226,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                         <hr class="star-light">
                         
                     </div>
