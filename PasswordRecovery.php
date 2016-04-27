@@ -66,14 +66,17 @@
 					$sql = "SELECT answer FROM user Where user_id=\"$_SESSION['passrecovery_user']\";";
 					
 					$result = $connobj->query($sql);
-				   	if($row = $connobj->fetch())
-					{
+					if($result->num_rows > 0)
+					 {
+				   	 if($row = $connobj->fetch())
+					  {
 						$GLOBALS['answer']= $row['answer'];	
                         if($row['answer']==$answer)
 						{
 							$GLOBALS['allowreset']=1;
 						}							
-					}					
+					  }
+					 }					
 				}
 				
 				function get_reset()
