@@ -65,8 +65,10 @@
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-md-9 text-left">
+												<strong>
                                                   <?php if(isset($_POST['edit'])){echo 'Edit';}
                                                         else{echo 'Create';} ?> Post
+												</strong>
                                                 </div>
                                                 
                                                 <?php 

@@ -77,7 +77,9 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col-md-8 text-left">
+											   <strong>
                                                <?php echo $title; ?>
+											   </strong>
                                             </div>
                                             <div class="col-md-1" style="width:5%">
 
