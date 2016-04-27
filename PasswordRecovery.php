@@ -62,8 +62,10 @@
 				{
 					$connobj = new Connection;
 					$passrec_user = $_SESSION['passrecovery_user'];
-					
+					echo "user = " . $passrec_user;
+                    
 					$answer = $_POST["answer"];
+                    echo "answer = " . $answer;
 					$sql = "SELECT answer FROM user Where user_id=\"$passrec_user\";";
 					
 					$result = $connobj->query($sql);
