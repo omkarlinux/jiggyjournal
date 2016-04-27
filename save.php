@@ -37,7 +37,7 @@
             $date = $_POST["date"];
             $userid = $_SESSION["userid"];
             
-            $sql = "INSERT INTO journal(title,content, date, user_id) VALUES ('$title','$content' , STR_TO_DATE('$date', '%m/%d/%Y'),'$userid');";
+            $sql = "INSERT INTO journal(title,content, date, user_id) VALUES (\"$title\",\"$content\" , STR_TO_DATE('$date', '%m/%d/%Y'),\"$userid\");";
             
             $connobj->query($sql);
             
@@ -59,11 +59,11 @@
             if (isset($journal_id))
             {
                 $sql = "UPDATE journal 
-                            SET title = '$title', 
-                                content = '$content', 
+                            SET title = \"$title\", 
+                                content = \"$content\", 
                                 date = STR_TO_DATE('$date', '%m/%d/%Y'), 
-                                user_id = '$userid'
-                            WHERE journal_id = '$journal_id';";
+                                user_id = \"$userid\"
+                            WHERE journal_id = \"$journal_id\";";
             }
             $connobj->query($sql);
             if(isset($_FILES['UploadFile']) && $_FILES['UploadFile']['error'] != UPLOAD_ERR_NO_FILE) {
@@ -151,7 +151,7 @@
                 else
                 {
                     //Update journal id with new photo file name
-                    $sql = "UPDATE journal SET photoFile = '$name' WHERE journal_id = '$journal_id';";
+                    $sql = "UPDATE journal SET photoFile = \"$name\" WHERE journal_id = \"$journal_id\";";
  
                     $conn->query($sql);
                 }
