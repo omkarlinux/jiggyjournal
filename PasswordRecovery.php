@@ -118,9 +118,9 @@
                     <?php
                     if ($GLOBALS['resetSuccess'] == 1 )
                     {?>
-                        <br/><br/><br/>
+                        <br/>
                         <h3>Password reset successful!</h3>
-                        <br/><br/><br/>
+                        <br/>
                     <?php    
                     }
                     else 
