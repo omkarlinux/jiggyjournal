@@ -50,8 +50,11 @@
 				
 					 if($result->num_rows > 0)
 					 {
-					 	$GLOBALS['emailId']= $row['email'];
-						$GLOBALS['security']= $row['security'];
+						if($row = $connobj->fetch())
+						{
+							$GLOBALS['emailId']= $row['email'];
+							$GLOBALS['security']= $row['security'];
+						}
 					 }
 					 else
 					 {	 
