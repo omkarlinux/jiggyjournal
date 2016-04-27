@@ -105,6 +105,7 @@
                     unset($_SESSION['passrecovery_user']);
                     unset($_SESSION['passrecovery_email']);
                     unset($_SESSION['passrecovery_security']);
+                    header("refresh:1; url=index.php");
 				}
 		?>
     <!-- Main Content -->
@@ -119,6 +120,7 @@
                     {?>
                         <br/><br/><br/>
                         <h3>Password reset successful!</h3>
+                        <br/><br/><br/>
                     <?php    
                     }
                     else 
@@ -212,7 +214,7 @@
                                                         <input type="text" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <input name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</input>
+                                                        <button name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
                                                     </div>
                                                 </div>
                                             </div>
