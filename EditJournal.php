@@ -64,12 +64,11 @@
                                     <div class="panel panel-success">
                                         <div class="panel-heading">
                                             <div class="row">
-                                                <div class="col-md-7 text-left">
+                                                <div class="col-md-9 text-left">
                                                   <?php if(isset($_POST['edit'])){echo 'Edit';}
                                                         else{echo 'Create';} ?> Post
                                                 </div>
-                                                <div class="col-md-2">
-                                                </div>
+                                                
                                                 <?php 
                                                 if(isset($_POST['edit']))
                                                 {?>
@@ -78,11 +77,16 @@
                                                     </div>
                                                 <?php    
                                                 }
+												else
+												{  ?> 
+											       <div class="col-md-1"></div>
+												   <?php	
+												}
                                                 ?>
                                                 <div class="col-md-1 col-md-offset-0" style="width:7%">
                                                     <a  class="btn btn-link" href="ListView.php" title="Cancel Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-ban-circle" style="font-size:16px"></span></span></a>
                                                 </div>
-                                                <div class="col-md-1 col-md-offset-0" style="width:5%">
+                                                <div class="col-md-1 col-md-offset-0" style="width:7%">
                                                     <button type="submit" name="save" formAction="save.php" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk" style="font-size:16px"></span></span></button>
                                                 </div>
                                             </div>
