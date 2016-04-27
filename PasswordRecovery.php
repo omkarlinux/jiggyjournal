@@ -80,12 +80,13 @@
 					 }					
 				}
 				
-		/*		function get_reset()
+				function get_reset()
 				{
 					$connobj = new Connection;
 					$password = $_POST["password"];
-					
-					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$_SESSION['passrecovery_user']\";";
+					$passrecovery_user = $_SESSION['passrecovery_user'];
+                    
+					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$passrecovery_user\";";
 					
 					   if ($conn->query($sql) === TRUE) 
 					   {
@@ -95,7 +96,7 @@
 					   {
 					 	 echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
 					   }
-				}*/
+				}
 		?>
     <!-- Main Content -->
     <header>
@@ -161,9 +162,9 @@
 									</form>
                                     <br/><br/>
 									<?php
-									/*
-									if($GLOBALS['allowreset']==1)
-									{*/
+									
+									if($GLOBALS['allowreset'] == 1)
+									{
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
@@ -193,7 +194,7 @@
                                                 </div>
                                             </div>
 										</form>
-									<? /*}*/ ?>
+									<? } ?>
 							
                                 </div>
                             </div>
