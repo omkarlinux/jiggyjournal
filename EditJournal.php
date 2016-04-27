@@ -71,9 +71,15 @@
                                                 <div class="col-md-1 col-md-offset-3">
                                                     <button type="submit" name="save" formAction="save.php" class="btn btn-link" title="Save Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-floppy-disk"></span></span></button>
                                                 </div>
-                                                <div class="col-md-1 col-md-offset-0">
-                                                    <button type="submit" name="delete" value="delete" formAction="delete.php" onClick="return confirm('Are you sure?')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
-                                                </div>
+                                                <?php 
+                                                if(isset($_POST['edit']))
+                                                {?>
+                                                    <div class="col-md-1 col-md-offset-0">
+                                                        <button type="submit" name="delete" value="delete" formAction="delete.php" onClick="return confirm('Are you sure?')" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+                                                    </div>
+                                                <?php    
+                                                } 
+                                                ?>
                                             </div>
                                         </div>
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">

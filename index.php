@@ -102,7 +102,7 @@
 
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    We can accept the following digital photo formats:  .jpg, .png, .tiff, .bmp
+                                    We can accept the following digital photo formats:  .jpg, .png, .gif, .bmp
                                 </div>
                             </div>
 
