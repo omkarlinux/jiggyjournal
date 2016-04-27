@@ -38,7 +38,7 @@
 					$emailId = $_POST["emailId"];
 				
 					
-					$sql = "SELECT security FROM user Where u_email=\"$emailId\";";
+					$sql = "SELECT * FROM user Where u_email=\"$emailId\";";
 					$result = $connobj->query($sql);
 				
 					 if($result->num_rows > 0)
