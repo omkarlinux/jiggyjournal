@@ -89,7 +89,7 @@
                     echo "updated password = ". $password;
 					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$passrecovery_user\";";
 
-                    if ($conn->query($sql)) 
+                    if ($connobj->query($sql)) 
                     {
                         echo "Your password has been reset ";
                     } 
