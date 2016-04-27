@@ -18,7 +18,7 @@
 					get_email();
 				}
 				
-				 if(isset($_POST['submit']))
+				 if(isset($_POST['validate_answer']))
 				{
 					get_securityanswer();
 				}
@@ -34,19 +34,12 @@
 	
 					// Database connection setup
 					//Create connection object
-					$conn = new Connection;
-
-					// Check connection
-					if ($conn->isConnectionError()) 
-					{
-						echo("Connection failed: ");
-					} 
-					
+					$connobj = new Connection;				
 					$emailId = $_POST["emailId"];
 				
 					
-					$sql1 = "SELECT * FROM user Where u_email='$emailId'";
-					$result = $conn->query($sql1);
+					$sql = "SELECT * FROM user Where u_email=\"$emailId\"";
+					$result = $connobj->query($sql);
 				
 					 if($result->num_rows > 0)
 					 {
@@ -58,7 +51,7 @@
 					 }
 					 else
 					 {	 
-					  echo("Invalid usename, Try again!");
+					  echo("Invalid username, Try again!");
 					   
 					 }        
 				}
@@ -91,6 +84,8 @@
                                         <div class="panel-heading">
                                            &nbsp;
                                           </div>
+										  
+											  
                                         <form action="PasswordRecovery.php" method="post" >
                                         <div class="panel-body" style="margin:2px 15px 2px 15px !important;">
                                             <div id="show-email-row" class="row">
@@ -130,7 +125,7 @@
                                                         <input type="text" name="answer" class="form-control input-sm" id="answer" required>
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <button name="submit" class="btn btn-primary btn-sm text-left" type="submit" id="submit" value="submit">Submit</button>
+                                                        <button name="validate_answer" class="btn btn-primary btn-sm text-left" type="submit" id="submit" value="submit">Submit</button>
                                                     </div>
                                                 </div>
                                     </div>
