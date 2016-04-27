@@ -96,7 +96,7 @@
                                                         <label for="entryDate">Enter Email ID:</label> <br /><br />
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" name="emailId" value="<?php echo $emailId; ?>" class="form-control input-sm" id="emailId" required><br />
+                                                        <input type="text" name="emailId" value="<?php echo @$GLOBALS['emailId']; ?>" class="form-control input-sm" id="emailId" required><br />
                                                    </div>
                                                     <div class="col-md-1">
                                                         <button class="btn btn-primary btn-sm" name="go" id="go" type="submit" name="go" value="go">Go</button>
@@ -112,7 +112,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                      <span class="form-control disabled text-left input-sm"><?php echo $security; ?></span> 
+                                                      <span class="form-control disabled text-left input-sm"><?php echo @$GLOBALS['security']; ?></span> 
                                                     </div>
                                                 </div><br/>
                                                 
