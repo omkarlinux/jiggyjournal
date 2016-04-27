@@ -100,23 +100,10 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-						<script>
-							function check_pass()
-							{
-							 if(document.getElementById('password').value==document.getElementById('password1').value)
-								{
-										document.getElementById('message').innerHTML = "match";
-								} 
-							 else 
-								{
-									document.getElementById('message').innerHTML = "no match";
-								}
-							}
-						</script>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Re-enter Password</label>
-                                <input type="password" class="form-control" placeholder="Re-enter Password" id="password1" onchange='check_pass();' required data-validation-required-message="Please re-enter your password.">
+                                <input type="password" class="form-control" placeholder="Re-enter Password" id="password1" required data-validation-required-message="Please re-enter your password.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
