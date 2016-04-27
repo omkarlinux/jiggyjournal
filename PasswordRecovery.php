@@ -117,7 +117,7 @@
                     <!--<img class="img-responsive" src="img/profile.png" alt="">-->
                     <div class="intro-text">
                     <?php
-                    if ($GLOBALS['resetSuccessful'])
+                    if ($GLOBALS['resetSuccess'] == 1 )
                     {?>
                         <br/><br/><br/>
                         <h3>Password reset successful!</h3>
