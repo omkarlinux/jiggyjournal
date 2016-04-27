@@ -162,9 +162,8 @@
 									</form>
                                     <br/><br/>
 									<?php
-									
-									if($GLOBALS['allowreset'] == 1)
-									{
+                                    									
+									echo "AllowReset = " . $GLOBALS['allowreset']; 
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
@@ -194,7 +193,7 @@
                                                 </div>
                                             </div>
 										</form>
-									<? } ?>
+									<?  ?>
 							
                                 </div>
                             </div>
