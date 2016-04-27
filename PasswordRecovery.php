@@ -61,9 +61,10 @@
 				function get_securityanswer()
 				{
 					$connobj = new Connection;
+					$passrec_user = $_SESSION['passrecovery_user'];
 					
 					$answer = $_POST["answer"];
-					$sql = "SELECT answer FROM user Where user_id=\"$_SESSION['passrecovery_user']\";";
+					$sql = "SELECT answer FROM user Where user_id=\"$passrec_user\";";
 					
 					$result = $connobj->query($sql);
 					if($result->num_rows > 0)
