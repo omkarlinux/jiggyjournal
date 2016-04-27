@@ -48,7 +48,7 @@
 							
 							session_start();
 							$_SESSION['passrecovery_user']= $row['user_id'];
-							$_SESSION['passrecovery_email']= $emailId;;
+							$_SESSION['passrecovery_email']= $emailId;
 							$_SESSION['passrecovery_security']= $row['security'];
 						}
 					 }
