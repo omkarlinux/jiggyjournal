@@ -200,7 +200,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" name="password" class="form-control input-sm" id="password" >
+                                                        <input type="password" name="password" class="form-control input-sm" id="password" >
                                                     </div>
                                                 </div><br/>
                                                 <div class="row">
@@ -211,7 +211,7 @@
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
 
-                                                        <input type="text" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
+                                                        <input type="password" name="confirmpassword" class="form-control input-sm" id="confirmPassword" >
                                                     </div>
                                                     <div class="col-md-1">
                                                         <button name="reset" class="btn btn-primary btn-sm text-left" type="submit" id="reset" value="reset">Reset</button>
