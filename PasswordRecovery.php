@@ -85,7 +85,7 @@
 					
 					   if ($conn->query($sql) === TRUE) 
 					   {
-					 	 echo "Password reset successfully ";
+					 	 echo "Your password has been reset ";
 					   } 
 					   else 
 					   {
@@ -158,7 +158,7 @@
                                     <br/><br/>
 									<?php
 									
-									if($GLOBALS['allowreset']=1)
+									if(isset($GLOBALS['allowreset'])
 									{
 									?>
 									        <form action="PasswordRecovery.php" method="post" >
