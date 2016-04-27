@@ -38,15 +38,18 @@
 					$emailId = $_POST["emailId"];
 				
 					
-					$sql = "SELECT * FROM user Where u_email=\"$emailId\"";
+					$sql = "SELECT security FROM user Where u_email=\"$emailId\"";
 					$result = $connobj->query($sql);
 				
 					 if($result->num_rows > 0)
 					 {
 						if($row = $connobj->fetch())
 						{
-							$GLOBALS['emailId']= $row['email'];
-							$GLOBALS['security']= $row['security'];
+							
+							session_start();
+							$_SESSION['passrecovery_user']= $row['user_id'];
+							$_SESSION['passrecovery_email']= $emailId;
+							$_SESSION['passrecovery_security']= $row['security'];
 						}
 					 }
 					 else
@@ -60,12 +63,34 @@
 					$connobj = new Connection;
 					
 					$answer = $_POST["answer"];
+					$sql = "SELECT answer FROM user Where user_id=\"$_SESSION['passrecovery_user']\";";
 					
-									
+					$result = $connobj->query($sql);
+				   	if($row = $connobj->fetch())
+					{
+						$GLOBALS['answer']= $row['answer'];	
+                        if($row['answer']==$answer)
+						{
+							$GLOBALS['allowreset']=1;
+						}							
+					}					
 				}
+				
 				function get_reset()
 				{
 					$connobj = new Connection;
+					$password = $_POST["password"]
+					
+					$sql = "UPDATE user SET password = \"$password\" WHERE user_id=\"$_SESSION['passrecovery_user']\";";
+					
+					   if ($conn->query($sql) === TRUE) 
+					   {
+					 	 echo "Password reset successfully ";
+					   } 
+					   else 
+					   {
+					 	 echo "Password not reset: " .$sql . "<br>" . $conn->error(); 
+					   }
 				}
 		?>
     <!-- Main Content -->
@@ -94,7 +119,7 @@
                                                         <label for="entryDate">Enter Email ID:</label> <br /><br />
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                        <input type="text" name="emailId" value="<?php echo @$GLOBALS['emailId']; ?>" class="form-control input-sm" id="emailId" required><br />
+                                                        <input type="text" name="emailId" value="<?php echo $_SESSION['passrecovery_email']; ?>" class="form-control input-sm" id="emailId" required><br />
                                                    </div>
                                                     <div class="col-md-1">
                                                         <button class="btn btn-primary btn-sm" name="go" id="go" type="submit" name="go" value="go">Go</button>
@@ -110,7 +135,7 @@
 
                                                     </div>
                                                     <div class="col-md-7 col-md-offeset-2">
-                                                      <span class="form-control disabled text-left input-sm"><?php echo @$GLOBALS['security']; ?></span> 
+                                                      <span class="form-control disabled text-left input-sm"><?php echo $_SESSION['passrecovery_security']; ?></span> 
                                                     </div>
                                                 </div><br/>
                                                 
@@ -131,6 +156,11 @@
                                     </div>
 									</form>
                                     <br/><br/>
+									<?php
+									
+									if($GLOBALS['allowreset']=1)
+									{
+									?>
 									        <form action="PasswordRecovery.php" method="post" >
                                             <div id="show-reset-password">
                                                 <h4 class="text-left">Reset your password</h4>
@@ -159,6 +189,8 @@
                                                 </div>
                                             </div>
 										</form>
+									<? } ?>
+							
                                 </div>
                             </div>
                                 </div>

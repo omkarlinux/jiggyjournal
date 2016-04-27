@@ -79,17 +79,17 @@
                                             <div class="col-md-8 text-left">
                                                <?php echo $title; ?>
                                             </div>
-                                            <div class="col-md-1">
+                                            <div class="col-md-1" style="width:5%">
 
                                             <form action = "EditJournal.php" method="post" >
                                                 <input type="hidden" name="edit_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="edit" value="edit" class="btn btn-link" title="Edit Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"> <span class="glyphicon glyphicon-pencil"></span></span></button>			
+                                                <button type="submit" name="edit" value="edit" class="btn btn-link" title="Edit Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"> <span class="glyphicon glyphicon-pencil" style="font-size:16px"></span></span></button>			
 											</form>
                                             </div>
-                                            <div class="col-md-1">
+                                            <div class="col-md-1" style="width:10%">
 											<form action = "delete.php" onclick="return confirm('Are you sure you want to delete?')" method="post" >
                                                 <input type="hidden" name="journal_id" value="<?php echo $journal_id; ?>" />
-                                                <button type="submit" name="delete" value="delete" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove"></span></span></button>
+                                                <button type="submit" name="delete" value="delete" class="btn btn-link" title="Delete Entry" data-toggle="tooltip" data-placement="bottom"><span class="badge"><span class="glyphicon glyphicon-remove" style="font-size:16px"></span></span></button>
 											</form>
 											</div>
 
