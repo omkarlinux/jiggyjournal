@@ -42,6 +42,14 @@
                                         </td>
                                     </tr>
                                     <tr class="row">
+                                        <td class="col-md-2"><img src="img/MugdhaProfile.jpg" class="img-thumbnail" style="height:130px; width:130px;" /></td>
+                                        <td class="col-md-10">
+                                            <p style="text-align: justify; margin-left: 8px">
+                                                <b>Mugdha Kulkarni</b> worked as a web developer and designer for this project. She hails from Pune, a city in India known for it's varied culture and history. She studied in North Eastern University and worked with us to collaborate on this project. She likes hiking, cooking and learning how to belly dance. 
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="row">
                                         <td class="col-md-2"><img src="img/SongSmallHeadshot.jpg" class="img-thumbnail" style="height:130px; width:130px;" /></td>
                                         <td class="col-md-10">
                                             <p style="text-align: justify; margin-left: 8px">
