@@ -29,7 +29,7 @@
                                         <td class="col-md-2"><img src="img/OmkarSmallHeadshot.jpg" class="img-thumbnail" style="height:130px; width:130px;" /></td>
                                         <td class="col-md-10">
                                             <p style="text-align: justify; margin-left: 8px;">
-                                                <b>Omkar Jayant Danke</b> is a badass and is the lead product development manager for Jiggy Journal.  He is originally from India and has five years of experience in SAP ABAP at Accenture.  He loves to learn new things, tackle new technology, and when he’s not satisfying his curiosity, he enjoys hiking, reading novels and sketching. He loves to try out different types of cuisine and is learning how to cook.
+                                                <b>Omkar Jayant Danke</b> is the lead product development manager for Jiggy Journal.  He is originally from India and has five years of experience in SAP ABAP at Accenture.  He loves to learn new things, tackle new technology, and when he’s not satisfying his curiosity, he enjoys hiking, reading novels and sketching. He loves to try out different types of cuisine and is learning how to cook.
                                             </p>
                                         </td>
                                     </tr>
